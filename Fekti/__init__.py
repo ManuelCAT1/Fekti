@@ -15,7 +15,7 @@ db = SQLAlchemy()
 DB_NAME = "database.db"
 mail = Mail()  # Initialize mail
 
-def create_app(environ, start_response):
+def create_app():
     
     app = Flask(__name__)
 
