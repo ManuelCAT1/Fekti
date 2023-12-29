@@ -26,7 +26,7 @@ app.config['UPLOAD_FOLDER'] = '/photos/'
 
 
 if __name__ == '__main__':
-    app.run(port = 0000, debug=True)
+    app.run()
 
 
 
