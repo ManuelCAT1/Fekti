@@ -21,7 +21,7 @@ def create_app(environ=None, start_response=None):
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     
 
-    mail = Mail(app)
+  
 
     app.config['SECRET_KEY'] = 'SuperFektiXDUnpredictableKey'
     app.config['SECURITY_PASSWORD_SALT'] = 'AnotherSuperFektiXDUnpredictableKey'
