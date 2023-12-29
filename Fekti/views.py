@@ -50,6 +50,7 @@ views = Blueprint('views', __name__)
 @views.route('/home/<subject>')
 @login_required
 def homePage(subject):
+    print("homePage 1")
     logging.info('Entered homePage() function')
     if current_user.banned:
         return render_template('banned.html')
@@ -91,6 +92,7 @@ def homePage(subject):
 @views.route('/image/<int:photo_id>')
 @login_required
 def serve_image(photo_id):
+    print("serve_image 2")
     logging.info('Entered image/() function')
     unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
     photo = Photo.query.get(photo_id)
@@ -112,6 +114,7 @@ def serve_image(photo_id):
 from datetime import datetime, timedelta
 
 def update_credits(user):
+    print("update_credits 3")
     logging.info('Entered update credits() function')
     if user.last_credit_update is not None and user.last_credit_update + timedelta(weeks=2) <= datetime.now():
         user.credits += 1
@@ -124,6 +127,7 @@ from datetime import datetime, timedelta
 
 
 def flashFeedback(photo_id, user_id):
+    print("flashFeedback 4")
 
     return redirect(url_for('views.feedback', photo_id=photo_id))
 
@@ -134,6 +138,7 @@ import time
 @views.route('/unlock_photo/<int:photo_id>', methods=['POST'])
 @login_required
 def unlock_photo(photo_id):
+    print("unlock_photo 5")
     logging.info('Entered unlocktphoto() function')
     user = current_user
     photo = Photo.query.get(photo_id)
@@ -160,6 +165,7 @@ def unlock_photo(photo_id):
         return redirect(url_for('views.homePage'))
 
 def add_photo_to_feedback(photo_id, user_id):
+    print("add_photo_to_feedback 6")
     # Add the photo to the NeededFeedback table
     needed_feedback = NeededFeedback(photo_id=photo_id, user_id=user_id)
     db.session.add(needed_feedback)
@@ -171,6 +177,7 @@ from datetime import datetime
 @views.route('/feedback')
 @login_required
 def feedback():
+    print("feedback 7")
     logging.info('Entered feedback() function')
     needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id).first()
     photo_id = needed_feedback.photo_id if needed_feedback else None
@@ -186,6 +193,7 @@ from flask import redirect, url_for
 @views.route('/feedback_photo/<int:photo_id>')
 @login_required
 def feedback_photo(photo_id):
+    print("feedback_photo 8")
     logging.info('Entered feedback pgohto() function')
     photo = Photo.query.get(photo_id)
     existing_feedback = PhotoFeedback.query.filter_by(photo_id=photo_id, user_id=current_user.id).first()
@@ -204,6 +212,7 @@ def feedback_photo(photo_id):
 @views.route('/submit_feedback/<int:photo_id>', methods=['POST'])
 @login_required
 def submit_feedback(photo_id):
+    print("submit_feedback 9")
     logging.info('Entered submitfeedbacks() function')
     feedback = request.form.get('feedback')  # Get the feedback from the form
     feedback = True if feedback == 'like' else False
@@ -256,6 +265,7 @@ def submit_feedback(photo_id):
     return redirect(url_for('views.homePage'))
 
 def mark_feedback_as_rated(photo_id, user_id):
+    print("mark_feedback_as_rated 10")
     needed_feedback = NeededFeedback.query.filter_by(photo_id=photo_id, user_id=user_id).first()
     if needed_feedback:
         needed_feedback.isRated = True
@@ -270,6 +280,7 @@ def mark_feedback_as_rated(photo_id, user_id):
 @views.route('/school')
 @login_required
 def yourschool():
+    print("yourschool 11")
     if current_user.banned:
         return redirect(url_for('views.banned'))  # Redirect to banned page
 
@@ -282,6 +293,7 @@ def yourschool():
 
 @login_required
 def photos():
+    print("photos 12")
     if current_user.banned:
         return redirect(url_for('views.banned'))  # Redirect to banned page
 
@@ -294,11 +306,13 @@ def photos():
 @views.route('/onas')
 @views.route('/about')
 def about():
+    print("about 13")
     return render_template('about.html')
 
 @views.route('/kontakt')
 @views.route('/contact')
 def contact():
+    print("contact 14")
     return render_template('contact.html')
 
 @views.route('/credits')
@@ -582,6 +596,7 @@ def help():
 # @login_required
 # def swietokrzyskie():
 #     return render_template('schools/ŚWIĘTOKRZYSKIE/ŚWIĘTOKRZYSKIE.html')
+
 
 
 
