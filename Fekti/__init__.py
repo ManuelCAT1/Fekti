@@ -18,12 +18,15 @@ mail = Mail()  # Initialize mail
 def create_app(environ=None, start_response=None):
     
     app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    
 
     mail = Mail(app)
 
     app.config['SECRET_KEY'] = 'SuperFektiXDUnpredictableKey'
     app.config['SECURITY_PASSWORD_SALT'] = 'AnotherSuperFektiXDUnpredictableKey'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    
+
 
 
     # Email configuration
@@ -49,7 +52,7 @@ def create_app(environ=None, start_response=None):
     
 
     with app.app_context():
-      db.create_all()
+        db.create_all()
 
 
 
@@ -70,14 +73,13 @@ def create_app(environ=None, start_response=None):
     @login_manager.user_loader
     def load_user(id):
         return User.query.get(int(id))
+    
+    from . import models
 
+    with app.app_context():
+        db.create_all()
     return app
 
-def create_database(app):
-    if not os.path.exists(DB_NAME):
-        with app.app_context():
-            db.create_all()
-        print('Created Database!')
 
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif'}
