@@ -10,6 +10,10 @@ from datetime import datetime, timedelta
 from PIL import Image, ImageFilter
 import io
 
+import logging
+
+logging.basicConfig(filename='routeLogs.log', level=logging.INFO)
+
 def blur_image_blob(image_blob):
     # Convert the binary data to an image
     img = Image.open(io.BytesIO(image_blob))
@@ -46,6 +50,7 @@ views = Blueprint('views', __name__)
 @views.route('/home/<subject>')
 @login_required
 def homePage(subject):
+    logging.info('Entered homePage() function')
     if current_user.banned:
         return render_template('banned.html')
     update_credits(current_user)
@@ -86,6 +91,7 @@ def homePage(subject):
 @views.route('/image/<int:photo_id>')
 @login_required
 def serve_image(photo_id):
+    logging.info('Entered image/() function')
     unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
     photo = Photo.query.get(photo_id)
     print(current_user.id)
@@ -106,6 +112,7 @@ def serve_image(photo_id):
 from datetime import datetime, timedelta
 
 def update_credits(user):
+    logging.info('Entered update credits() function')
     if user.last_credit_update is not None and user.last_credit_update + timedelta(weeks=2) <= datetime.now():
         user.credits += 1
         user.last_credit_update = datetime.now()
@@ -127,6 +134,7 @@ import time
 @views.route('/unlock_photo/<int:photo_id>', methods=['POST'])
 @login_required
 def unlock_photo(photo_id):
+    logging.info('Entered unlocktphoto() function')
     user = current_user
     photo = Photo.query.get(photo_id)
     
@@ -163,6 +171,7 @@ from datetime import datetime
 @views.route('/feedback')
 @login_required
 def feedback():
+    logging.info('Entered feedback() function')
     needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id).first()
     photo_id = needed_feedback.photo_id if needed_feedback else None
 
@@ -177,6 +186,7 @@ from flask import redirect, url_for
 @views.route('/feedback_photo/<int:photo_id>')
 @login_required
 def feedback_photo(photo_id):
+    logging.info('Entered feedback pgohto() function')
     photo = Photo.query.get(photo_id)
     existing_feedback = PhotoFeedback.query.filter_by(photo_id=photo_id, user_id=current_user.id).first()
     if existing_feedback:
@@ -194,6 +204,7 @@ def feedback_photo(photo_id):
 @views.route('/submit_feedback/<int:photo_id>', methods=['POST'])
 @login_required
 def submit_feedback(photo_id):
+    logging.info('Entered submitfeedbacks() function')
     feedback = request.form.get('feedback')  # Get the feedback from the form
     feedback = True if feedback == 'like' else False
 
@@ -250,19 +261,11 @@ def mark_feedback_as_rated(photo_id, user_id):
         needed_feedback.isRated = True
         db.session.commit()
 
-@views.route('/photos')
-@views.route('/zdjecia')
-@views.route('/zdjęcia')
-@login_required
-def Photos():
-    unlocked_photos = Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()
-    return render_template('photos.html', photos=unlocked_photos, user=current_user, credits=current_user.credits)
-
 
 @views.route('/yourschool')
-@views.route('/twojaszkoła')
+
 @views.route('/twojaszkola')
-@views.route('/szkoła')
+
 @views.route('/szkola')
 @views.route('/school')
 @login_required
@@ -276,7 +279,7 @@ def yourschool():
 
 @views.route('/photos')
 @views.route('/zdjecia')
-@views.route('/zdjęcia')
+
 @login_required
 def photos():
     if current_user.banned:
@@ -300,7 +303,7 @@ def contact():
 
 @views.route('/credits')
 @views.route('/zetony')
-@views.route('/żetony')
+
 @login_required
 def credits():
     return render_template('credits.html')
