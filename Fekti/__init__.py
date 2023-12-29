@@ -64,7 +64,7 @@ def create_app(environ=None, start_response=None):
 
     from .models import User, Photo
 
-    create_database(app)
+
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.loginPage'
