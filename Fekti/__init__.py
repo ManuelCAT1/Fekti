@@ -26,7 +26,6 @@ def create_app(environ=None, start_response=None):
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
 
-
     # Email configuration
     app.config['MAIL_SERVER'] = 'serwer2395047.home.pl'
  
@@ -49,7 +48,8 @@ def create_app(environ=None, start_response=None):
 
     
 
-    
+    with app.app_context():
+      db.create_all()
 
 
 
