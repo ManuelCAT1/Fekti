@@ -1,0 +1,10 @@
+@media screen and (max-device-width: 420px) {
+    .close{
+     top: 20%;
+    }
+ }
+
+ .user-list{
+    margin-top: 150px;
+
+ }

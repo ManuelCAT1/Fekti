@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap');
+
+body{
+	background: #190F2E;
+	
+	background-color: #190F2E;
+	font-family: Ubuntu;
+	padding-bottom: 100px;
+}
+
+h5{
+    font-family: Ubuntu;
+    font-weight: 800;
+    line-height: 1.5;
+
+
+}
+p3{
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.feedbackContainer{
+	align-items: center;
+	justify-content: center;
+}
+
+
+.postContatiner{
+	margin-top: 100px;
+	padding-top: 100px;
+	top: 100px;
+	
+}
+.photo-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+}
+
+
+  .photo-img li {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+
+
+  .image-wrapper {
+	margin-top: -20px;
+    display: inline-block;
+    border: 2px solid #000; /* adds a black border */
+    margin: 0; /* adds space between images */
+	border-radius: 30px;
+	overflow: hidden;
+	background: #0D035E; /* Change to match your website's color scheme */
+	background-color: rgba(255,255,255,0.13);
+    -webkit-backdrop-filter: blur(40px); /* Add this line first, it fixes blur for Safari*/
+    backdrop-filter: blur(40px);
+	border: 2px solid rgba(255,255,255,0.1);
+	box-shadow: 0 0 40px rgba(8,7,16,0.6);
+	color: #E5B8F4;
+	text-align: center;
+	z-index: 500;
+	width: 35%;
+}
+
+
+@media (max-width: 800px){
+    .image-wrapper {
+   
+        width: 500px;
+    }
+
+
+    .imgsrc-unblurred {
+		display: block;
+		height: 300px;
+		width: 100%;
+		object-fit: cover; 
+		pointer-events: none;
+		user-select: none;
+		border-radius: 30px;
+	}
+}
+
+
+.imgsrc-unblurred {
+    display: block;
+    height: 400px;
+    width: 100%;
+    object-fit: cover; 
+    pointer-events: none;
+    user-select: none;
+	border-radius: 30px;
+	margin-bottom: -20px;
+
+
+	border: 2px solid rgba(255,255,255,0.1);
+	box-shadow: 0 0 40px rgba(8,7,16,0.6); 
+	margin-left: -2px;
+
+}
+
+
+@media (min-width: 1700px){
+    .image-wrapper {
+   
+		width: 45%;
+    }
+
+	.imgsrc-unblurred {
+
+		height: 500px;
+
+	}
+}
+
+
+
+.rateImg{
+    margin-top: 30px;
+    position: relative;
+    padding-bottom: 50px;
+    padding-top: 5%;
+    
+}
+
+.toggleImg{
+    color: #E5B8F4;
+	filter: invert(99%) sepia(39%) saturate(6117%) hue-rotate(205deg) brightness(100%) contrast(92%);
+	font-size: 4.5rem;
+	cursor: pointer;
+	position: relative;
+    outline: none;
+    border: none;
+    outline: blue   ;
+    width: 35px; /* Adjust the width as needed */
+    height: 35px; /* Adjust the height as needed */
+    padding: 5px;
+
+    
+}
+
+.unlockButton{
+    background-color: none;
+    background: none;
+}
+
+.btn{
+    background-color: none;
+    background: none;
+    outline: #E5B8F4;
+    border: 2px solid #E5B8F4; /* Add a rounded outline */
+    border-radius: 30px; /* Set the border radius */
+    outline: none; 
+
+    background: #0D035E; /* Change to match your website's color scheme */
+	background-color: rgba(255,255,255,0.13);
+    -webkit-backdrop-filter: blur(40px); /* Add this line first, it fixes blur for Safari*/
+    backdrop-filter: blur(40px);
+	border: 2px solid rgba(255,255,255,0.1);
+	box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+
+#rightRate{
+    width: 30%;
+    float: left;
+    padding-left: 10%;
+    
+}
+
+#leftRate{
+    width: 30%;
+    float: right;
+    padding-right: 10%;
+}
+
+h2{
+    font-size: 20px;
+    padding: 5%;
+    color: #c685dc;
+}
+
+

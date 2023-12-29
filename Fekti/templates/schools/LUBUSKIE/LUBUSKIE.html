@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Fekti
+  </title>
+  <link href="{{ url_for('static', filename='cities.css') }}" rel="stylesheet"/>
+  <script>
+    function searchUL() {
+             // Get input value
+             let input = document.getElementById('searchInput');
+             let filter = input.value.toUpperCase();
+ 
+             // Get all UL elements
+             let uls = document.getElementsByTagName('ul');
+             for (let i = 0; i < uls.length; i++) {
+                 let ul = uls[i];
+                 let li = ul.getElementsByTagName('li');
+                 for (let j = 0; j < li.length; j++) {
+                     if (li[j].getAttribute('data-attribute').toUpperCase().indexOf(filter) > -1) {
+                         li[j].style.display = "";
+                     } else {
+                         li[j].style.display = "none";
+                     }
+                 }
+             }
+         }
+   </script>
+ </head>
+</html>
+<body>
+ <div class="description">
+  <h5>
+   Select a City in LUBUSKIE
+  </h5>
+  <h4>
+   <br/>
+   <br <br=""/>
+   <input id="searchInput" onkeyup="searchUL()" placeholder="Search for cities..." type="text"/>
+   <ul>
+    <li data-attribute="Konin Żagański" href="">
+     <a href="LUBUSKIE_Konin Żagański.html">
+      Konin Żagański
+     </a>
+    </li>
+    <li data-attribute="Lipna" href="">
+     <a href="LUBUSKIE_Lipna.html">
+      Lipna
+     </a>
+    </li>
+    <li data-attribute="Kożuchów" href="">
+     <a href="LUBUSKIE_Kożuchów.html">
+      Kożuchów
+     </a>
+    </li>
+    <li data-attribute="Gorzów Wielkopolski" href="">
+     <a href="LUBUSKIE_Gorzów Wielkopolski.html">
+      Gorzów Wielkopolski
+     </a>
+    </li>
+    <li data-attribute="Zielona Góra" href="">
+     <a href="LUBUSKIE_Zielona Góra.html">
+      Zielona Góra
+     </a>
+    </li>
+    <li data-attribute="Strzelce Krajeńskie" href="">
+     <a href="LUBUSKIE_Strzelce Krajeńskie.html">
+      Strzelce Krajeńskie
+     </a>
+    </li>
+    <li data-attribute="Żagań" href="">
+     <a href="LUBUSKIE_Żagań.html">
+      Żagań
+     </a>
+    </li>
+    <li data-attribute="Siedlisko" href="">
+     <a href="LUBUSKIE_Siedlisko.html">
+      Siedlisko
+     </a>
+    </li>
+    <li data-attribute="Sulęcin" href="">
+     <a href="LUBUSKIE_Sulęcin.html">
+      Sulęcin
+     </a>
+    </li>
+    <li data-attribute="Iłowa" href="">
+     <a href="LUBUSKIE_Iłowa.html">
+      Iłowa
+     </a>
+    </li>
+    <li data-attribute="Szprotawa" href="">
+     <a href="LUBUSKIE_Szprotawa.html">
+      Szprotawa
+     </a>
+    </li>
+    <li data-attribute="Rogoziniec" href="">
+     <a href="LUBUSKIE_Rogoziniec.html">
+      Rogoziniec
+     </a>
+    </li>
+    <li data-attribute="Witnica" href="">
+     <a href="LUBUSKIE_Witnica.html">
+      Witnica
+     </a>
+    </li>
+    <li data-attribute="Drezdenko" href="">
+     <a href="LUBUSKIE_Drezdenko.html">
+      Drezdenko
+     </a>
+    </li>
+    <li data-attribute="Skwierzyna" href="">
+     <a href="LUBUSKIE_Skwierzyna.html">
+      Skwierzyna
+     </a>
+    </li>
+    <li data-attribute="Międzyrzecz" href="">
+     <a href="LUBUSKIE_Międzyrzecz.html">
+      Międzyrzecz
+     </a>
+    </li>
+    <li data-attribute="Nowe Miasteczko" href="">
+     <a href="LUBUSKIE_Nowe Miasteczko.html">
+      Nowe Miasteczko
+     </a>
+    </li>
+    <li data-attribute="Kamień Mały" href="">
+     <a href="LUBUSKIE_Kamień Mały.html">
+      Kamień Mały
+     </a>
+    </li>
+    <li data-attribute="Sulechów" href="">
+     <a href="LUBUSKIE_Sulechów.html">
+      Sulechów
+     </a>
+    </li>
+    <li data-attribute="Słubice" href="">
+     <a href="LUBUSKIE_Słubice.html">
+      Słubice
+     </a>
+    </li>
+    <li data-attribute="Żary" href="">
+     <a href="LUBUSKIE_Żary.html">
+      Żary
+     </a>
+    </li>
+    <li data-attribute="Gubin" href="">
+     <a href="LUBUSKIE_Gubin.html">
+      Gubin
+     </a>
+    </li>
+    <li data-attribute="Lubsko" href="">
+     <a href="LUBUSKIE_Lubsko.html">
+      Lubsko
+     </a>
+    </li>
+    <li data-attribute="Nowa Sól" href="">
+     <a href="LUBUSKIE_Nowa Sól.html">
+      Nowa Sól
+     </a>
+    </li>
+    <li data-attribute="Świebodzin" href="">
+     <a href="LUBUSKIE_Świebodzin.html">
+      Świebodzin
+     </a>
+    </li>
+    <li data-attribute="Bobowicko" href="">
+     <a href="LUBUSKIE_Bobowicko.html">
+      Bobowicko
+     </a>
+    </li>
+    <li data-attribute="Henryków" href="">
+     <a href="LUBUSKIE_Henryków.html">
+      Henryków
+     </a>
+    </li>
+    <li data-attribute="Kostrzyn nad Odrą" href="">
+     <a href="LUBUSKIE_Kostrzyn nad Odrą.html">
+      Kostrzyn nad Odrą
+     </a>
+    </li>
+    <li data-attribute="Krosno Odrzańskie" href="">
+     <a href="LUBUSKIE_Krosno Odrzańskie.html">
+      Krosno Odrzańskie
+     </a>
+    </li>
+    <li data-attribute="Sława" href="">
+     <a href="LUBUSKIE_Sława.html">
+      Sława
+     </a>
+    </li>
+    <li data-attribute="Zbąszynek" href="">
+     <a href="LUBUSKIE_Zbąszynek.html">
+      Zbąszynek
+     </a>
+    </li>
+    <li data-attribute="Lipki Wielkie" href="">
+     <a href="LUBUSKIE_Lipki Wielkie.html">
+      Lipki Wielkie
+     </a>
+    </li>
+    <li data-attribute="Różanki" href="">
+     <a href="LUBUSKIE_Różanki.html">
+      Różanki
+     </a>
+    </li>
+    <li data-attribute="Wschowa" href="">
+     <a href="LUBUSKIE_Wschowa.html">
+      Wschowa
+     </a>
+    </li>
+    <li data-attribute="Rudnica" href="">
+     <a href="LUBUSKIE_Rudnica.html">
+      Rudnica
+     </a>
+    </li>
+    <li data-attribute="Brzoza" href="">
+     <a href="LUBUSKIE_Brzoza.html">
+      Brzoza
+     </a>
+    </li>
+    <li data-attribute="Szczepanów" href="">
+     <a href="LUBUSKIE_Szczepanów.html">
+      Szczepanów
+     </a>
+    </li>
+    <li data-attribute="Sieniawa" href="">
+     <a href="LUBUSKIE_Sieniawa.html">
+      Sieniawa
+     </a>
+    </li>
+    <li data-attribute="Grabik" href="">
+     <a href="LUBUSKIE_Grabik.html">
+      Grabik
+     </a>
+    </li>
+    <li data-attribute="Jenin" href="">
+     <a href="LUBUSKIE_Jenin.html">
+      Jenin
+     </a>
+    </li>
+    <li data-attribute="Przewóz" href="">
+     <a href="LUBUSKIE_Przewóz.html">
+      Przewóz
+     </a>
+    </li>
+    <li data-attribute="Santok" href="">
+     <a href="LUBUSKIE_Santok.html">
+      Santok
+     </a>
+    </li>
+    <li data-attribute="Szczaniec" href="">
+     <a href="LUBUSKIE_Szczaniec.html">
+      Szczaniec
+     </a>
+    </li>
+    <li data-attribute="Zwierzyn" href="">
+     <a href="LUBUSKIE_Zwierzyn.html">
+      Zwierzyn
+     </a>
+    </li>
+    <li data-attribute="Dobiegniew" href="">
+     <a href="LUBUSKIE_Dobiegniew.html">
+      Dobiegniew
+     </a>
+    </li>
+    <li data-attribute="Zakęcie" href="">
+     <a href="LUBUSKIE_Zakęcie.html">
+      Zakęcie
+     </a>
+    </li>
+    <li data-attribute="Czerwieńsk" href="">
+     <a href="LUBUSKIE_Czerwieńsk.html">
+      Czerwieńsk
+     </a>
+    </li>
+    <li data-attribute="Rzepin" href="">
+     <a href="LUBUSKIE_Rzepin.html">
+      Rzepin
+     </a>
+    </li>
+    <li data-attribute="Zabór" href="">
+     <a href="LUBUSKIE_Zabór.html">
+      Zabór
+     </a>
+    </li>
+    <li data-attribute="Nowogród Bobrzański" href="">
+     <a href="LUBUSKIE_Nowogród Bobrzański.html">
+      Nowogród Bobrzański
+     </a>
+    </li>
+    <li data-attribute="Przytok" href="">
+     <a href="LUBUSKIE_Przytok.html">
+      Przytok
+     </a>
+    </li>
+    <li data-attribute="Ośno Lubuskie" href="">
+     <a href="LUBUSKIE_Ośno Lubuskie.html">
+      Ośno Lubuskie
+     </a>
+    </li>
+    <li data-attribute="Babimost" href="">
+     <a href="LUBUSKIE_Babimost.html">
+      Babimost
+     </a>
+    </li>
+    <li data-attribute="Miłaków" href="">
+     <a href="LUBUSKIE_Miłaków.html">
+      Miłaków
+     </a>
+    </li>
+    <li data-attribute="Popęszyce" href="">
+     <a href="LUBUSKIE_Popęszyce.html">
+      Popęszyce
+     </a>
+    </li>
+    <li data-attribute="Tomaszowo" href="">
+     <a href="LUBUSKIE_Tomaszowo.html">
+      Tomaszowo
+     </a>
+    </li>
+    <li data-attribute="Wiechlice" href="">
+     <a href="LUBUSKIE_Wiechlice.html">
+      Wiechlice
+     </a>
+    </li>
+    <li data-attribute="Maszewo" href="">
+     <a href="LUBUSKIE_Maszewo.html">
+      Maszewo
+     </a>
+    </li>
+    <li data-attribute="Bukowina Bobrzańska" href="">
+     <a href="LUBUSKIE_Bukowina Bobrzańska.html">
+      Bukowina Bobrzańska
+     </a>
+    </li>
+    <li data-attribute="Bogaczów" href="">
+     <a href="LUBUSKIE_Bogaczów.html">
+      Bogaczów
+     </a>
+    </li>
+    <li data-attribute="Mierków" href="">
+     <a href="LUBUSKIE_Mierków.html">
+      Mierków
+     </a>
+    </li>
+    <li data-attribute="Mostki" href="">
+     <a href="LUBUSKIE_Mostki.html">
+      Mostki
+     </a>
+    </li>
+    <li data-attribute="Płoty" href="">
+     <a href="LUBUSKIE_Płoty.html">
+      Płoty
+     </a>
+    </li>
+    <li data-attribute="Sosny" href="">
+     <a href="LUBUSKIE_Sosny.html">
+      Sosny
+     </a>
+    </li>
+    <li data-attribute="Żabice" href="">
+     <a href="LUBUSKIE_Żabice.html">
+      Żabice
+     </a>
+    </li>
+    <li data-attribute="Kręcko" href="">
+     <a href="LUBUSKIE_Kręcko.html">
+      Kręcko
+     </a>
+    </li>
+    <li data-attribute="Lubrza" href="">
+     <a href="LUBUSKIE_Lubrza.html">
+      Lubrza
+     </a>
+    </li>
+    <li data-attribute="Cybinka" href="">
+     <a href="LUBUSKIE_Cybinka.html">
+      Cybinka
+     </a>
+    </li>
+    <li data-attribute="Klenica" href="">
+     <a href="LUBUSKIE_Klenica.html">
+      Klenica
+     </a>
+    </li>
+    <li data-attribute="Świdnica" href="">
+     <a href="LUBUSKIE_Świdnica.html">
+      Świdnica
+     </a>
+    </li>
+    <li data-attribute="Górzyca" href="">
+     <a href="LUBUSKIE_Górzyca.html">
+      Górzyca
+     </a>
+    </li>
+    <li data-attribute="Cibórz" href="">
+     <a href="LUBUSKIE_Cibórz.html">
+      Cibórz
+     </a>
+    </li>
+    <li data-attribute="Kunowice" href="">
+     <a href="LUBUSKIE_Kunowice.html">
+      Kunowice
+     </a>
+    </li>
+    <li data-attribute="Brzezie k. Sulechowa" href="">
+     <a href="LUBUSKIE_Brzezie k. Sulechowa.html">
+      Brzezie k. Sulechowa
+     </a>
+    </li>
+    <li data-attribute="Leśniów Wielki" href="">
+     <a href="LUBUSKIE_Leśniów Wielki.html">
+      Leśniów Wielki
+     </a>
+    </li>
+    <li data-attribute="Lubno" href="">
+     <a href="LUBUSKIE_Lubno.html">
+      Lubno
+     </a>
+    </li>
+    <li data-attribute="Gralewo" href="">
+     <a href="LUBUSKIE_Gralewo.html">
+      Gralewo
+     </a>
+    </li>
+    <li data-attribute="Lutol Suchy" href="">
+     <a href="LUBUSKIE_Lutol Suchy.html">
+      Lutol Suchy
+     </a>
+    </li>
+    <li data-attribute="Toporów" href="">
+     <a href="LUBUSKIE_Toporów.html">
+      Toporów
+     </a>
+    </li>
+    <li data-attribute="Trzciel" href="">
+     <a href="LUBUSKIE_Trzciel.html">
+      Trzciel
+     </a>
+    </li>
+    <li data-attribute="Lubiszyn" href="">
+     <a href="LUBUSKIE_Lubiszyn.html">
+      Lubiszyn
+     </a>
+    </li>
+    <li data-attribute="Bytom Odrzański" href="">
+     <a href="LUBUSKIE_Bytom Odrzański.html">
+      Bytom Odrzański
+     </a>
+    </li>
+    <li data-attribute="Stare Kurowo" href="">
+     <a href="LUBUSKIE_Stare Kurowo.html">
+      Stare Kurowo
+     </a>
+    </li>
+    <li data-attribute="Nowiny Wielkie" href="">
+     <a href="LUBUSKIE_Nowiny Wielkie.html">
+      Nowiny Wielkie
+     </a>
+    </li>
+    <li data-attribute="Krzeszyce" href="">
+     <a href="LUBUSKIE_Krzeszyce.html">
+      Krzeszyce
+     </a>
+    </li>
+    <li data-attribute="Kołczyn" href="">
+     <a href="LUBUSKIE_Kołczyn.html">
+      Kołczyn
+     </a>
+    </li>
+    <li data-attribute="Nowa Wieś" href="">
+     <a href="LUBUSKIE_Nowa Wieś.html">
+      Nowa Wieś
+     </a>
+    </li>
+    <li data-attribute="Wawrów" href="">
+     <a href="LUBUSKIE_Wawrów.html">
+      Wawrów
+     </a>
+    </li>
+    <li data-attribute="Małomice" href="">
+     <a href="LUBUSKIE_Małomice.html">
+      Małomice
+     </a>
+    </li>
+    <li data-attribute="Torzym" href="">
+     <a href="LUBUSKIE_Torzym.html">
+      Torzym
+     </a>
+    </li>
+    <li data-attribute="Przytoczna" href="">
+     <a href="LUBUSKIE_Przytoczna.html">
+      Przytoczna
+     </a>
+    </li>
+    <li data-attribute="Gozdnica" href="">
+     <a href="LUBUSKIE_Gozdnica.html">
+      Gozdnica
+     </a>
+    </li>
+    <li data-attribute="Łęknica" href="">
+     <a href="LUBUSKIE_Łęknica.html">
+      Łęknica
+     </a>
+    </li>
+    <li data-attribute="Białków" href="">
+     <a href="LUBUSKIE_Białków.html">
+      Białków
+     </a>
+    </li>
+    <li data-attribute="Laski" href="">
+     <a href="LUBUSKIE_Laski.html">
+      Laski
+     </a>
+    </li>
+    <li data-attribute="Kosieczyn" href="">
+     <a href="LUBUSKIE_Kosieczyn.html">
+      Kosieczyn
+     </a>
+    </li>
+    <li data-attribute="Stare Drzewce" href="">
+     <a href="LUBUSKIE_Stare Drzewce.html">
+      Stare Drzewce
+     </a>
+    </li>
+    <li data-attribute="Dąbrówka Wielkopolska" href="">
+     <a href="LUBUSKIE_Dąbrówka Wielkopolska.html">
+      Dąbrówka Wielkopolska
+     </a>
+    </li>
+    <li data-attribute="Nietków" href="">
+     <a href="LUBUSKIE_Nietków.html">
+      Nietków
+     </a>
+    </li>
+    <li data-attribute="Swarzynice" href="">
+     <a href="LUBUSKIE_Swarzynice.html">
+      Swarzynice
+     </a>
+    </li>
+    <li data-attribute="Bogdaniec" href="">
+     <a href="LUBUSKIE_Bogdaniec.html">
+      Bogdaniec
+     </a>
+    </li>
+    <li data-attribute="Trzebiechów" href="">
+     <a href="LUBUSKIE_Trzebiechów.html">
+      Trzebiechów
+     </a>
+    </li>
+    <li data-attribute="Kargowa" href="">
+     <a href="LUBUSKIE_Kargowa.html">
+      Kargowa
+     </a>
+    </li>
+    <li data-attribute="Kłodawa" href="">
+     <a href="LUBUSKIE_Kłodawa.html">
+      Kłodawa
+     </a>
+    </li>
+    <li data-attribute="Kolsko" href="">
+     <a href="LUBUSKIE_Kolsko.html">
+      Kolsko
+     </a>
+    </li>
+    <li data-attribute="Konotop" href="">
+     <a href="LUBUSKIE_Konotop.html">
+      Konotop
+     </a>
+    </li>
+    <li data-attribute="Bytnica" href="">
+     <a href="LUBUSKIE_Bytnica.html">
+      Bytnica
+     </a>
+    </li>
+    <li data-attribute="Bobrowice" href="">
+     <a href="LUBUSKIE_Bobrowice.html">
+      Bobrowice
+     </a>
+    </li>
+    <li data-attribute="Pszczew" href="">
+     <a href="LUBUSKIE_Pszczew.html">
+      Pszczew
+     </a>
+    </li>
+    <li data-attribute="Jasień" href="">
+     <a href="LUBUSKIE_Jasień.html">
+      Jasień
+     </a>
+    </li>
+    <li data-attribute="Bojadła" href="">
+     <a href="LUBUSKIE_Bojadła.html">
+      Bojadła
+     </a>
+    </li>
+    <li data-attribute="Brody" href="">
+     <a href="LUBUSKIE_Brody.html">
+      Brody
+     </a>
+    </li>
+    <li data-attribute="Dychów" href="">
+     <a href="LUBUSKIE_Dychów.html">
+      Dychów
+     </a>
+    </li>
+    <li data-attribute="Słońsk" href="">
+     <a href="LUBUSKIE_Słońsk.html">
+      Słońsk
+     </a>
+    </li>
+    <li data-attribute="Szlichtyngowa" href="">
+     <a href="LUBUSKIE_Szlichtyngowa.html">
+      Szlichtyngowa
+     </a>
+    </li>
+    <li data-attribute="Boczów" href="">
+     <a href="LUBUSKIE_Boczów.html">
+      Boczów
+     </a>
+    </li>
+    <li data-attribute="Bożnów" href="">
+     <a href="LUBUSKIE_Bożnów.html">
+      Bożnów
+     </a>
+    </li>
+    <li data-attribute="Gądków Wielki" href="">
+     <a href="LUBUSKIE_Gądków Wielki.html">
+      Gądków Wielki
+     </a>
+    </li>
+    <li data-attribute="Lipinki Łużyckie" href="">
+     <a href="LUBUSKIE_Lipinki Łużyckie.html">
+      Lipinki Łużyckie
+     </a>
+    </li>
+    <li data-attribute="Lubięcin" href="">
+     <a href="LUBUSKIE_Lubięcin.html">
+      Lubięcin
+     </a>
+    </li>
+    <li data-attribute="Ługi" href="">
+     <a href="LUBUSKIE_Ługi.html">
+      Ługi
+     </a>
+    </li>
+    <li data-attribute="Nowe Kramsko" href="">
+     <a href="LUBUSKIE_Nowe Kramsko.html">
+      Nowe Kramsko
+     </a>
+    </li>
+    <li data-attribute="Podmokle Wielkie" href="">
+     <a href="LUBUSKIE_Podmokle Wielkie.html">
+      Podmokle Wielkie
+     </a>
+    </li>
+    <li data-attribute="Połupin" href="">
+     <a href="LUBUSKIE_Połupin.html">
+      Połupin
+     </a>
+    </li>
+    <li data-attribute="Ulim" href="">
+     <a href="LUBUSKIE_Ulim.html">
+      Ulim
+     </a>
+    </li>
+    <li data-attribute="Wężyska" href="">
+     <a href="LUBUSKIE_Wężyska.html">
+      Wężyska
+     </a>
+    </li>
+    <li data-attribute="Borów Wielki" href="">
+     <a href="LUBUSKIE_Borów Wielki.html">
+      Borów Wielki
+     </a>
+    </li>
+    <li data-attribute="Kowalów" href="">
+     <a href="LUBUSKIE_Kowalów.html">
+      Kowalów
+     </a>
+    </li>
+    <li data-attribute="Chotków" href="">
+     <a href="LUBUSKIE_Chotków.html">
+      Chotków
+     </a>
+    </li>
+    <li data-attribute="Miodnica" href="">
+     <a href="LUBUSKIE_Miodnica.html">
+      Miodnica
+     </a>
+    </li>
+    <li data-attribute="Trzebiel" href="">
+     <a href="LUBUSKIE_Trzebiel.html">
+      Trzebiel
+     </a>
+    </li>
+    <li data-attribute="Gościkowo" href="">
+     <a href="LUBUSKIE_Gościkowo.html">
+      Gościkowo
+     </a>
+    </li>
+    <li data-attribute="Wojcieszyce" href="">
+     <a href="LUBUSKIE_Wojcieszyce.html">
+      Wojcieszyce
+     </a>
+    </li>
+    <li data-attribute="Otyń" href="">
+     <a href="LUBUSKIE_Otyń.html">
+      Otyń
+     </a>
+    </li>
+    <li data-attribute="Kamień Wielki" href="">
+     <a href="LUBUSKIE_Kamień Wielki.html">
+      Kamień Wielki
+     </a>
+    </li>
+    <li data-attribute="Niegosław" href="">
+     <a href="LUBUSKIE_Niegosław.html">
+      Niegosław
+     </a>
+    </li>
+    <li data-attribute="Złotnik" href="">
+     <a href="LUBUSKIE_Złotnik.html">
+      Złotnik
+     </a>
+    </li>
+    <li data-attribute="Bieniów" href="">
+     <a href="LUBUSKIE_Bieniów.html">
+      Bieniów
+     </a>
+    </li>
+    <li data-attribute="Lubanice" href="">
+     <a href="LUBUSKIE_Lubanice.html">
+      Lubanice
+     </a>
+    </li>
+    <li data-attribute="Mirostowice Dolne" href="">
+     <a href="LUBUSKIE_Mirostowice Dolne.html">
+      Mirostowice Dolne
+     </a>
+    </li>
+    <li data-attribute="Olbrachtów" href="">
+     <a href="LUBUSKIE_Olbrachtów.html">
+      Olbrachtów
+     </a>
+    </li>
+    <li data-attribute="Sieniawa Żarska" href="">
+     <a href="LUBUSKIE_Sieniawa Żarska.html">
+      Sieniawa Żarska
+     </a>
+    </li>
+    <li data-attribute="Czarnów" href="">
+     <a href="LUBUSKIE_Czarnów.html">
+      Czarnów
+     </a>
+    </li>
+    <li data-attribute="Golice" href="">
+     <a href="LUBUSKIE_Golice.html">
+      Golice
+     </a>
+    </li>
+    <li data-attribute="Lgiń" href="">
+     <a href="LUBUSKIE_Lgiń.html">
+      Lgiń
+     </a>
+    </li>
+    <li data-attribute="Bledzew" href="">
+     <a href="LUBUSKIE_Bledzew.html">
+      Bledzew
+     </a>
+    </li>
+    <li data-attribute="Stary Dworek" href="">
+     <a href="LUBUSKIE_Stary Dworek.html">
+      Stary Dworek
+     </a>
+    </li>
+    <li data-attribute="Świecko" href="">
+     <a href="LUBUSKIE_Świecko.html">
+      Świecko
+     </a>
+    </li>
+    <li data-attribute="Lubieszów" href="">
+     <a href="LUBUSKIE_Lubieszów.html">
+      Lubieszów
+     </a>
+    </li>
+    <li data-attribute="Kowalewo" href="">
+     <a href="LUBUSKIE_Kowalewo.html">
+      Kowalewo
+     </a>
+    </li>
+    <li data-attribute="Trzebiszewo" href="">
+     <a href="LUBUSKIE_Trzebiszewo.html">
+      Trzebiszewo
+     </a>
+    </li>
+    <li data-attribute="Przyborów" href="">
+     <a href="LUBUSKIE_Przyborów.html">
+      Przyborów
+     </a>
+    </li>
+    <li data-attribute="Łagów" href="">
+     <a href="LUBUSKIE_Łagów.html">
+      Łagów
+     </a>
+    </li>
+    <li data-attribute="Tuplice" href="">
+     <a href="LUBUSKIE_Tuplice.html">
+      Tuplice
+     </a>
+    </li>
+    <li data-attribute="Lubniewice" href="">
+     <a href="LUBUSKIE_Lubniewice.html">
+      Lubniewice
+     </a>
+    </li>
+    <li data-attribute="Droszków" href="">
+     <a href="LUBUSKIE_Droszków.html">
+      Droszków
+     </a>
+    </li>
+    <li data-attribute="Wichów" href="">
+     <a href="LUBUSKIE_Wichów.html">
+      Wichów
+     </a>
+    </li>
+    <li data-attribute="Jelenin" href="">
+     <a href="LUBUSKIE_Jelenin.html">
+      Jelenin
+     </a>
+    </li>
+    <li data-attribute="Koźla" href="">
+     <a href="LUBUSKIE_Koźla.html">
+      Koźla
+     </a>
+    </li>
+    <li data-attribute="Piotrów" href="">
+     <a href="LUBUSKIE_Piotrów.html">
+      Piotrów
+     </a>
+    </li>
+    <li data-attribute="Trzebów" href="">
+     <a href="LUBUSKIE_Trzebów.html">
+      Trzebów
+     </a>
+    </li>
+    <li data-attribute="Niwica" href="">
+     <a href="LUBUSKIE_Niwica.html">
+      Niwica
+     </a>
+    </li>
+    <li data-attribute="Smardzewo" href="">
+     <a href="LUBUSKIE_Smardzewo.html">
+      Smardzewo
+     </a>
+    </li>
+    <li data-attribute="Wicina" href="">
+     <a href="LUBUSKIE_Wicina.html">
+      Wicina
+     </a>
+    </li>
+    <li data-attribute="Słone" href="">
+     <a href="LUBUSKIE_Słone.html">
+      Słone
+     </a>
+    </li>
+    <li data-attribute="Ołobok" href="">
+     <a href="LUBUSKIE_Ołobok.html">
+      Ołobok
+     </a>
+    </li>
+    <li data-attribute="Kosierz" href="">
+     <a href="LUBUSKIE_Kosierz.html">
+      Kosierz
+     </a>
+    </li>
+    <li data-attribute="Dąbie" href="">
+     <a href="LUBUSKIE_Dąbie.html">
+      Dąbie
+     </a>
+    </li>
+    <li data-attribute="Niedoradz" href="">
+     <a href="LUBUSKIE_Niedoradz.html">
+      Niedoradz
+     </a>
+    </li>
+    <li data-attribute="Nietkowice" href="">
+     <a href="LUBUSKIE_Nietkowice.html">
+      Nietkowice
+     </a>
+    </li>
+    <li data-attribute="Chichy" href="">
+     <a href="LUBUSKIE_Chichy.html">
+      Chichy
+     </a>
+    </li>
+    <li data-attribute="Ciecierzyce" href="">
+     <a href="LUBUSKIE_Ciecierzyce.html">
+      Ciecierzyce
+     </a>
+    </li>
+    <li data-attribute="Lubczyno" href="">
+     <a href="LUBUSKIE_Lubczyno.html">
+      Lubczyno
+     </a>
+    </li>
+    <li data-attribute="Przecław" href="">
+     <a href="LUBUSKIE_Przecław.html">
+      Przecław
+     </a>
+    </li>
+    <li data-attribute="Bolemin" href="">
+     <a href="LUBUSKIE_Bolemin.html">
+      Bolemin
+     </a>
+    </li>
+    <li data-attribute="Międzylesie" href="">
+     <a href="LUBUSKIE_Międzylesie.html">
+      Międzylesie
+     </a>
+    </li>
+    <li data-attribute="Łysiny" href="">
+     <a href="LUBUSKIE_Łysiny.html">
+      Łysiny
+     </a>
+    </li>
+    <li data-attribute="Bobrówko" href="">
+     <a href="LUBUSKIE_Bobrówko.html">
+      Bobrówko
+     </a>
+    </li>
+    <li data-attribute="Bielawy" href="">
+     <a href="LUBUSKIE_Bielawy.html">
+      Bielawy
+     </a>
+    </li>
+    <li data-attribute="Gronów" href="">
+     <a href="LUBUSKIE_Gronów.html">
+      Gronów
+     </a>
+    </li>
+    <li data-attribute="Szczawno" href="">
+     <a href="LUBUSKIE_Szczawno.html">
+      Szczawno
+     </a>
+    </li>
+    <li data-attribute="Cigacice" href="">
+     <a href="LUBUSKIE_Cigacice.html">
+      Cigacice
+     </a>
+    </li>
+    <li data-attribute="Deszczno" href="">
+     <a href="LUBUSKIE_Deszczno.html">
+      Deszczno
+     </a>
+    </li>
+    <li data-attribute="Radoszyn" href="">
+     <a href="LUBUSKIE_Radoszyn.html">
+      Radoszyn
+     </a>
+    </li>
+    <li data-attribute="Żarki Wielkie" href="">
+     <a href="LUBUSKIE_Żarki Wielkie.html">
+      Żarki Wielkie
+     </a>
+    </li>
+    <li data-attribute="Górki Noteckie" href="">
+     <a href="LUBUSKIE_Górki Noteckie.html">
+      Górki Noteckie
+     </a>
+    </li>
+    <li data-attribute="Baczyna" href="">
+     <a href="LUBUSKIE_Baczyna.html">
+      Baczyna
+     </a>
+    </li>
+    <li data-attribute="Trzemeszno Lubuskie" href="">
+     <a href="LUBUSKIE_Trzemeszno Lubuskie.html">
+      Trzemeszno Lubuskie
+     </a>
+    </li>
+    <li data-attribute="Osowa Sień" href="">
+     <a href="LUBUSKIE_Osowa Sień.html">
+      Osowa Sień
+     </a>
+    </li>
+    <li data-attribute="Gościmiec" href="">
+     <a href="LUBUSKIE_Gościmiec.html">
+      Gościmiec
+     </a>
+    </li>
+    <li data-attribute="Trzebicz" href="">
+     <a href="LUBUSKIE_Trzebicz.html">
+      Trzebicz
+     </a>
+    </li>
+    <li data-attribute="Ściechów" href="">
+     <a href="LUBUSKIE_Ściechów.html">
+      Ściechów
+     </a>
+    </li>
+    <li data-attribute="Wędrzyn" href="">
+     <a href="LUBUSKIE_Wędrzyn.html">
+      Wędrzyn
+     </a>
+    </li>
+    <li data-attribute="Krzepielów" href="">
+     <a href="LUBUSKIE_Krzepielów.html">
+      Krzepielów
+     </a>
+    </li>
+    <li data-attribute="Nowe Czaple" href="">
+     <a href="LUBUSKIE_Nowe Czaple.html">
+      Nowe Czaple
+     </a>
+    </li>
+    <li data-attribute="Górzyn" href="">
+     <a href="LUBUSKIE_Górzyn.html">
+      Górzyn
+     </a>
+    </li>
+    <li data-attribute="Wojnowo" href="">
+     <a href="LUBUSKIE_Wojnowo.html">
+      Wojnowo
+     </a>
+    </li>
+    <li data-attribute="Brzeźnica" href="">
+     <a href="LUBUSKIE_Brzeźnica.html">
+      Brzeźnica
+     </a>
+    </li>
+    <li data-attribute="Bukowiec" href="">
+     <a href="LUBUSKIE_Bukowiec.html">
+      Bukowiec
+     </a>
+    </li>
+    <li data-attribute="Buków" href="">
+     <a href="LUBUSKIE_Buków.html">
+      Buków
+     </a>
+    </li>
+    <li data-attribute="Chlebowo" href="">
+     <a href="LUBUSKIE_Chlebowo.html">
+      Chlebowo
+     </a>
+    </li>
+    <li data-attribute="Ciosaniec" href="">
+     <a href="LUBUSKIE_Ciosaniec.html">
+      Ciosaniec
+     </a>
+    </li>
+    <li data-attribute="Łupice" href="">
+     <a href="LUBUSKIE_Łupice.html">
+      Łupice
+     </a>
+    </li>
+    <li data-attribute="Czarnowice" href="">
+     <a href="LUBUSKIE_Czarnowice.html">
+      Czarnowice
+     </a>
+    </li>
+    <li data-attribute="Dąbroszyn" href="">
+     <a href="LUBUSKIE_Dąbroszyn.html">
+      Dąbroszyn
+     </a>
+    </li>
+    <li data-attribute="Długie" href="">
+     <a href="LUBUSKIE_Długie.html">
+      Długie
+     </a>
+    </li>
+    <li data-attribute="Drawiny" href="">
+     <a href="LUBUSKIE_Drawiny.html">
+      Drawiny
+     </a>
+    </li>
+    <li data-attribute="Gęstowice" href="">
+     <a href="LUBUSKIE_Gęstowice.html">
+      Gęstowice
+     </a>
+    </li>
+    <li data-attribute="Gościeszowice" href="">
+     <a href="LUBUSKIE_Gościeszowice.html">
+      Gościeszowice
+     </a>
+    </li>
+    <li data-attribute="Gościm" href="">
+     <a href="LUBUSKIE_Gościm.html">
+      Gościm
+     </a>
+    </li>
+    <li data-attribute="Goszczanowo" href="">
+     <a href="LUBUSKIE_Goszczanowo.html">
+      Goszczanowo
+     </a>
+    </li>
+    <li data-attribute="Grabice" href="">
+     <a href="LUBUSKIE_Grabice.html">
+      Grabice
+     </a>
+    </li>
+    <li data-attribute="Grotów" href="">
+     <a href="LUBUSKIE_Grotów.html">
+      Grotów
+     </a>
+    </li>
+    <li data-attribute="Janczewo" href="">
+     <a href="LUBUSKIE_Janczewo.html">
+      Janczewo
+     </a>
+    </li>
+    <li data-attribute="Jeniniec" href="">
+     <a href="LUBUSKIE_Jeniniec.html">
+      Jeniniec
+     </a>
+    </li>
+    <li data-attribute="Kaława" href="">
+     <a href="LUBUSKIE_Kaława.html">
+      Kaława
+     </a>
+    </li>
+    <li data-attribute="Kalsk" href="">
+     <a href="LUBUSKIE_Kalsk.html">
+      Kalsk
+     </a>
+    </li>
+    <li data-attribute="Kije" href="">
+     <a href="LUBUSKIE_Kije.html">
+      Kije
+     </a>
+    </li>
+    <li data-attribute="Konradowo" href="">
+     <a href="LUBUSKIE_Konradowo.html">
+      Konradowo
+     </a>
+    </li>
+    <li data-attribute="Leszno Górne" href="">
+     <a href="LUBUSKIE_Leszno Górne.html">
+      Leszno Górne
+     </a>
+    </li>
+    <li data-attribute="Mirocin Dolny" href="">
+     <a href="LUBUSKIE_Mirocin Dolny.html">
+      Mirocin Dolny
+     </a>
+    </li>
+    <li data-attribute="Murzynowo" href="">
+     <a href="LUBUSKIE_Murzynowo.html">
+      Murzynowo
+     </a>
+    </li>
+    <li data-attribute="Niwiska" href="">
+     <a href="LUBUSKIE_Niwiska.html">
+      Niwiska
+     </a>
+    </li>
+    <li data-attribute="Nowe Kurowo" href="">
+     <a href="LUBUSKIE_Nowe Kurowo.html">
+      Nowe Kurowo
+     </a>
+    </li>
+    <li data-attribute="Ogardy" href="">
+     <a href="LUBUSKIE_Ogardy.html">
+      Ogardy
+     </a>
+    </li>
+    <li data-attribute="Podmokle Małe" href="">
+     <a href="LUBUSKIE_Podmokle Małe.html">
+      Podmokle Małe
+     </a>
+    </li>
+    <li data-attribute="Rąpin" href="">
+     <a href="LUBUSKIE_Rąpin.html">
+      Rąpin
+     </a>
+    </li>
+    <li data-attribute="Stare Polichno" href="">
+     <a href="LUBUSKIE_Stare Polichno.html">
+      Stare Polichno
+     </a>
+    </li>
+    <li data-attribute="Siecieborzyce" href="">
+     <a href="LUBUSKIE_Siecieborzyce.html">
+      Siecieborzyce
+     </a>
+    </li>
+    <li data-attribute="Smogóry" href="">
+     <a href="LUBUSKIE_Smogóry.html">
+      Smogóry
+     </a>
+    </li>
+    <li data-attribute="Starosiedle" href="">
+     <a href="LUBUSKIE_Starosiedle.html">
+      Starosiedle
+     </a>
+    </li>
+    <li data-attribute="Stare Bielice" href="">
+     <a href="LUBUSKIE_Stare Bielice.html">
+      Stare Bielice
+     </a>
+    </li>
+    <li data-attribute="Stare Strącze" href="">
+     <a href="LUBUSKIE_Stare Strącze.html">
+      Stare Strącze
+     </a>
+    </li>
+    <li data-attribute="Staw" href="">
+     <a href="LUBUSKIE_Staw.html">
+      Staw
+     </a>
+    </li>
+    <li data-attribute="Strzegów" href="">
+     <a href="LUBUSKIE_Strzegów.html">
+      Strzegów
+     </a>
+    </li>
+    <li data-attribute="Templewo" href="">
+     <a href="LUBUSKIE_Templewo.html">
+      Templewo
+     </a>
+    </li>
+    <li data-attribute="Tuczno" href="">
+     <a href="LUBUSKIE_Tuczno.html">
+      Tuczno
+     </a>
+    </li>
+    <li data-attribute="Walewice" href="">
+     <a href="LUBUSKIE_Walewice.html">
+      Walewice
+     </a>
+    </li>
+    <li data-attribute="Wielisławice" href="">
+     <a href="LUBUSKIE_Wielisławice.html">
+      Wielisławice
+     </a>
+    </li>
+    <li data-attribute="Witoszyn" href="">
+     <a href="LUBUSKIE_Witoszyn.html">
+      Witoszyn
+     </a>
+    </li>
+    <li data-attribute="Wierzbno" href="">
+     <a href="LUBUSKIE_Wierzbno.html">
+      Wierzbno
+     </a>
+    </li>
+    <li data-attribute="Starościn" href="">
+     <a href="LUBUSKIE_Starościn.html">
+      Starościn
+     </a>
+    </li>
+    <li data-attribute="Brójce" href="">
+     <a href="LUBUSKIE_Brójce.html">
+      Brójce
+     </a>
+    </li>
+    <li data-attribute="Osiecznica" href="">
+     <a href="LUBUSKIE_Osiecznica.html">
+      Osiecznica
+     </a>
+    </li>
+    <li data-attribute="Stary Raduszec" href="">
+     <a href="LUBUSKIE_Stary Raduszec.html">
+      Stary Raduszec
+     </a>
+    </li>
+   </ul>
+  </h4>
+ </div>
+</body>

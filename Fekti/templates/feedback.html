@@ -1,0 +1,59 @@
+<!-- Fekti/templates/feedback.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TL1H9BWD28');
+</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Feedback</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='feedback.css') }}">
+</head>
+<body>
+
+    <div class="feedbackContainer">
+    <div class="postContainer">
+        <div class="photo-img">
+            <div class="image-wrapper">
+        <h5>Co sądzisz o  <br> <p3>"{{ photo.title }}"?</p3></h5>
+
+		<div class="description">
+            <img src="{{ url_for('views.download_photo', photo_id=photo.id) }}" alt="Photo" class="imgsrc-unblurred">
+            
+            <div class="rateImg">
+            <form method="post" action="{{ url_for('views.submit_feedback', photo_id=photo.id) }}" id="rightRate" >
+                <input type="hidden" name="feedback" value="like">
+                <button type="submit" class="btn" class="unlockButton" >
+                    <img src="{{ url_for('static', filename='thumbs-up.svg') }}" class="toggleImg">
+
+                </button>
+            </form>
+            <form method="post" action="{{ url_for('views.submit_feedback', photo_id=photo.id) }}" id="leftRate">
+                <input type="hidden" name="feedback" value="dislike">
+                <button type="submit" class="btn" class="unlockButton">
+                    <img src="{{ url_for('static', filename='thumbs-down.svg') }}" class="toggleImg">
+                </button>
+            </form>
+            </div>
+
+        </div>
+
+		<nav>
+			<h2>
+                Przed kontynuacją, wyraź swoją opinię na temat tego materiału.
+	        </h2>
+		</nav>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

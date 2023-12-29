@@ -1,0 +1,908 @@
+/* Fekti/static/help.footerdrocss */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap');
+
+body {
+	background: #190F2E;
+	
+	background-color: #190F2E;
+    background-size: contain;
+    font-family: Ubuntu;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.container2 {
+    position: absolute;
+    width: 70%;
+    text-align: center;
+    border: gray;
+    border-radius: 60px;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    padding: 50px 35px;
+    height: auto;
+    padding-bottom: 150px;
+    
+}
+
+h6{
+    text-align: center;
+}
+
+
+h6, h2, h3 {
+    color: #89C4E1;
+    font-size: 46px;
+    font-weight: 700;
+
+}
+
+p4, p {
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details {
+    margin-left: 20px;
+}
+
+.details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #89C4E1;
+}
+
+.details summary::-webkit-details-marker {
+    color: #89C4E1;
+}
+
+.details p2 {
+    font-size: 1rem;
+    color: #c4cfde;
+    font-family: 'Poppins', sans-serif;
+    opacity: .5;
+    padding: 20px;
+    margin: 20px 0px;
+    text-align: left;
+}
+
+.answer {
+    overflow: auto;
+    height: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    text-align: center;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.active .answer {
+    height: auto;
+    padding: 20px;
+    margin: 20px 0px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    h5, h2, h3 {
+        font-size: 30px;
+    }
+    p4, p {
+        font-size: 16px;
+    }
+}
+
+#lastAnswer{
+    margin-bottom: 120px;
+}
+
+section {
+    position: static;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2%;
+    margin-bottom:
+    
+
+    /* right: 200px; */
+
+     
+
+  
+
+
+
+
+}
+
+.accordion {
+    width: 100%;
+    
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+     background-color: rgba(255,255,255,0.13);
+ backdrop-filter: blur(40px);
+ -webkit-backdrop-filter: blur(40px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 35%;
+    /* position: static; */
+   
+    /* transform: translate(-50%,-50%); */
+    /* top: 150px; */
+    /* right: 800px; */
+
+    
+}
+
+.accordion h3 {
+    font-size: 1.1rem;
+    color: #c4cfde;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: -10px;
+}
+
+.accordion::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    background-color: #1c1e22;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+}
+
+.accordion.active::after {
+    background-color: #C147E9;
+}
+
+.accordion p2 {
+    font-size: 1rem;
+    color: #c4cfde;
+    font-family: 'Poppins', sans-serif;
+    opacity: .5;
+    padding: 120;
+    margin: 20px 0px;
+    text-align: left;
+    
+    
+}
+
+.answer {
+    overflow: hidden;
+    height: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    text-align: center;
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+h3{
+    text-align: center;
+}
+
+section.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 800px){
+
+.accordion {
+    width: 170%;
+}
+section {
+    position: static;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%
+    
+
+    /* right: 200px; */
+
+     
+
+  
+
+
+
+
+}
+h6{
+    font-size: 26px;
+}
+
+
+}
+
+
+
+
+.header{
+	
+	position: fixed;
+	top: -1%;
+	left: 0;
+
+	width: 100%;
+	padding: 10px 0px ;
+	
+	
+	
+	
+	z-index: 1000;
+	
+	border-radius: 0px 6px 30px 30px;
+ background-color: rgba(255,255,255,0.13);
+
+
+ -webkit-backdrop-filter: blur(40px); /* Add this line first, it fixes blur for Safari*/
+ backdrop-filter: blur(40px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+justify-content: center;
+	align-items: center;
+	
+
+
+}
+.navbar{
+position: fixed ;
+text-align: center;
+left: 0;
+right: 0;
+top: 30px;
+align-items: center;
+list-style: none;
+display: inline-block;
+flex: 1;
+}
+
+.navbar a {
+	margin-right: 30px;
+	margin-left: 30px;
+	color: #E5B8F4;
+text-align: center;
+font-family: Ubuntu;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-decoration-line: none;
+justify-content: center;
+right: 0;
+
+}
+
+.logo{
+
+color: #F0F;
+font-family: Ubuntu;
+font-size: 45px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-decoration: none;
+margin-left: 20px;
+}
+
+
+.navbar a {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.profileButton{
+
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	right: 5%;
+	margin-right: 0;
+	cursor: pointer;
+	top: 20%;
+
+
+	
+	
+}
+
+.imgProfile{
+	width:45px;
+	box-shadow: 0px 4px 4px 0px #000;
+	border-radius: 30px;
+
+
+}
+.photo-img {
+	padding-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .photo-img li {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+
+
+
+.alert alert-danger alert-dismissable fade show{
+    z-index: 1000;
+}
+
+
+
+.alert-error{
+    position: absolute;
+	bottom: 10;
+	z-index: 1000;
+    right: 40%;
+
+	width: 20%;
+	padding: 10px 0px ;
+    margin-top: 70px;
+	
+	
+	
+	
+	z-index: 1000;
+	
+	border-radius: 30px;
+ background-color: rgba(255,255,255,0.13);
+
+ -webkit-backdrop-filter: blur(40px);
+ backdrop-filter: blur(40px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+justify-content: center;
+	align-items: center;
+    text-align: left;
+    padding-left: 10px;
+    
+
+
+
+	color: #ff3d3d;
+
+font-family: Ubuntu;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;   
+line-height: normal;
+}
+
+.close{
+    right: 0;
+    
+    margin-right: 10px;
+    background: black;
+    border-radius: 10px;
+    outline: none;
+    margin-top: -2px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    
+    z-index: 1200;
+    
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+close:focus, close:active {
+    outline: none;
+}
+
+.alert-success{
+   position: absolute;
+	bottom: 10;
+	z-index: 1000;
+    right: 40%;
+
+	width: 20%;
+	padding: 10px 0px ;
+    margin-top: 70px;
+	
+	
+	
+	
+	z-index: 1000;
+	
+	border-radius: 30px;
+ background-color: rgba(255,255,255,0.13);
+
+ -webkit-backdrop-filter: blur(40px);
+ backdrop-filter: blur(40px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+justify-content: center;
+	align-items: center;
+    text-align: left;
+    padding-left: 10px;
+    
+
+
+
+	color: #4f8f2a;
+
+font-family: Ubuntu;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;   
+line-height: normal;
+}
+
+
+
+.dropdown-menu {
+
+	position: absolute;
+	top: 100%;
+	left: -35px;
+	display: none;
+	
+	padding: 5px;
+	border: 1px solid #ddd;
+
+	width: 100px;
+	position: absolute;
+	top: 140%;
+	
+
+
+
+
+	
+	
+	
+	
+	z-index: 1000;
+	
+	border-radius: 30px;
+ background-color: rgba(255,255,255,0.13);
+	padding-bottom: 10px;
+
+    -webkit-backdrop-filter: blur(40px);
+ backdrop-filter: blur(40px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+justify-content: center;
+	align-items: center;
+    text-align: left;
+    padding-left: 10px;
+	color: #0087ca;
+  }
+  
+  .profileButton.active .dropdown-menu {
+	display: block;
+  }
+
+.dropdown-menu a {
+	color: #F0F;
+font-family: Ubuntu;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-decoration: none;
+margin-left: 20px;
+margin-bottom: 10px;
+}
+
+
+
+.footer {
+	position: fixed;
+	left: 0;
+	border-radius: 20px 20px 0px 0px;
+	bottom: -1%;
+	width: 100%;
+	background-color: rgba(255,255,255,0.13);
+    -webkit-backdrop-filter: blur(40px); /* Add this line first, it fixes blur for Safari*/
+    backdrop-filter: blur(40px);
+	border: 2px solid rgba(255,255,255,0.1);
+	box-shadow: 0 0 40px rgba(8,7,16,0.6);
+	color: #E5B8F4;
+	text-align: center;
+	padding: 10px 0;
+	font-family: Ubuntu;
+	height: 5%;
+	font-size: 25px;
+	z-index: 502;
+	
+  }
+  
+  .footer .container {
+	/* display: flex;
+	justify-content: space-between; */
+	align-items: center;
+	padding: 0 20px;
+  }
+  
+  .footer nav a {
+	color: #E5B8F4;
+	text-decoration: none;
+	text-align: center;
+	right: 0;
+	margin-right: 20px;
+	margin-left: 20px;
+  }
+
+
+  .dropdownMenu{
+	overflow: hidden; 
+	backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+	position: fixed;
+	right: 2rem;
+	top: 80px;
+	background-color: rgba(255,255,255,0.13);
+	backdrop-filter: blur(40px);
+	border: 2px solid rgba(255,255,255,0.2);
+	box-shadow: 0 0 40px rgba(8,7,16,0.6);
+
+	border-radius: 10px;
+	overflow: hidden;
+	padding-bottom: 10px;
+	display: none;
+	z-index: 999;
+}
+
+li{
+	  color: #0087ca;
+	  text-decoration: none;
+
+
+      
+	  
+}
+
+.dropdownMenu li {
+	padding: 0.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight:700;
+}
+
+
+.dropdownMenu .credits {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+    display: flex;
+    
+        
+        top: 25%;
+        height: 40px;
+        left: 3%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        width: 90%;
+        background: #0D035E; /* Change to match your website's color scheme */
+        background-color: rgba(255,255,255,0.13);
+        -webkit-backdrop-filter: blur(40px); /* Add this line first, it fixes blur for Safari*/
+        backdrop-filter: blur(40px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        color: #E5B8F4;
+        text-decoration: none;
+        text-align: center;
+        right: 0;
+        margin-right: 50%;
+        margin-left: 0px;
+    
+}
+
+.dropdownMenu .credits h5 {
+	font-size: 14px;
+	text-align: center;
+	top: -2px;
+	position: absolute;
+}
+
+.dropdownMenu .credits h5 {
+	font-size: 14px;
+	text-align: center;
+	top: -2px;
+}
+
+.toggleImg{
+	color: #E5B8F4;
+	filter: invert(99%) sepia(39%) saturate(6117%) hue-rotate(205deg) brightness(100%) contrast(92%);
+	font-size: 1.5rem;
+	cursor: pointer;
+	position: absolute;
+	right: 1rem;
+	top: 35%;
+	display: none;
+}
+
+@media (max-width: 960px) {
+.navbar{
+	display: none;
+}
+.toggleImg{
+	display: block;
+}
+
+.profileButton{
+
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	right: 3rem;
+	margin-right: 0;
+	cursor: pointer;
+	top: 20%;
+
+
+	
+	
+}
+
+
+
+}
+
+a{
+	text-decoration: none;
+}
+
+@media (min-width: 960px) {
+	.dropdownMenu {
+	  display: none !important;
+	}
+  }
+
+  h5{
+
+    position: fixed;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #E5B8F4;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: none;
+
+
+  }
+  .dropdownMenu .credits h5 {
+	font-size: 14px;
+	text-align: center;
+	top: -2px;
+}
+
+
+.credits{
+	position:fixed ;
+	top: 21%;
+	height: 40px;
+	left: 70%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	width: 15%;
+	background: #0D035E; /* Change to match your website's color scheme */
+	background-color: rgba(255,255,255,0.13);
+    -webkit-backdrop-filter: blur(40px); /* Add this line first, it fixes blur for Safari*/
+    backdrop-filter: blur(40px);
+	border: 2px solid rgba(255,255,255,0.1);
+	box-shadow: 0 0 40px rgba(8,7,16,0.6);
+	color: #E5B8F4;
+	text-decoration: none;
+	text-align: center;
+	right: 0;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.dropdownMenu .credits {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+    display: flex;
+    
+        
+        top: 25%;
+        height: 40px;
+        left: 3%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        width: 90%;
+        background: #0D035E; /* Change to match your website's color scheme */
+        background-color: rgba(255,255,255,0.13);
+        -webkit-backdrop-filter: blur(40px);
+        backdrop-filter: blur(40px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        color: #E5B8F4;
+        text-decoration: none;
+        text-align: center;
+        right: 0;
+        margin-right: 50%;
+        margin-left: 0px;
+    
+    }
+    
+    .dropdownMenu .credits h5 {
+        font-size: 14px;
+        text-align: center;
+        top: -2px;
+    }
+
+    @media (max-width: 850px) {
+        .container2 {
+            width: 80%;
+            text-align: center;
+         
+            border-radius: 10px;
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            padding: 50px 35px;
+            
+        }
+    }
+
+
+    a{
+        text-decoration: none;
+    }
+    
+    @media (min-width: 960px) {
+        .dropdownMenu {
+          display: none !important;
+        }
+      }
+    
+      @media (max-width: 960px) {
+        .dropdownMenu {
+            -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+        }
+      }
+    
+    
+      @media (max-width: 400px){
+        .footer {
+       
+            font-size: 20px;
+        }
+    }
+    
+    @media (max-width: 350px){
+        .footer {
+       
+            font-size: 15px;
+        }
+    }
+
+
+    .header-cover{
+        backdrop-filter: blur(40px);
+    
+    top: -20%;
+    
+        
+    }
+    
+    h7{
+        color: rgba(128, 128, 128, 0.274);
+    }
+    
+    @media (max-width: 363px){
+    
+    }
+
+
+    @media (min-width: 960px) {
+        .dropdownMenu {
+          display: none !important;
+        }
+      }
+    
+      @media (max-width: 960px) {
+        .dropdownMenu {
+            -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .footer{
+        width: 99%;
+    }
+
+    .header{
+	
+
+
+		width: 99%; }
+      }
+
+
+
+
+
+      

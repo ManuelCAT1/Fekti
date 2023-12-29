@@ -1,0 +1,292 @@
+<!DOCTYPE htmlc class="bodySchool">
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TL1H9BWD28');
+</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Twoja Szkoła</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='school.css') }}">
+
+  <script>
+    function toggleDropdown() {
+      var profileButton = document.querySelector('.profileButton');
+      profileButton.classList.toggle('active');
+    }
+  
+    function closeAlert(id) {
+      var alert = document.getElementById(id);
+      alert.style.display = 'none';
+    }
+  
+    window.onload = function() {
+      var imageUpload = document.getElementById('imageUpload');
+      var imagePreview = document.getElementById('imagePreview');
+      if (imageUpload) {
+        imageUpload.addEventListener('change', function(e) {
+          var reader = new FileReader();
+  
+          reader.onload = function(event) {
+            imagePreview.src = event.target.result;
+            imagePreview.style.display = 'block'; // Show when image is selected
+          }
+  
+          reader.readAsDataURL(e.target.files[0]);
+        });
+      }
+    };
+
+
+
+    window.onload = function() {
+    function toggleDropdown() {
+      var profileButton = document.querySelector('.profileButton');
+      profileButton.classList.toggle('active');
+    }
+
+    function closeAlert(id) {
+      var alert = document.getElementById(id);
+      alert.style.display = 'none';
+    }
+
+    var imageUpload = document.getElementById('imageUpload');
+    var imagePreview = document.getElementById('imagePreview');
+    if (imageUpload) {
+      imageUpload.addEventListener('change', function(e) {
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+          imagePreview.src = event.target.result;
+          imagePreview.style.display = 'block'; // Show when image is selected
+        }
+
+        reader.readAsDataURL(e.target.files[0]);
+      });
+    }
+
+    var toggleBtn = document.getElementById('toggleBtn');
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    var toggleImg = document.querySelector('.toggleImg');
+    var originalSrc = toggleImg.src; // menu-01.svg is the original image
+    var toggleSrc = "{{ url_for('static', filename='x.svg') }}"; // x.svg is the toggle image
+
+    toggleBtn.addEventListener('click', function() {
+      if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+        // If the dropdown menu is not visible, show it and change the image to x.svg
+        dropdownMenu.style.display = 'block';
+        toggleImg.src = toggleSrc;
+      } else {
+        // If the dropdown menu is visible, hide it and change the image back to menu-01.svg
+        dropdownMenu.style.display = 'none';
+        toggleImg.src = originalSrc;
+      }
+    });
+};
+
+window.addEventListener('resize', function() {
+  var dropdownMenu = document.querySelector('.dropdown-menu');
+  if (window.innerWidth > 960) {
+    dropdownMenu.style.display = 'none';
+  }
+});
+
+
+
+
+
+
+
+
+
+  </script>
+
+<script>
+function openModal(userId, username) {
+  var modal = document.getElementById('confirmModal');
+  var confirmBtn = modal.querySelector('.confirm-btn');
+  var cancelBtn = modal.querySelector('.cancel-btn');
+  var form = document.getElementById('reportForm' + userId);
+  var mainContent = document.getElementById('main-content');
+  var mainContent2 = document.getElementById('main-content2');
+  var modalText = document.getElementById('modalText');
+  modalText.textContent = "Czy jesteś pewny, że chcesz zgłosić \"" + username + "\"?";
+ 
+ 
+
+  // When the user clicks on the confirm button, submit the form
+  confirmBtn.onclick = function() {
+    form.submit();
+  }
+
+  // When the user clicks on the cancel button, close the modal
+  cancelBtn.onclick = function() {
+    modal.style.display = "none";
+    mainContent.classList.remove('modal-open');
+    mainContent2.classList.remove('modal-open'); // Remove the class when the modal is hidden
+  }
+
+
+  modal.style.display = "block";
+  mainContent.classList.add('modal-open');
+  mainContent2.classList.add('modal-open'); // Add the class when the modal is displayed
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  var modal = document.getElementById('confirmModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.body.classList.remove('modal-open');
+  }
+}
+</script>
+
+
+</head>
+<body>
+
+<div id="main-content">
+
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	  {% for category, message in messages %}
+		{% if category == 'error' %}
+		  <!-- Display error message here -->
+		  <div class="alert-error" role="alert" id="errorAlert">
+			{{ message }}
+      <div class="close-button">
+			<button type="button" class="close" onclick="closeAlert('errorAlert')">
+        <img src="{{ url_for('static', filename='x.svg') }}" class="xButton">
+			</button>
+      </div>
+		  </div>
+		{% elif category == 'success' %}
+		  <!-- Display success message here -->
+		  <div class="alert-success" role="alert" id="successAlert">
+			{{ message }}
+      <div class="close-button"></div>
+			<button type="button" class="close" onclick="closeAlert('successAlert')">
+        <img src="{{ url_for('static', filename='x.svg') }}" class="xButton">
+			</button>
+      </div>
+		  </div>
+		{% endif %}
+	  {% endfor %}
+	{% endif %}
+    {% endwith %}
+
+   
+<header class="header">
+
+  <a href="/home" class="logo">Fekti</a>
+  <nav class="navbar">
+    <a href="/szkola">TWOJA SZKOŁA</a>
+    <a href="/zdjecia">ODBLOKOWANE ZDJĘCIA </a>
+  
+  
+      <div class="credits" href="/zetony">
+        <a href="/zetony" style="text-decoration: none; color: inherit;">
+          <h5>ŻETONY: {{ credits }}</h5>
+        </a>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </nav>
+  <div class="toggleBtn" id="toggleBtn">
+    <i>
+    <img src="{{ url_for('static', filename='menu-01.svg') }}" class="toggleImg">
+  </i>
+  </div>
+  
+  
+  <div class="dropdownMenu" id="dropdownMenu" style="-webkit-backdrop-filter: blur(40px); backdrop-filter: blur(40px);">
+			
+    
+    <nav class="navbar2">
+      <a href="/szkola">
+      <li href="/szkola">TWOJA SZKOŁA </li>
+    </a>
+    <a href="/zdjecia">
+      <li href="/zdjecia">ODBLOKOWANE ZDJĘCIA </li>
+      </a>
+    
+    </nav>
+    <div class="credits" href="/zetony">
+      <a href="/zetony" style="text-decoration: none; color: inherit;">
+        <h5>ŻETONY: {{ credits }}</h5>
+      </a>
+  </div>
+  </div>
+  
+  
+  <div class="profileButton" onclick="toggleDropdown()">
+    <a href="#">
+      <img src="{{ url_for('static', filename='profile.svg') }}" class="imgProfile">
+    </a>
+    <div class="dropdown-menu">
+      <a href="/logout">Wyloguj</a>
+      
+      
+    </div>
+  </div>
+  </header>
+</div>
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <h8>Potwierdź zgłoszenie</h8>
+      <br>
+      <br>
+      <p8 id="modalText">Czy jesteś pewny, że chcesz zgłosić  "{{ username }}"?</p8>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close cancel-btn" style="color: #d01919b3;">Anuluj</a>
+      <a href="#!" class="modal-close confirm-btn" style="color: #7f9324b3;">Potwierdź</a>
+    </div>
+  </div>
+<div id="main-content2">
+    <div class="user-list">
+        <h1> Wszyscy użytkownicy twojej szkoły:</h1>
+        <ol>
+          {% for user in users %}
+          <li>
+            {% if user.id != current_user.id %}
+            <form id="reportForm{{ user.id }}" action="{{ url_for('views.report', user_id=user.id) }}" method="post">
+              <button class="reportButton" type="button" onclick="openModal({{ user.id }}, '{{ user.username }}')">Zgłoś</button>
+            </form>
+          {% endif %}
+            {{ user.username }}
+
+          </li>
+        {% endfor %}
+        </ol>
+    </div>
+    <footer class="footer">
+      <div class="container">
+    
+        <nav>
+          <a href="/about">O nas</a>
+          <a href="/kontakt">Kontakt</a>
+          <a href="/pomoc">Pomoc</a>
+        </nav>
+      </div>
+    </footer>
+</div>
+</body>
+</html>
+

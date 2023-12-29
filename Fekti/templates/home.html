@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TL1H9BWD28');
+</script>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
+	<title>{% block title %}Strona Główna{%endblock%}</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <script>
+
+    
+function toggleDropdown() {
+          var profileButton = document.querySelector('.profileButton');
+          profileButton.classList.toggle('active');
+        }
+      
+        function closeAlert(id) {
+          var alert = document.getElementById(id);
+          alert.style.display = 'none';
+        }
+      
+        window.onload = function() {
+    // Function to toggle dropdown
+    function toggleDropdown() {
+        var profileButton = document.querySelector('.profileButton');
+        profileButton.classList.toggle('active');
+    }
+    
+    // Function to close alerts
+    function closeAlert(id) {
+        var alert = document.getElementById(id);
+        alert.style.display = 'none';
+    }
+
+    // Handling image upload and preview
+    var imageUpload = document.getElementById('imageUpload');
+    var imagePreview = document.getElementById('imagePreview');
+    var sortSubject = document.getElementById('sortSubject');
+
+    if (imageUpload) {
+        imageUpload.addEventListener('change', function(e) {
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                imagePreview.src = event.target.result;
+                imagePreview.style.display = 'block'; // Show when image is selected
+                if (sortSubject) {
+                    sortSubject.style.marginTop = '60px';
+                }
+            }
+
+            reader.readAsDataURL(e.target.files[0]);
+        });
+    }
+
+    // Handling toggle button for dropdown menu
+    var toggleBtn = document.getElementById('toggleBtn');
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    var toggleImg = document.querySelector('.toggleImg');
+    var originalSrc = toggleImg ? toggleImg.src : ''; // Check if toggleImg exists
+
+    if (toggleBtn && dropdownMenu && toggleImg) {
+        toggleBtn.addEventListener('click', function() {
+            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+                dropdownMenu.style.display = 'block';
+                toggleImg.src = "{{ url_for('static', filename='x.svg') }}";
+            } else {
+                dropdownMenu.style.display = 'none';
+                toggleImg.src = originalSrc;
+            }
+        });
+    }
+
+    // Other necessary code...
+};
+
+// Additional event listeners...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var textElements = document.getElementById('titleImage1');
+  if (textElements) {
+    if (textElements.textContent.length > 50) {
+      textElements.style.textIndent = '95px';
+    }
+  }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const titleP = document.querySelector('.titleP');
+  titleP.addEventListener('click', function() {
+    if (titleP.textContent.length > 50) {
+      if (titleP.style.whiteSpace === 'normal') {
+        titleP.style.whiteSpace = 'nowrap';
+        titleP.style.overflow = 'hidden';
+        titleP.style.textOverflow = 'ellipsis';
+        titleP.style.textAlign = 'right';
+      } else {
+        titleP.style.whiteSpace = 'normal';
+        titleP.style.overflow = 'visible';
+        titleP.style.textOverflow = 'clip';
+        titleP.style.position = 'relative';
+        titleP.style.top = '0';
+        titleP.style.textAlign = 'right';
+      }
+    }
+  });
+});
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     // ... existing event listeners ...
+
+//     // Event listener for the subject select dropdown
+//     var subjectSelect = document.querySelector('.sortSubject');
+//     subjectSelect.addEventListener('change', function() {
+//         sortPhotosBySubject(this.value);
+//     });
+// });
+
+// function sortPhotosBySubject(subject) {
+//     // Get all the photo elements
+//     var photos = document.querySelectorAll('.photo-img');
+//     var photosArray = Array.from(photos);
+
+//     // Filter and sort photos based on the selected subject
+//     var sortedPhotos = photosArray.filter(function(photo) {
+//         var photoSubject = photo.querySelector('p4').textContent;
+//         return photoSubject === subject || subject === 'All';
+//     });
+
+//     // Clear existing photos
+//     var photosContainer = document.querySelector('.postContatiner');
+//     photosContainer.innerHTML = '';
+
+//     // Append sorted photos to the container
+//     sortedPhotos.forEach(function(photo) {
+//         photosContainer.appendChild(photo);
+//     });
+
+//     // Update the select element to show the selected option
+//     var selectElement = document.querySelector('.sortSubject');
+//     selectElement.value = subject;
+// }
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {% if category == 'feedback' %}
+                <!-- Show your feedback form here -->
+                <div id="feedback-form">
+                    <p>{{ message }}</p>
+                    <!-- Add your feedback form fields here -->
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category, message in messages %}
+  {% if category == 'error' %}
+    <!-- Display error message here -->
+    <div class="alert-error" role="alert" id="errorAlert">
+    {{ message }}
+    <div class="close-button">
+    <button type="button" class="close" onclick="closeAlert('errorAlert')">
+      <div class="x">
+      <img src="{{ url_for('static', filename='x.svg') }}" class="xButton">
+    </div>
+    </button>
+    </div>
+    </div>
+  {% elif category == 'success' %}
+    <!-- Display success message here -->
+    <div class="alert-success" role="alert" id="successAlert">
+    {{ message }}
+    <div class="close-button"></div>
+    <div class="x">
+    <button type="button" class="close" onclick="closeAlert('successAlert')">
+      <img src="{{ url_for('static', filename='x.svg') }}" class="xButton">
+    </div>
+    </button>
+    </div>
+    </div>
+  {% endif %}
+  {% endfor %}
+{% endif %}
+  {% endwith %}
+
+
+
+
+<header class="header">
+
+
+
+<a href="/home" class="logo">Fekti</a>
+<div class="links">
+<nav class="navbar">
+
+ 
+	<a href="/szkola">TWOJA SZKOŁA </a>
+	<a href="/zdjecia">ODBLOKOWANE ZDJĘCIA </a>
+
+
+
+    <div class="credits" href="/zetony">
+      <a href="/zetony" style="text-decoration: none; color: inherit;">
+        <h5>ŻETONY: {{ credits }}</h5>
+      </a>
+</div>
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+</div>
+
+
+<div class="toggleBtn" id="toggleBtn">
+  <i>
+  <img src="{{ url_for('static', filename='menu-01.svg') }}" class="toggleImg">
+</i>
+</div>
+
+
+
+
+
+
+<div class="profileButton" onclick="toggleDropdown()">
+  <a href="javascript:void(0);">
+    <img src="{{ url_for('static', filename='profile.svg') }}" class="imgProfile">
+  </a>
+  <div class="dropdown-menu">
+    <a href="/logout">Wyloguj</a>
+  </div>
+</div>
+
+
+
+
+
+</header>
+<div class="dropdownMenu" id="dropdownMenu">
+	
+	<nav class="navbar2">
+    <div class="parentBackground">
+    <a href="/szkola">
+		<li href="/szkola">TWOJA SZKOŁA </li>
+  </a>
+  <a href="/zdjecia">
+		<li href="/zdjecia">ODBLOKOWANE ZDJĘCIA </li>
+    </a>
+	
+	</nav>
+  <div class="credits" href="/zetony">
+    <a href="/zetony" style="text-decoration: none; color: inherit;">
+      <h5>ŻETONY: {{ credits }}</h5>
+    </a>
+</div>
+</div>
+
+</div>
+<div id="background" style="display: none"></div>
+</div>
+<div class="uploadIMG">
+  <form method="POST" enctype="multipart/form-data" action="/upload">
+      <label class="labelFileUpload">
+         <h7> Wybierz plik </h7>
+          <input type="file" id="imageUpload" name="file" class="fileUpload">
+      </label>
+     
+      <input type="text" name="title" placeholder="Wpisz tytuł"  class="inputField" autocomplete="off" maxlength="75">
+      <br>
+      <select class="selectSubject" name="selectSubject">
+        <option value="" disabled selected>Wybierz przedmiot</option>
+        <option value="Matematyka">Matematyka</option>
+        <option value="Fizyka">Fizyka</option>
+        <option value="Angielski">Angielski</option>
+        <option value="Polski">Polski</option>
+        <option value="Hiszpański">Hiszpański</option>
+        <option value="Niemiecki">Niemiecki</option>
+        <option value="EDB/BHP">EDBiBHP</option>
+        <option value="Chemia">Chemia</option>
+        <option value="Geografia">Geografia</option>
+        <option value="Biologia">Biologia</option>
+        <option value="Historia">Historia</option>
+        <option value="HIT/WOS">HITiWOS</option>
+        <option value="Informatyka">Informatyka</option>
+        <option value="Religia">Religia</option>
+
+    </select>
+      <input type="submit" value="Wyślij" class="submitButton">
+      <img id="imagePreview" src="#" alt="" />
+  </form>
+</div>
+
+<div class="postContatiner">
+
+
+  <div class="sortBySubject">
+<select class="sortSubject" name="sortSubject" onchange="window.location.href=this.value ? '/home/' + this.value : '/home'" id="sortSubject">
+  <option value="" disabled {% if selected_subject is none %}selected{% endif %}>Sortuj</option>
+  <option value="" {% if selected_subject == 'all' %}selected{% endif %}>Wszystkie Przedmioty</option>
+  {% for subject in subjects %}
+    <option value="{{ subject }}" {% if selected_subject == subject %}selected{% endif %}>{{ subject }}</option>
+  {% endfor %}
+</select>
+
+</div>
+
+
+  
+  {% if photos %}
+  {% for photo in photos %}
+      {% if photo.image_data %}
+      <div class="photo-img">
+          <li>
+              {% if photo.image_data %}
+              <div class="image-wrapper">
+                
+                <p4>{{ photo.selected_subject }}</p4>
+     <div class="titleImage" id="titleImage1">
+                  <p class="titleP">{{ photo.title }}</p>
+
+                </div>
+                  
+               
+                  {% if user.is_authenticated and user.credits > 0 %}
+
+                  {% endif %}
+                  {% if photo.id in unlocked_photos_ids %}
+                  <img src="data:image/png;base64,{{ photo.image_data|custom_b64encode }}" alt="{{ photo.title }}" class="imgsrc-unblurred">
+              {% else %}
+                  <img src="data:image/png;base64,{{ photo.image_data|custom_b64encode }}" alt="{{ photo.title }}" class="imgsrc-unblurred">
+                  <form method="POST" action="{{ url_for('views.unlock_photo', photo_id=photo.id) }}">
+                      <button type="submit" class="unlockButton">Odblokuj</button>
+                  </form>
+              {% endif %}
+                  <p class="likesCount">{{ photo.likes.count() }} Polubień</p>
+                </div>
+              {% endif %}
+          </li>
+      </div>
+      {% endif %}  <!-- Add this line to close the if block -->
+  {% endfor %}
+  {% endif %}
+</div>
+
+<div class="pagination">
+  {% if photos.has_prev %}
+      <a href="{{ url_for('views.homePage', page=photos.prev_num) }}" class="previousPage">
+        <img src="{{ url_for('static', filename='previous.svg') }}" class="nextPageImg">
+   
+        Previous Page
+  </a>
+ 
+      {% endif %}
+  {% if photos.has_next %}
+      <a href="{{ url_for('views.homePage', page=photos.next_num) }}" class="nextPage">Next Page
+      <img src="{{ url_for('static', filename='nextPage.svg') }}" class="nextPageImg">
+    </a>
+  {% endif %}
+</div>
+
+<footer class="footer">
+  <div class="container">
+
+    <nav>
+      <a href="/about">O nas</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/pomoc">Pomoc</a>
+    </nav>
+  </div>
+</footer>
+
+
+
+
+
+
+
+<script>
+
+
+
+</script>
+
+</body >
+</html>

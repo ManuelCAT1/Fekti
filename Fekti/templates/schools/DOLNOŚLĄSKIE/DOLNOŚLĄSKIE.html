@@ -1,0 +1,2736 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Fekti
+  </title>
+  <link href="{{ url_for('static', filename='cities.css') }}" rel="stylesheet"/>
+  <script>
+   function searchUL() {
+            // Get input value
+            let input = document.getElementById('searchInput');
+            let filter = input.value.toUpperCase();
+
+            // Get all UL elements
+            let uls = document.getElementsByTagName('ul');
+            for (let i = 0; i < uls.length; i++) {
+                let ul = uls[i];
+                let li = ul.getElementsByTagName('li');
+                for (let j = 0; j < li.length; j++) {
+                    if (li[j].getAttribute('data-attribute').toUpperCase().indexOf(filter) > -1) {
+                        li[j].style.display = "";
+                    } else {
+                        li[j].style.display = "none";
+                    }
+                }
+            }
+        }
+  </script>
+ </head>
+</html>
+<body>
+ <div class="description">
+  <h5>
+   Select a City in DOLNOŚLĄSKIE
+  </h5>
+  <h4>
+   <br/>
+   <br <br=""/>
+   <input id="searchInput" onkeyup="searchUL()" placeholder="Search for cities..." type="text"/>
+   <ul>
+    <li data-attribute="Wrocław-Krzyki" href="">
+     <a href="DOLNOŚLĄSKIE_Wrocław-Krzyki.html">
+      Wrocław-Krzyki
+     </a>
+    </li>
+    <li data-attribute="Nowa Ruda" href="">
+     <a href="DOLNOŚLĄSKIE_Nowa Ruda.html">
+      Nowa Ruda
+     </a>
+    </li>
+    <li data-attribute="Kłodzko" href="">
+     <a href="DOLNOŚLĄSKIE_Kłodzko.html">
+      Kłodzko
+     </a>
+    </li>
+    <li data-attribute="Żarów" href="">
+     <a href="DOLNOŚLĄSKIE_Żarów.html">
+      Żarów
+     </a>
+    </li>
+    <li data-attribute="Oleśnica" href="">
+     <a href="DOLNOŚLĄSKIE_Oleśnica.html">
+      Oleśnica
+     </a>
+    </li>
+    <li data-attribute="Kamieniec Wrocławski" href="">
+     <a href="DOLNOŚLĄSKIE_Kamieniec Wrocławski.html">
+      Kamieniec Wrocławski
+     </a>
+    </li>
+    <li data-attribute="Głogów" href="">
+     <a href="DOLNOŚLĄSKIE_Głogów.html">
+      Głogów
+     </a>
+    </li>
+    <li data-attribute="Wrocław-Stare Miasto" href="">
+     <a href="DOLNOŚLĄSKIE_Wrocław-Stare Miasto.html">
+      Wrocław-Stare Miasto
+     </a>
+    </li>
+    <li data-attribute="Wrocław-Psie Pole" href="">
+     <a href="DOLNOŚLĄSKIE_Wrocław-Psie Pole.html">
+      Wrocław-Psie Pole
+     </a>
+    </li>
+    <li data-attribute="Milicz" href="">
+     <a href="DOLNOŚLĄSKIE_Milicz.html">
+      Milicz
+     </a>
+    </li>
+    <li data-attribute="Świdnica" href="">
+     <a href="DOLNOŚLĄSKIE_Świdnica.html">
+      Świdnica
+     </a>
+    </li>
+    <li data-attribute="Zgorzelec" href="">
+     <a href="DOLNOŚLĄSKIE_Zgorzelec.html">
+      Zgorzelec
+     </a>
+    </li>
+    <li data-attribute="Wrocław-Fabryczna" href="">
+     <a href="DOLNOŚLĄSKIE_Wrocław-Fabryczna.html">
+      Wrocław-Fabryczna
+     </a>
+    </li>
+    <li data-attribute="Wrocław-Śródmieście" href="">
+     <a href="DOLNOŚLĄSKIE_Wrocław-Śródmieście.html">
+      Wrocław-Śródmieście
+     </a>
+    </li>
+    <li data-attribute="Ślęza" href="">
+     <a href="DOLNOŚLĄSKIE_Ślęza.html">
+      Ślęza
+     </a>
+    </li>
+    <li data-attribute="Trzebnica" href="">
+     <a href="DOLNOŚLĄSKIE_Trzebnica.html">
+      Trzebnica
+     </a>
+    </li>
+    <li data-attribute="Żórawina" href="">
+     <a href="DOLNOŚLĄSKIE_Żórawina.html">
+      Żórawina
+     </a>
+    </li>
+    <li data-attribute="Lubin" href="">
+     <a href="DOLNOŚLĄSKIE_Lubin.html">
+      Lubin
+     </a>
+    </li>
+    <li data-attribute="Jelenia Góra" href="">
+     <a href="DOLNOŚLĄSKIE_Jelenia Góra.html">
+      Jelenia Góra
+     </a>
+    </li>
+    <li data-attribute="Wałbrzych" href="">
+     <a href="DOLNOŚLĄSKIE_Wałbrzych.html">
+      Wałbrzych
+     </a>
+    </li>
+    <li data-attribute="Wróblowice" href="">
+     <a href="DOLNOŚLĄSKIE_Wróblowice.html">
+      Wróblowice
+     </a>
+    </li>
+    <li data-attribute="Lubachów" href="">
+     <a href="DOLNOŚLĄSKIE_Lubachów.html">
+      Lubachów
+     </a>
+    </li>
+    <li data-attribute="Lubań" href="">
+     <a href="DOLNOŚLĄSKIE_Lubań.html">
+      Lubań
+     </a>
+    </li>
+    <li data-attribute="Siechnice" href="">
+     <a href="DOLNOŚLĄSKIE_Siechnice.html">
+      Siechnice
+     </a>
+    </li>
+    <li data-attribute="Strzelin" href="">
+     <a href="DOLNOŚLĄSKIE_Strzelin.html">
+      Strzelin
+     </a>
+    </li>
+    <li data-attribute="Legnica" href="">
+     <a href="DOLNOŚLĄSKIE_Legnica.html">
+      Legnica
+     </a>
+    </li>
+    <li data-attribute="Bystrzyca Kłodzka" href="">
+     <a href="DOLNOŚLĄSKIE_Bystrzyca Kłodzka.html">
+      Bystrzyca Kłodzka
+     </a>
+    </li>
+    <li data-attribute="Psary" href="">
+     <a href="DOLNOŚLĄSKIE_Psary.html">
+      Psary
+     </a>
+    </li>
+    <li data-attribute="Gorzanów" href="">
+     <a href="DOLNOŚLĄSKIE_Gorzanów.html">
+      Gorzanów
+     </a>
+    </li>
+    <li data-attribute="Bolków" href="">
+     <a href="DOLNOŚLĄSKIE_Bolków.html">
+      Bolków
+     </a>
+    </li>
+    <li data-attribute="Środa Śląska" href="">
+     <a href="DOLNOŚLĄSKIE_Środa Śląska.html">
+      Środa Śląska
+     </a>
+    </li>
+    <li data-attribute="Kamienna Góra" href="">
+     <a href="DOLNOŚLĄSKIE_Kamienna Góra.html">
+      Kamienna Góra
+     </a>
+    </li>
+    <li data-attribute="Jawor" href="">
+     <a href="DOLNOŚLĄSKIE_Jawor.html">
+      Jawor
+     </a>
+    </li>
+    <li data-attribute="Złotoryja" href="">
+     <a href="DOLNOŚLĄSKIE_Złotoryja.html">
+      Złotoryja
+     </a>
+    </li>
+    <li data-attribute="Bolesławiec" href="">
+     <a href="DOLNOŚLĄSKIE_Bolesławiec.html">
+      Bolesławiec
+     </a>
+    </li>
+    <li data-attribute="Oława" href="">
+     <a href="DOLNOŚLĄSKIE_Oława.html">
+      Oława
+     </a>
+    </li>
+    <li data-attribute="Wołów" href="">
+     <a href="DOLNOŚLĄSKIE_Wołów.html">
+      Wołów
+     </a>
+    </li>
+    <li data-attribute="Kudowa-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Kudowa-Zdrój.html">
+      Kudowa-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Krzyżowice" href="">
+     <a href="DOLNOŚLĄSKIE_Krzyżowice.html">
+      Krzyżowice
+     </a>
+    </li>
+    <li data-attribute="Chocianów" href="">
+     <a href="DOLNOŚLĄSKIE_Chocianów.html">
+      Chocianów
+     </a>
+    </li>
+    <li data-attribute="Polkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Polkowice.html">
+      Polkowice
+     </a>
+    </li>
+    <li data-attribute="Lwówek Śląski" href="">
+     <a href="DOLNOŚLĄSKIE_Lwówek Śląski.html">
+      Lwówek Śląski
+     </a>
+    </li>
+    <li data-attribute="Przemków" href="">
+     <a href="DOLNOŚLĄSKIE_Przemków.html">
+      Przemków
+     </a>
+    </li>
+    <li data-attribute="Piechowice" href="">
+     <a href="DOLNOŚLĄSKIE_Piechowice.html">
+      Piechowice
+     </a>
+    </li>
+    <li data-attribute="Gryfów Śląski" href="">
+     <a href="DOLNOŚLĄSKIE_Gryfów Śląski.html">
+      Gryfów Śląski
+     </a>
+    </li>
+    <li data-attribute="Rakowice Wielkie" href="">
+     <a href="DOLNOŚLĄSKIE_Rakowice Wielkie.html">
+      Rakowice Wielkie
+     </a>
+    </li>
+    <li data-attribute="Ząbkowice Śląskie" href="">
+     <a href="DOLNOŚLĄSKIE_Ząbkowice Śląskie.html">
+      Ząbkowice Śląskie
+     </a>
+    </li>
+    <li data-attribute="Bielawa" href="">
+     <a href="DOLNOŚLĄSKIE_Bielawa.html">
+      Bielawa
+     </a>
+    </li>
+    <li data-attribute="Ludów Polski" href="">
+     <a href="DOLNOŚLĄSKIE_Ludów Polski.html">
+      Ludów Polski
+     </a>
+    </li>
+    <li data-attribute="Bogatynia" href="">
+     <a href="DOLNOŚLĄSKIE_Bogatynia.html">
+      Bogatynia
+     </a>
+    </li>
+    <li data-attribute="Brzeg Dolny" href="">
+     <a href="DOLNOŚLĄSKIE_Brzeg Dolny.html">
+      Brzeg Dolny
+     </a>
+    </li>
+    <li data-attribute="Dzierżoniów" href="">
+     <a href="DOLNOŚLĄSKIE_Dzierżoniów.html">
+      Dzierżoniów
+     </a>
+    </li>
+    <li data-attribute="Nowe Siodło" href="">
+     <a href="DOLNOŚLĄSKIE_Nowe Siodło.html">
+      Nowe Siodło
+     </a>
+    </li>
+    <li data-attribute="Mrowiny" href="">
+     <a href="DOLNOŚLĄSKIE_Mrowiny.html">
+      Mrowiny
+     </a>
+    </li>
+    <li data-attribute="Sobótka" href="">
+     <a href="DOLNOŚLĄSKIE_Sobótka.html">
+      Sobótka
+     </a>
+    </li>
+    <li data-attribute="Długopole-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Długopole-Zdrój.html">
+      Długopole-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Szklary Górne" href="">
+     <a href="DOLNOŚLĄSKIE_Szklary Górne.html">
+      Szklary Górne
+     </a>
+    </li>
+    <li data-attribute="Walim" href="">
+     <a href="DOLNOŚLĄSKIE_Walim.html">
+      Walim
+     </a>
+    </li>
+    <li data-attribute="Biedrzychowice" href="">
+     <a href="DOLNOŚLĄSKIE_Biedrzychowice.html">
+      Biedrzychowice
+     </a>
+    </li>
+    <li data-attribute="Bożków" href="">
+     <a href="DOLNOŚLĄSKIE_Bożków.html">
+      Bożków
+     </a>
+    </li>
+    <li data-attribute="Jelcz-Laskowice" href="">
+     <a href="DOLNOŚLĄSKIE_Jelcz-Laskowice.html">
+      Jelcz-Laskowice
+     </a>
+    </li>
+    <li data-attribute="Karpacz" href="">
+     <a href="DOLNOŚLĄSKIE_Karpacz.html">
+      Karpacz
+     </a>
+    </li>
+    <li data-attribute="Kowary" href="">
+     <a href="DOLNOŚLĄSKIE_Kowary.html">
+      Kowary
+     </a>
+    </li>
+    <li data-attribute="Lubomierz" href="">
+     <a href="DOLNOŚLĄSKIE_Lubomierz.html">
+      Lubomierz
+     </a>
+    </li>
+    <li data-attribute="Międzybórz" href="">
+     <a href="DOLNOŚLĄSKIE_Międzybórz.html">
+      Międzybórz
+     </a>
+    </li>
+    <li data-attribute="Szklarska Poręba" href="">
+     <a href="DOLNOŚLĄSKIE_Szklarska Poręba.html">
+      Szklarska Poręba
+     </a>
+    </li>
+    <li data-attribute="Mokrzeszów" href="">
+     <a href="DOLNOŚLĄSKIE_Mokrzeszów.html">
+      Mokrzeszów
+     </a>
+    </li>
+    <li data-attribute="Jerzmanice-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Jerzmanice-Zdrój.html">
+      Jerzmanice-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Polanica-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Polanica-Zdrój.html">
+      Polanica-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Oborniki Śląskie" href="">
+     <a href="DOLNOŚLĄSKIE_Oborniki Śląskie.html">
+      Oborniki Śląskie
+     </a>
+    </li>
+    <li data-attribute="Żmigród" href="">
+     <a href="DOLNOŚLĄSKIE_Żmigród.html">
+      Żmigród
+     </a>
+    </li>
+    <li data-attribute="Rudna" href="">
+     <a href="DOLNOŚLĄSKIE_Rudna.html">
+      Rudna
+     </a>
+    </li>
+    <li data-attribute="Skoroszowice" href="">
+     <a href="DOLNOŚLĄSKIE_Skoroszowice.html">
+      Skoroszowice
+     </a>
+    </li>
+    <li data-attribute="Stronie Śląskie" href="">
+     <a href="DOLNOŚLĄSKIE_Stronie Śląskie.html">
+      Stronie Śląskie
+     </a>
+    </li>
+    <li data-attribute="Strzegom" href="">
+     <a href="DOLNOŚLĄSKIE_Strzegom.html">
+      Strzegom
+     </a>
+    </li>
+    <li data-attribute="Świebodzice" href="">
+     <a href="DOLNOŚLĄSKIE_Świebodzice.html">
+      Świebodzice
+     </a>
+    </li>
+    <li data-attribute="Syców" href="">
+     <a href="DOLNOŚLĄSKIE_Syców.html">
+      Syców
+     </a>
+    </li>
+    <li data-attribute="Szczawno-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Szczawno-Zdrój.html">
+      Szczawno-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Twardogóra" href="">
+     <a href="DOLNOŚLĄSKIE_Twardogóra.html">
+      Twardogóra
+     </a>
+    </li>
+    <li data-attribute="Ziębice" href="">
+     <a href="DOLNOŚLĄSKIE_Ziębice.html">
+      Ziębice
+     </a>
+    </li>
+    <li data-attribute="Góra" href="">
+     <a href="DOLNOŚLĄSKIE_Góra.html">
+      Góra
+     </a>
+    </li>
+    <li data-attribute="Włosień" href="">
+     <a href="DOLNOŚLĄSKIE_Włosień.html">
+      Włosień
+     </a>
+    </li>
+    <li data-attribute="Wrocław" href="">
+     <a href="DOLNOŚLĄSKIE_Wrocław.html">
+      Wrocław
+     </a>
+    </li>
+    <li data-attribute="Mieroszów" href="">
+     <a href="DOLNOŚLĄSKIE_Mieroszów.html">
+      Mieroszów
+     </a>
+    </li>
+    <li data-attribute="Duszniki-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Duszniki-Zdrój.html">
+      Duszniki-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Sokołowsko" href="">
+     <a href="DOLNOŚLĄSKIE_Sokołowsko.html">
+      Sokołowsko
+     </a>
+    </li>
+    <li data-attribute="Bardo" href="">
+     <a href="DOLNOŚLĄSKIE_Bardo.html">
+      Bardo
+     </a>
+    </li>
+    <li data-attribute="Świeradów-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Świeradów-Zdrój.html">
+      Świeradów-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Kiełczów" href="">
+     <a href="DOLNOŚLĄSKIE_Kiełczów.html">
+      Kiełczów
+     </a>
+    </li>
+    <li data-attribute="Ramiszów" href="">
+     <a href="DOLNOŚLĄSKIE_Ramiszów.html">
+      Ramiszów
+     </a>
+    </li>
+    <li data-attribute="Krzeptów" href="">
+     <a href="DOLNOŚLĄSKIE_Krzeptów.html">
+      Krzeptów
+     </a>
+    </li>
+    <li data-attribute="Grodziszcze" href="">
+     <a href="DOLNOŚLĄSKIE_Grodziszcze.html">
+      Grodziszcze
+     </a>
+    </li>
+    <li data-attribute="Wądroże Wielkie" href="">
+     <a href="DOLNOŚLĄSKIE_Wądroże Wielkie.html">
+      Wądroże Wielkie
+     </a>
+    </li>
+    <li data-attribute="Dobroszyce" href="">
+     <a href="DOLNOŚLĄSKIE_Dobroszyce.html">
+      Dobroszyce
+     </a>
+    </li>
+    <li data-attribute="Olszyna" href="">
+     <a href="DOLNOŚLĄSKIE_Olszyna.html">
+      Olszyna
+     </a>
+    </li>
+    <li data-attribute="Dobrocin" href="">
+     <a href="DOLNOŚLĄSKIE_Dobrocin.html">
+      Dobrocin
+     </a>
+    </li>
+    <li data-attribute="Mościsko" href="">
+     <a href="DOLNOŚLĄSKIE_Mościsko.html">
+      Mościsko
+     </a>
+    </li>
+    <li data-attribute="Ostroszowice" href="">
+     <a href="DOLNOŚLĄSKIE_Ostroszowice.html">
+      Ostroszowice
+     </a>
+    </li>
+    <li data-attribute="Piława Dolna" href="">
+     <a href="DOLNOŚLĄSKIE_Piława Dolna.html">
+      Piława Dolna
+     </a>
+    </li>
+    <li data-attribute="Przeworno" href="">
+     <a href="DOLNOŚLĄSKIE_Przeworno.html">
+      Przeworno
+     </a>
+    </li>
+    <li data-attribute="Ścinawka Średnia" href="">
+     <a href="DOLNOŚLĄSKIE_Ścinawka Średnia.html">
+      Ścinawka Średnia
+     </a>
+    </li>
+    <li data-attribute="Radków" href="">
+     <a href="DOLNOŚLĄSKIE_Radków.html">
+      Radków
+     </a>
+    </li>
+    <li data-attribute="Czarny Bór" href="">
+     <a href="DOLNOŚLĄSKIE_Czarny Bór.html">
+      Czarny Bór
+     </a>
+    </li>
+    <li data-attribute="Goliszów" href="">
+     <a href="DOLNOŚLĄSKIE_Goliszów.html">
+      Goliszów
+     </a>
+    </li>
+    <li data-attribute="Gromadka" href="">
+     <a href="DOLNOŚLĄSKIE_Gromadka.html">
+      Gromadka
+     </a>
+    </li>
+    <li data-attribute="Osiecznica" href="">
+     <a href="DOLNOŚLĄSKIE_Osiecznica.html">
+      Osiecznica
+     </a>
+    </li>
+    <li data-attribute="Rokitki" href="">
+     <a href="DOLNOŚLĄSKIE_Rokitki.html">
+      Rokitki
+     </a>
+    </li>
+    <li data-attribute="Stara Kamienica" href="">
+     <a href="DOLNOŚLĄSKIE_Stara Kamienica.html">
+      Stara Kamienica
+     </a>
+    </li>
+    <li data-attribute="Świętoszów" href="">
+     <a href="DOLNOŚLĄSKIE_Świętoszów.html">
+      Świętoszów
+     </a>
+    </li>
+    <li data-attribute="Twardocice" href="">
+     <a href="DOLNOŚLĄSKIE_Twardocice.html">
+      Twardocice
+     </a>
+    </li>
+    <li data-attribute="Wiadrów" href="">
+     <a href="DOLNOŚLĄSKIE_Wiadrów.html">
+      Wiadrów
+     </a>
+    </li>
+    <li data-attribute="Boguszów-Gorce" href="">
+     <a href="DOLNOŚLĄSKIE_Boguszów-Gorce.html">
+      Boguszów-Gorce
+     </a>
+    </li>
+    <li data-attribute="Kotowice" href="">
+     <a href="DOLNOŚLĄSKIE_Kotowice.html">
+      Kotowice
+     </a>
+    </li>
+    <li data-attribute="Henryków" href="">
+     <a href="DOLNOŚLĄSKIE_Henryków.html">
+      Henryków
+     </a>
+    </li>
+    <li data-attribute="Biały Kościół" href="">
+     <a href="DOLNOŚLĄSKIE_Biały Kościół.html">
+      Biały Kościół
+     </a>
+    </li>
+    <li data-attribute="Chojnów" href="">
+     <a href="DOLNOŚLĄSKIE_Chojnów.html">
+      Chojnów
+     </a>
+    </li>
+    <li data-attribute="Wilczyce" href="">
+     <a href="DOLNOŚLĄSKIE_Wilczyce.html">
+      Wilczyce
+     </a>
+    </li>
+    <li data-attribute="Smolnik" href="">
+     <a href="DOLNOŚLĄSKIE_Smolnik.html">
+      Smolnik
+     </a>
+    </li>
+    <li data-attribute="Gęsiniec" href="">
+     <a href="DOLNOŚLĄSKIE_Gęsiniec.html">
+      Gęsiniec
+     </a>
+    </li>
+    <li data-attribute="Lądek-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Lądek-Zdrój.html">
+      Lądek-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Mirsk" href="">
+     <a href="DOLNOŚLĄSKIE_Mirsk.html">
+      Mirsk
+     </a>
+    </li>
+    <li data-attribute="Długołęka" href="">
+     <a href="DOLNOŚLĄSKIE_Długołęka.html">
+      Długołęka
+     </a>
+    </li>
+    <li data-attribute="Lubiąż" href="">
+     <a href="DOLNOŚLĄSKIE_Lubiąż.html">
+      Lubiąż
+     </a>
+    </li>
+    <li data-attribute="Wierzbice" href="">
+     <a href="DOLNOŚLĄSKIE_Wierzbice.html">
+      Wierzbice
+     </a>
+    </li>
+    <li data-attribute="Bierutów" href="">
+     <a href="DOLNOŚLĄSKIE_Bierutów.html">
+      Bierutów
+     </a>
+    </li>
+    <li data-attribute="Stara Łomnica" href="">
+     <a href="DOLNOŚLĄSKIE_Stara Łomnica.html">
+      Stara Łomnica
+     </a>
+    </li>
+    <li data-attribute="Drołtowice" href="">
+     <a href="DOLNOŚLĄSKIE_Drołtowice.html">
+      Drołtowice
+     </a>
+    </li>
+    <li data-attribute="Stradomia Wierzchnia" href="">
+     <a href="DOLNOŚLĄSKIE_Stradomia Wierzchnia.html">
+      Stradomia Wierzchnia
+     </a>
+    </li>
+    <li data-attribute="Krzyżowa" href="">
+     <a href="DOLNOŚLĄSKIE_Krzyżowa.html">
+      Krzyżowa
+     </a>
+    </li>
+    <li data-attribute="Morawa" href="">
+     <a href="DOLNOŚLĄSKIE_Morawa.html">
+      Morawa
+     </a>
+    </li>
+    <li data-attribute="Węgliniec" href="">
+     <a href="DOLNOŚLĄSKIE_Węgliniec.html">
+      Węgliniec
+     </a>
+    </li>
+    <li data-attribute="Wojcieszów" href="">
+     <a href="DOLNOŚLĄSKIE_Wojcieszów.html">
+      Wojcieszów
+     </a>
+    </li>
+    <li data-attribute="Prochowice" href="">
+     <a href="DOLNOŚLĄSKIE_Prochowice.html">
+      Prochowice
+     </a>
+    </li>
+    <li data-attribute="Leśna" href="">
+     <a href="DOLNOŚLĄSKIE_Leśna.html">
+      Leśna
+     </a>
+    </li>
+    <li data-attribute="Bystrzyca Górna" href="">
+     <a href="DOLNOŚLĄSKIE_Bystrzyca Górna.html">
+      Bystrzyca Górna
+     </a>
+    </li>
+    <li data-attribute="Godzięcin" href="">
+     <a href="DOLNOŚLĄSKIE_Godzięcin.html">
+      Godzięcin
+     </a>
+    </li>
+    <li data-attribute="Pieszków" href="">
+     <a href="DOLNOŚLĄSKIE_Pieszków.html">
+      Pieszków
+     </a>
+    </li>
+    <li data-attribute="Lubiechowa" href="">
+     <a href="DOLNOŚLĄSKIE_Lubiechowa.html">
+      Lubiechowa
+     </a>
+    </li>
+    <li data-attribute="Łomnica" href="">
+     <a href="DOLNOŚLĄSKIE_Łomnica.html">
+      Łomnica
+     </a>
+    </li>
+    <li data-attribute="Olszanica" href="">
+     <a href="DOLNOŚLĄSKIE_Olszanica.html">
+      Olszanica
+     </a>
+    </li>
+    <li data-attribute="Wilkszyn" href="">
+     <a href="DOLNOŚLĄSKIE_Wilkszyn.html">
+      Wilkszyn
+     </a>
+    </li>
+    <li data-attribute="Dobrzykowice" href="">
+     <a href="DOLNOŚLĄSKIE_Dobrzykowice.html">
+      Dobrzykowice
+     </a>
+    </li>
+    <li data-attribute="Mokronos Górny" href="">
+     <a href="DOLNOŚLĄSKIE_Mokronos Górny.html">
+      Mokronos Górny
+     </a>
+    </li>
+    <li data-attribute="Bielany Wrocławskie" href="">
+     <a href="DOLNOŚLĄSKIE_Bielany Wrocławskie.html">
+      Bielany Wrocławskie
+     </a>
+    </li>
+    <li data-attribute="Piszkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Piszkowice.html">
+      Piszkowice
+     </a>
+    </li>
+    <li data-attribute="Ludwikowice Kłodzkie" href="">
+     <a href="DOLNOŚLĄSKIE_Ludwikowice Kłodzkie.html">
+      Ludwikowice Kłodzkie
+     </a>
+    </li>
+    <li data-attribute="Krotoszyce" href="">
+     <a href="DOLNOŚLĄSKIE_Krotoszyce.html">
+      Krotoszyce
+     </a>
+    </li>
+    <li data-attribute="Lubnów" href="">
+     <a href="DOLNOŚLĄSKIE_Lubnów.html">
+      Lubnów
+     </a>
+    </li>
+    <li data-attribute="Dzikowiec" href="">
+     <a href="DOLNOŚLĄSKIE_Dzikowiec.html">
+      Dzikowiec
+     </a>
+    </li>
+    <li data-attribute="Gilów" href="">
+     <a href="DOLNOŚLĄSKIE_Gilów.html">
+      Gilów
+     </a>
+    </li>
+    <li data-attribute="Mikoszów" href="">
+     <a href="DOLNOŚLĄSKIE_Mikoszów.html">
+      Mikoszów
+     </a>
+    </li>
+    <li data-attribute="Przerzeczyn-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Przerzeczyn-Zdrój.html">
+      Przerzeczyn-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Zachowice" href="">
+     <a href="DOLNOŚLĄSKIE_Zachowice.html">
+      Zachowice
+     </a>
+    </li>
+    <li data-attribute="Żelazno" href="">
+     <a href="DOLNOŚLĄSKIE_Żelazno.html">
+      Żelazno
+     </a>
+    </li>
+    <li data-attribute="Ręków" href="">
+     <a href="DOLNOŚLĄSKIE_Ręków.html">
+      Ręków
+     </a>
+    </li>
+    <li data-attribute="Pieszyce" href="">
+     <a href="DOLNOŚLĄSKIE_Pieszyce.html">
+      Pieszyce
+     </a>
+    </li>
+    <li data-attribute="Wszewilki" href="">
+     <a href="DOLNOŚLĄSKIE_Wszewilki.html">
+      Wszewilki
+     </a>
+    </li>
+    <li data-attribute="Siedlec" href="">
+     <a href="DOLNOŚLĄSKIE_Siedlec.html">
+      Siedlec
+     </a>
+    </li>
+    <li data-attribute="Bolesławów" href="">
+     <a href="DOLNOŚLĄSKIE_Bolesławów.html">
+      Bolesławów
+     </a>
+    </li>
+    <li data-attribute="Głogówko" href="">
+     <a href="DOLNOŚLĄSKIE_Głogówko.html">
+      Głogówko
+     </a>
+    </li>
+    <li data-attribute="Stanowice" href="">
+     <a href="DOLNOŚLĄSKIE_Stanowice.html">
+      Stanowice
+     </a>
+    </li>
+    <li data-attribute="Marcinkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Marcinkowice.html">
+      Marcinkowice
+     </a>
+    </li>
+    <li data-attribute="Iwiny" href="">
+     <a href="DOLNOŚLĄSKIE_Iwiny.html">
+      Iwiny
+     </a>
+    </li>
+    <li data-attribute="Stare Bogaczowice" href="">
+     <a href="DOLNOŚLĄSKIE_Stare Bogaczowice.html">
+      Stare Bogaczowice
+     </a>
+    </li>
+    <li data-attribute="Mrozów" href="">
+     <a href="DOLNOŚLĄSKIE_Mrozów.html">
+      Mrozów
+     </a>
+    </li>
+    <li data-attribute="Sobocisko" href="">
+     <a href="DOLNOŚLĄSKIE_Sobocisko.html">
+      Sobocisko
+     </a>
+    </li>
+    <li data-attribute="Struga" href="">
+     <a href="DOLNOŚLĄSKIE_Struga.html">
+      Struga
+     </a>
+    </li>
+    <li data-attribute="Gajków" href="">
+     <a href="DOLNOŚLĄSKIE_Gajków.html">
+      Gajków
+     </a>
+    </li>
+    <li data-attribute="Kiełczówek" href="">
+     <a href="DOLNOŚLĄSKIE_Kiełczówek.html">
+      Kiełczówek
+     </a>
+    </li>
+    <li data-attribute="Wysoka" href="">
+     <a href="DOLNOŚLĄSKIE_Wysoka.html">
+      Wysoka
+     </a>
+    </li>
+    <li data-attribute="Tyniec Mały" href="">
+     <a href="DOLNOŚLĄSKIE_Tyniec Mały.html">
+      Tyniec Mały
+     </a>
+    </li>
+    <li data-attribute="Boleścin" href="">
+     <a href="DOLNOŚLĄSKIE_Boleścin.html">
+      Boleścin
+     </a>
+    </li>
+    <li data-attribute="Radwanice" href="">
+     <a href="DOLNOŚLĄSKIE_Radwanice.html">
+      Radwanice
+     </a>
+    </li>
+    <li data-attribute="Zabrodzie" href="">
+     <a href="DOLNOŚLĄSKIE_Zabrodzie.html">
+      Zabrodzie
+     </a>
+    </li>
+    <li data-attribute="Poniatowice" href="">
+     <a href="DOLNOŚLĄSKIE_Poniatowice.html">
+      Poniatowice
+     </a>
+    </li>
+    <li data-attribute="Piotrowice" href="">
+     <a href="DOLNOŚLĄSKIE_Piotrowice.html">
+      Piotrowice
+     </a>
+    </li>
+    <li data-attribute="Kąty Wrocławskie" href="">
+     <a href="DOLNOŚLĄSKIE_Kąty Wrocławskie.html">
+      Kąty Wrocławskie
+     </a>
+    </li>
+    <li data-attribute="Smolec" href="">
+     <a href="DOLNOŚLĄSKIE_Smolec.html">
+      Smolec
+     </a>
+    </li>
+    <li data-attribute="Chocieszów" href="">
+     <a href="DOLNOŚLĄSKIE_Chocieszów.html">
+      Chocieszów
+     </a>
+    </li>
+    <li data-attribute="Ruszów" href="">
+     <a href="DOLNOŚLĄSKIE_Ruszów.html">
+      Ruszów
+     </a>
+    </li>
+    <li data-attribute="Włodowice" href="">
+     <a href="DOLNOŚLĄSKIE_Włodowice.html">
+      Włodowice
+     </a>
+    </li>
+    <li data-attribute="Krzyżanowice" href="">
+     <a href="DOLNOŚLĄSKIE_Krzyżanowice.html">
+      Krzyżanowice
+     </a>
+    </li>
+    <li data-attribute="Jedlina-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Jedlina-Zdrój.html">
+      Jedlina-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Lubawka" href="">
+     <a href="DOLNOŚLĄSKIE_Lubawka.html">
+      Lubawka
+     </a>
+    </li>
+    <li data-attribute="Kruszyn" href="">
+     <a href="DOLNOŚLĄSKIE_Kruszyn.html">
+      Kruszyn
+     </a>
+    </li>
+    <li data-attribute="Kościelec" href="">
+     <a href="DOLNOŚLĄSKIE_Kościelec.html">
+      Kościelec
+     </a>
+    </li>
+    <li data-attribute="Nielubia" href="">
+     <a href="DOLNOŚLĄSKIE_Nielubia.html">
+      Nielubia
+     </a>
+    </li>
+    <li data-attribute="Jaszkotle" href="">
+     <a href="DOLNOŚLĄSKIE_Jaszkotle.html">
+      Jaszkotle
+     </a>
+    </li>
+    <li data-attribute="Chwalibożyce" href="">
+     <a href="DOLNOŚLĄSKIE_Chwalibożyce.html">
+      Chwalibożyce
+     </a>
+    </li>
+    <li data-attribute="Oleśnica Mała" href="">
+     <a href="DOLNOŚLĄSKIE_Oleśnica Mała.html">
+      Oleśnica Mała
+     </a>
+    </li>
+    <li data-attribute="Bartoszów" href="">
+     <a href="DOLNOŚLĄSKIE_Bartoszów.html">
+      Bartoszów
+     </a>
+    </li>
+    <li data-attribute="Błonie" href="">
+     <a href="DOLNOŚLĄSKIE_Błonie.html">
+      Błonie
+     </a>
+    </li>
+    <li data-attribute="Brzezinka Średzka" href="">
+     <a href="DOLNOŚLĄSKIE_Brzezinka Średzka.html">
+      Brzezinka Średzka
+     </a>
+    </li>
+    <li data-attribute="Złoty Stok" href="">
+     <a href="DOLNOŚLĄSKIE_Złoty Stok.html">
+      Złoty Stok
+     </a>
+    </li>
+    <li data-attribute="Iwiny-Osiedle" href="">
+     <a href="DOLNOŚLĄSKIE_Iwiny-Osiedle.html">
+      Iwiny-Osiedle
+     </a>
+    </li>
+    <li data-attribute="Międzyrzecze" href="">
+     <a href="DOLNOŚLĄSKIE_Międzyrzecze.html">
+      Międzyrzecze
+     </a>
+    </li>
+    <li data-attribute="Kryniczno" href="">
+     <a href="DOLNOŚLĄSKIE_Kryniczno.html">
+      Kryniczno
+     </a>
+    </li>
+    <li data-attribute="Brzeg Głogowski" href="">
+     <a href="DOLNOŚLĄSKIE_Brzeg Głogowski.html">
+      Brzeg Głogowski
+     </a>
+    </li>
+    <li data-attribute="Kromolin" href="">
+     <a href="DOLNOŚLĄSKIE_Kromolin.html">
+      Kromolin
+     </a>
+    </li>
+    <li data-attribute="Święta Katarzyna" href="">
+     <a href="DOLNOŚLĄSKIE_Święta Katarzyna.html">
+      Święta Katarzyna
+     </a>
+    </li>
+    <li data-attribute="Szyszkowa" href="">
+     <a href="DOLNOŚLĄSKIE_Szyszkowa.html">
+      Szyszkowa
+     </a>
+    </li>
+    <li data-attribute="Pszenno" href="">
+     <a href="DOLNOŚLĄSKIE_Pszenno.html">
+      Pszenno
+     </a>
+    </li>
+    <li data-attribute="Jerzmanowa" href="">
+     <a href="DOLNOŚLĄSKIE_Jerzmanowa.html">
+      Jerzmanowa
+     </a>
+    </li>
+    <li data-attribute="Jaczów" href="">
+     <a href="DOLNOŚLĄSKIE_Jaczów.html">
+      Jaczów
+     </a>
+    </li>
+    <li data-attribute="Chobienia" href="">
+     <a href="DOLNOŚLĄSKIE_Chobienia.html">
+      Chobienia
+     </a>
+    </li>
+    <li data-attribute="Jaszkowa Dolna" href="">
+     <a href="DOLNOŚLĄSKIE_Jaszkowa Dolna.html">
+      Jaszkowa Dolna
+     </a>
+    </li>
+    <li data-attribute="Krosnowice" href="">
+     <a href="DOLNOŚLĄSKIE_Krosnowice.html">
+      Krosnowice
+     </a>
+    </li>
+    <li data-attribute="Ołdrzychowice Kłodzkie" href="">
+     <a href="DOLNOŚLĄSKIE_Ołdrzychowice Kłodzkie.html">
+      Ołdrzychowice Kłodzkie
+     </a>
+    </li>
+    <li data-attribute="Pobiedna" href="">
+     <a href="DOLNOŚLĄSKIE_Pobiedna.html">
+      Pobiedna
+     </a>
+    </li>
+    <li data-attribute="Szalejów Dolny" href="">
+     <a href="DOLNOŚLĄSKIE_Szalejów Dolny.html">
+      Szalejów Dolny
+     </a>
+    </li>
+    <li data-attribute="Bierkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Bierkowice.html">
+      Bierkowice
+     </a>
+    </li>
+    <li data-attribute="Raszówka" href="">
+     <a href="DOLNOŚLĄSKIE_Raszówka.html">
+      Raszówka
+     </a>
+    </li>
+    <li data-attribute="Mirków" href="">
+     <a href="DOLNOŚLĄSKIE_Mirków.html">
+      Mirków
+     </a>
+    </li>
+    <li data-attribute="Wiązów" href="">
+     <a href="DOLNOŚLĄSKIE_Wiązów.html">
+      Wiązów
+     </a>
+    </li>
+    <li data-attribute="Tomaszów Bolesławiecki" href="">
+     <a href="DOLNOŚLĄSKIE_Tomaszów Bolesławiecki.html">
+      Tomaszów Bolesławiecki
+     </a>
+    </li>
+    <li data-attribute="Chrząstawa Wielka" href="">
+     <a href="DOLNOŚLĄSKIE_Chrząstawa Wielka.html">
+      Chrząstawa Wielka
+     </a>
+    </li>
+    <li data-attribute="Srebrna Góra" href="">
+     <a href="DOLNOŚLĄSKIE_Srebrna Góra.html">
+      Srebrna Góra
+     </a>
+    </li>
+    <li data-attribute="Stoszowice" href="">
+     <a href="DOLNOŚLĄSKIE_Stoszowice.html">
+      Stoszowice
+     </a>
+    </li>
+    <li data-attribute="Zębice" href="">
+     <a href="DOLNOŚLĄSKIE_Zębice.html">
+      Zębice
+     </a>
+    </li>
+    <li data-attribute="Miłoszyce" href="">
+     <a href="DOLNOŚLĄSKIE_Miłoszyce.html">
+      Miłoszyce
+     </a>
+    </li>
+    <li data-attribute="Chrząstawa Mała" href="">
+     <a href="DOLNOŚLĄSKIE_Chrząstawa Mała.html">
+      Chrząstawa Mała
+     </a>
+    </li>
+    <li data-attribute="Olbrachcice Wielkie" href="">
+     <a href="DOLNOŚLĄSKIE_Olbrachcice Wielkie.html">
+      Olbrachcice Wielkie
+     </a>
+    </li>
+    <li data-attribute="Czerna" href="">
+     <a href="DOLNOŚLĄSKIE_Czerna.html">
+      Czerna
+     </a>
+    </li>
+    <li data-attribute="Miłkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Miłkowice.html">
+      Miłkowice
+     </a>
+    </li>
+    <li data-attribute="Gaworzyce" href="">
+     <a href="DOLNOŚLĄSKIE_Gaworzyce.html">
+      Gaworzyce
+     </a>
+    </li>
+    <li data-attribute="Radomierzyce" href="">
+     <a href="DOLNOŚLĄSKIE_Radomierzyce.html">
+      Radomierzyce
+     </a>
+    </li>
+    <li data-attribute="Lutynia" href="">
+     <a href="DOLNOŚLĄSKIE_Lutynia.html">
+      Lutynia
+     </a>
+    </li>
+    <li data-attribute="Osiek" href="">
+     <a href="DOLNOŚLĄSKIE_Osiek.html">
+      Osiek
+     </a>
+    </li>
+    <li data-attribute="Galowice" href="">
+     <a href="DOLNOŚLĄSKIE_Galowice.html">
+      Galowice
+     </a>
+    </li>
+    <li data-attribute="Czerwona Woda" href="">
+     <a href="DOLNOŚLĄSKIE_Czerwona Woda.html">
+      Czerwona Woda
+     </a>
+    </li>
+    <li data-attribute="Gądkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Gądkowice.html">
+      Gądkowice
+     </a>
+    </li>
+    <li data-attribute="Łaziska" href="">
+     <a href="DOLNOŚLĄSKIE_Łaziska.html">
+      Łaziska
+     </a>
+    </li>
+    <li data-attribute="Krzepice" href="">
+     <a href="DOLNOŚLĄSKIE_Krzepice.html">
+      Krzepice
+     </a>
+    </li>
+    <li data-attribute="Zawidów" href="">
+     <a href="DOLNOŚLĄSKIE_Zawidów.html">
+      Zawidów
+     </a>
+    </li>
+    <li data-attribute="Kondratowice" href="">
+     <a href="DOLNOŚLĄSKIE_Kondratowice.html">
+      Kondratowice
+     </a>
+    </li>
+    <li data-attribute="Marciszów" href="">
+     <a href="DOLNOŚLĄSKIE_Marciszów.html">
+      Marciszów
+     </a>
+    </li>
+    <li data-attribute="Stankowice" href="">
+     <a href="DOLNOŚLĄSKIE_Stankowice.html">
+      Stankowice
+     </a>
+    </li>
+    <li data-attribute="Ścinawka Dolna" href="">
+     <a href="DOLNOŚLĄSKIE_Ścinawka Dolna.html">
+      Ścinawka Dolna
+     </a>
+    </li>
+    <li data-attribute="Wambierzyce" href="">
+     <a href="DOLNOŚLĄSKIE_Wambierzyce.html">
+      Wambierzyce
+     </a>
+    </li>
+    <li data-attribute="Janowice Wielkie" href="">
+     <a href="DOLNOŚLĄSKIE_Janowice Wielkie.html">
+      Janowice Wielkie
+     </a>
+    </li>
+    <li data-attribute="Łagiewniki" href="">
+     <a href="DOLNOŚLĄSKIE_Łagiewniki.html">
+      Łagiewniki
+     </a>
+    </li>
+    <li data-attribute="Chełmsko Śląskie" href="">
+     <a href="DOLNOŚLĄSKIE_Chełmsko Śląskie.html">
+      Chełmsko Śląskie
+     </a>
+    </li>
+    <li data-attribute="Grębocice" href="">
+     <a href="DOLNOŚLĄSKIE_Grębocice.html">
+      Grębocice
+     </a>
+    </li>
+    <li data-attribute="Miłków" href="">
+     <a href="DOLNOŚLĄSKIE_Miłków.html">
+      Miłków
+     </a>
+    </li>
+    <li data-attribute="Pieńsk" href="">
+     <a href="DOLNOŚLĄSKIE_Pieńsk.html">
+      Pieńsk
+     </a>
+    </li>
+    <li data-attribute="Porajów" href="">
+     <a href="DOLNOŚLĄSKIE_Porajów.html">
+      Porajów
+     </a>
+    </li>
+    <li data-attribute="Kamieniec Ząbkowicki" href="">
+     <a href="DOLNOŚLĄSKIE_Kamieniec Ząbkowicki.html">
+      Kamieniec Ząbkowicki
+     </a>
+    </li>
+    <li data-attribute="Piława Górna" href="">
+     <a href="DOLNOŚLĄSKIE_Piława Górna.html">
+      Piława Górna
+     </a>
+    </li>
+    <li data-attribute="Borów" href="">
+     <a href="DOLNOŚLĄSKIE_Borów.html">
+      Borów
+     </a>
+    </li>
+    <li data-attribute="Bożejowice" href="">
+     <a href="DOLNOŚLĄSKIE_Bożejowice.html">
+      Bożejowice
+     </a>
+    </li>
+    <li data-attribute="Brzeźnik" href="">
+     <a href="DOLNOŚLĄSKIE_Brzeźnik.html">
+      Brzeźnik
+     </a>
+    </li>
+    <li data-attribute="Ciechów" href="">
+     <a href="DOLNOŚLĄSKIE_Ciechów.html">
+      Ciechów
+     </a>
+    </li>
+    <li data-attribute="Czernica" href="">
+     <a href="DOLNOŚLĄSKIE_Czernica.html">
+      Czernica
+     </a>
+    </li>
+    <li data-attribute="Czernina" href="">
+     <a href="DOLNOŚLĄSKIE_Czernina.html">
+      Czernina
+     </a>
+    </li>
+    <li data-attribute="Danielowice" href="">
+     <a href="DOLNOŚLĄSKIE_Danielowice.html">
+      Danielowice
+     </a>
+    </li>
+    <li data-attribute="Dziadowa Kłoda" href="">
+     <a href="DOLNOŚLĄSKIE_Dziadowa Kłoda.html">
+      Dziadowa Kłoda
+     </a>
+    </li>
+    <li data-attribute="Glinka" href="">
+     <a href="DOLNOŚLĄSKIE_Glinka.html">
+      Glinka
+     </a>
+    </li>
+    <li data-attribute="Kotla" href="">
+     <a href="DOLNOŚLĄSKIE_Kotla.html">
+      Kotla
+     </a>
+    </li>
+    <li data-attribute="Kraśnik Dolny" href="">
+     <a href="DOLNOŚLĄSKIE_Kraśnik Dolny.html">
+      Kraśnik Dolny
+     </a>
+    </li>
+    <li data-attribute="Krośnice" href="">
+     <a href="DOLNOŚLĄSKIE_Krośnice.html">
+      Krośnice
+     </a>
+    </li>
+    <li data-attribute="Krzeszów" href="">
+     <a href="DOLNOŚLĄSKIE_Krzeszów.html">
+      Krzeszów
+     </a>
+    </li>
+    <li data-attribute="Wisznia Mała" href="">
+     <a href="DOLNOŚLĄSKIE_Wisznia Mała.html">
+      Wisznia Mała
+     </a>
+    </li>
+    <li data-attribute="Miłowice" href="">
+     <a href="DOLNOŚLĄSKIE_Miłowice.html">
+      Miłowice
+     </a>
+    </li>
+    <li data-attribute="Mysłakowice" href="">
+     <a href="DOLNOŚLĄSKIE_Mysłakowice.html">
+      Mysłakowice
+     </a>
+    </li>
+    <li data-attribute="Niedźwiedź" href="">
+     <a href="DOLNOŚLĄSKIE_Niedźwiedź.html">
+      Niedźwiedź
+     </a>
+    </li>
+    <li data-attribute="Nowogrodziec" href="">
+     <a href="DOLNOŚLĄSKIE_Nowogrodziec.html">
+      Nowogrodziec
+     </a>
+    </li>
+    <li data-attribute="Ocice" href="">
+     <a href="DOLNOŚLĄSKIE_Ocice.html">
+      Ocice
+     </a>
+    </li>
+    <li data-attribute="Pęgów" href="">
+     <a href="DOLNOŚLĄSKIE_Pęgów.html">
+      Pęgów
+     </a>
+    </li>
+    <li data-attribute="Pisarzowice" href="">
+     <a href="DOLNOŚLĄSKIE_Pisarzowice.html">
+      Pisarzowice
+     </a>
+    </li>
+    <li data-attribute="Polwica" href="">
+     <a href="DOLNOŚLĄSKIE_Polwica.html">
+      Polwica
+     </a>
+    </li>
+    <li data-attribute="Rogów Sobócki" href="">
+     <a href="DOLNOŚLĄSKIE_Rogów Sobócki.html">
+      Rogów Sobócki
+     </a>
+    </li>
+    <li data-attribute="Stolec" href="">
+     <a href="DOLNOŚLĄSKIE_Stolec.html">
+      Stolec
+     </a>
+    </li>
+    <li data-attribute="Strzeszów" href="">
+     <a href="DOLNOŚLĄSKIE_Strzeszów.html">
+      Strzeszów
+     </a>
+    </li>
+    <li data-attribute="Sulików" href="">
+     <a href="DOLNOŚLĄSKIE_Sulików.html">
+      Sulików
+     </a>
+    </li>
+    <li data-attribute="Świątniki" href="">
+     <a href="DOLNOŚLĄSKIE_Świątniki.html">
+      Świątniki
+     </a>
+    </li>
+    <li data-attribute="Szczepanów" href="">
+     <a href="DOLNOŚLĄSKIE_Szczepanów.html">
+      Szczepanów
+     </a>
+    </li>
+    <li data-attribute="Szczytna" href="">
+     <a href="DOLNOŚLĄSKIE_Szczytna.html">
+      Szczytna
+     </a>
+    </li>
+    <li data-attribute="Szklary-Huta" href="">
+     <a href="DOLNOŚLĄSKIE_Szklary-Huta.html">
+      Szklary-Huta
+     </a>
+    </li>
+    <li data-attribute="Trzebień" href="">
+     <a href="DOLNOŚLĄSKIE_Trzebień.html">
+      Trzebień
+     </a>
+    </li>
+    <li data-attribute="Żeliszów" href="">
+     <a href="DOLNOŚLĄSKIE_Żeliszów.html">
+      Żeliszów
+     </a>
+    </li>
+    <li data-attribute="Żerniki Wrocławskie" href="">
+     <a href="DOLNOŚLĄSKIE_Żerniki Wrocławskie.html">
+      Żerniki Wrocławskie
+     </a>
+    </li>
+    <li data-attribute="Niemcza" href="">
+     <a href="DOLNOŚLĄSKIE_Niemcza.html">
+      Niemcza
+     </a>
+    </li>
+    <li data-attribute="Głuszyca" href="">
+     <a href="DOLNOŚLĄSKIE_Głuszyca.html">
+      Głuszyca
+     </a>
+    </li>
+    <li data-attribute="Kunice" href="">
+     <a href="DOLNOŚLĄSKIE_Kunice.html">
+      Kunice
+     </a>
+    </li>
+    <li data-attribute="Jaworzyna Śląska" href="">
+     <a href="DOLNOŚLĄSKIE_Jaworzyna Śląska.html">
+      Jaworzyna Śląska
+     </a>
+    </li>
+    <li data-attribute="Wąsosz" href="">
+     <a href="DOLNOŚLĄSKIE_Wąsosz.html">
+      Wąsosz
+     </a>
+    </li>
+    <li data-attribute="Jugów" href="">
+     <a href="DOLNOŚLĄSKIE_Jugów.html">
+      Jugów
+     </a>
+    </li>
+    <li data-attribute="Kobierzyce" href="">
+     <a href="DOLNOŚLĄSKIE_Kobierzyce.html">
+      Kobierzyce
+     </a>
+    </li>
+    <li data-attribute="Paszowice" href="">
+     <a href="DOLNOŚLĄSKIE_Paszowice.html">
+      Paszowice
+     </a>
+    </li>
+    <li data-attribute="Pogalewo Wielkie" href="">
+     <a href="DOLNOŚLĄSKIE_Pogalewo Wielkie.html">
+      Pogalewo Wielkie
+     </a>
+    </li>
+    <li data-attribute="Przygórze" href="">
+     <a href="DOLNOŚLĄSKIE_Przygórze.html">
+      Przygórze
+     </a>
+    </li>
+    <li data-attribute="Pustków Żurawski" href="">
+     <a href="DOLNOŚLĄSKIE_Pustków Żurawski.html">
+      Pustków Żurawski
+     </a>
+    </li>
+    <li data-attribute="Ujazd Górny" href="">
+     <a href="DOLNOŚLĄSKIE_Ujazd Górny.html">
+      Ujazd Górny
+     </a>
+    </li>
+    <li data-attribute="Wińsko" href="">
+     <a href="DOLNOŚLĄSKIE_Wińsko.html">
+      Wińsko
+     </a>
+    </li>
+    <li data-attribute="Wolibórz" href="">
+     <a href="DOLNOŚLĄSKIE_Wolibórz.html">
+      Wolibórz
+     </a>
+    </li>
+    <li data-attribute="Brzeźnica" href="">
+     <a href="DOLNOŚLĄSKIE_Brzeźnica.html">
+      Brzeźnica
+     </a>
+    </li>
+    <li data-attribute="Borowa" href="">
+     <a href="DOLNOŚLĄSKIE_Borowa.html">
+      Borowa
+     </a>
+    </li>
+    <li data-attribute="Jeżów Sudecki" href="">
+     <a href="DOLNOŚLĄSKIE_Jeżów Sudecki.html">
+      Jeżów Sudecki
+     </a>
+    </li>
+    <li data-attribute="Męcinka" href="">
+     <a href="DOLNOŚLĄSKIE_Męcinka.html">
+      Męcinka
+     </a>
+    </li>
+    <li data-attribute="Niechlów" href="">
+     <a href="DOLNOŚLĄSKIE_Niechlów.html">
+      Niechlów
+     </a>
+    </li>
+    <li data-attribute="Rzeszotary" href="">
+     <a href="DOLNOŚLĄSKIE_Rzeszotary.html">
+      Rzeszotary
+     </a>
+    </li>
+    <li data-attribute="Sadków" href="">
+     <a href="DOLNOŚLĄSKIE_Sadków.html">
+      Sadków
+     </a>
+    </li>
+    <li data-attribute="Ścinawa" href="">
+     <a href="DOLNOŚLĄSKIE_Ścinawa.html">
+      Ścinawa
+     </a>
+    </li>
+    <li data-attribute="Siciny" href="">
+     <a href="DOLNOŚLĄSKIE_Siciny.html">
+      Siciny
+     </a>
+    </li>
+    <li data-attribute="Ślubów" href="">
+     <a href="DOLNOŚLĄSKIE_Ślubów.html">
+      Ślubów
+     </a>
+    </li>
+    <li data-attribute="Witoszów Dolny" href="">
+     <a href="DOLNOŚLĄSKIE_Witoszów Dolny.html">
+      Witoszów Dolny
+     </a>
+    </li>
+    <li data-attribute="Witoszyce" href="">
+     <a href="DOLNOŚLĄSKIE_Witoszyce.html">
+      Witoszyce
+     </a>
+    </li>
+    <li data-attribute="Zaręba" href="">
+     <a href="DOLNOŚLĄSKIE_Zaręba.html">
+      Zaręba
+     </a>
+    </li>
+    <li data-attribute="Zawonia" href="">
+     <a href="DOLNOŚLĄSKIE_Zawonia.html">
+      Zawonia
+     </a>
+    </li>
+    <li data-attribute="Wleń" href="">
+     <a href="DOLNOŚLĄSKIE_Wleń.html">
+      Wleń
+     </a>
+    </li>
+    <li data-attribute="Mąkolno" href="">
+     <a href="DOLNOŚLĄSKIE_Mąkolno.html">
+      Mąkolno
+     </a>
+    </li>
+    <li data-attribute="Lewin Kłodzki" href="">
+     <a href="DOLNOŚLĄSKIE_Lewin Kłodzki.html">
+      Lewin Kłodzki
+     </a>
+    </li>
+    <li data-attribute="Goszczyna" href="">
+     <a href="DOLNOŚLĄSKIE_Goszczyna.html">
+      Goszczyna
+     </a>
+    </li>
+    <li data-attribute="Olszany" href="">
+     <a href="DOLNOŚLĄSKIE_Olszany.html">
+      Olszany
+     </a>
+    </li>
+    <li data-attribute="Rząsiny" href="">
+     <a href="DOLNOŚLĄSKIE_Rząsiny.html">
+      Rząsiny
+     </a>
+    </li>
+    <li data-attribute="Raciborowice Dolne" href="">
+     <a href="DOLNOŚLĄSKIE_Raciborowice Dolne.html">
+      Raciborowice Dolne
+     </a>
+    </li>
+    <li data-attribute="Wójcice" href="">
+     <a href="DOLNOŚLĄSKIE_Wójcice.html">
+      Wójcice
+     </a>
+    </li>
+    <li data-attribute="Kuropatnik" href="">
+     <a href="DOLNOŚLĄSKIE_Kuropatnik.html">
+      Kuropatnik
+     </a>
+    </li>
+    <li data-attribute="Kostrza" href="">
+     <a href="DOLNOŚLĄSKIE_Kostrza.html">
+      Kostrza
+     </a>
+    </li>
+    <li data-attribute="Jaroszów" href="">
+     <a href="DOLNOŚLĄSKIE_Jaroszów.html">
+      Jaroszów
+     </a>
+    </li>
+    <li data-attribute="Zielenice" href="">
+     <a href="DOLNOŚLĄSKIE_Zielenice.html">
+      Zielenice
+     </a>
+    </li>
+    <li data-attribute="Goczałków" href="">
+     <a href="DOLNOŚLĄSKIE_Goczałków.html">
+      Goczałków
+     </a>
+    </li>
+    <li data-attribute="Borek Strzeliński" href="">
+     <a href="DOLNOŚLĄSKIE_Borek Strzeliński.html">
+      Borek Strzeliński
+     </a>
+    </li>
+    <li data-attribute="Warta Bolesławiecka" href="">
+     <a href="DOLNOŚLĄSKIE_Warta Bolesławiecka.html">
+      Warta Bolesławiecka
+     </a>
+    </li>
+    <li data-attribute="Jugowice" href="">
+     <a href="DOLNOŚLĄSKIE_Jugowice.html">
+      Jugowice
+     </a>
+    </li>
+    <li data-attribute="Czarnoborsko" href="">
+     <a href="DOLNOŚLĄSKIE_Czarnoborsko.html">
+      Czarnoborsko
+     </a>
+    </li>
+    <li data-attribute="Płoski" href="">
+     <a href="DOLNOŚLĄSKIE_Płoski.html">
+      Płoski
+     </a>
+    </li>
+    <li data-attribute="Jordanów Śląski" href="">
+     <a href="DOLNOŚLĄSKIE_Jordanów Śląski.html">
+      Jordanów Śląski
+     </a>
+    </li>
+    <li data-attribute="Kowalowa" href="">
+     <a href="DOLNOŚLĄSKIE_Kowalowa.html">
+      Kowalowa
+     </a>
+    </li>
+    <li data-attribute="Minkowice Oławskie" href="">
+     <a href="DOLNOŚLĄSKIE_Minkowice Oławskie.html">
+      Minkowice Oławskie
+     </a>
+    </li>
+    <li data-attribute="Szczytnica" href="">
+     <a href="DOLNOŚLĄSKIE_Szczytnica.html">
+      Szczytnica
+     </a>
+    </li>
+    <li data-attribute="Biskupice Podgórne" href="">
+     <a href="DOLNOŚLĄSKIE_Biskupice Podgórne.html">
+      Biskupice Podgórne
+     </a>
+    </li>
+    <li data-attribute="Jędrzychowice" href="">
+     <a href="DOLNOŚLĄSKIE_Jędrzychowice.html">
+      Jędrzychowice
+     </a>
+    </li>
+    <li data-attribute="Bystrzyca" href="">
+     <a href="DOLNOŚLĄSKIE_Bystrzyca.html">
+      Bystrzyca
+     </a>
+    </li>
+    <li data-attribute="Bystrzyca Dolna" href="">
+     <a href="DOLNOŚLĄSKIE_Bystrzyca Dolna.html">
+      Bystrzyca Dolna
+     </a>
+    </li>
+    <li data-attribute="Cieszków" href="">
+     <a href="DOLNOŚLĄSKIE_Cieszków.html">
+      Cieszków
+     </a>
+    </li>
+    <li data-attribute="Gać" href="">
+     <a href="DOLNOŚLĄSKIE_Gać.html">
+      Gać
+     </a>
+    </li>
+    <li data-attribute="Malczyce" href="">
+     <a href="DOLNOŚLĄSKIE_Malczyce.html">
+      Malczyce
+     </a>
+    </li>
+    <li data-attribute="Marcinowice" href="">
+     <a href="DOLNOŚLĄSKIE_Marcinowice.html">
+      Marcinowice
+     </a>
+    </li>
+    <li data-attribute="Miękinia" href="">
+     <a href="DOLNOŚLĄSKIE_Miękinia.html">
+      Miękinia
+     </a>
+    </li>
+    <li data-attribute="Mietków" href="">
+     <a href="DOLNOŚLĄSKIE_Mietków.html">
+      Mietków
+     </a>
+    </li>
+    <li data-attribute="Przedborowa" href="">
+     <a href="DOLNOŚLĄSKIE_Przedborowa.html">
+      Przedborowa
+     </a>
+    </li>
+    <li data-attribute="Serby" href="">
+     <a href="DOLNOŚLĄSKIE_Serby.html">
+      Serby
+     </a>
+    </li>
+    <li data-attribute="Targoszyn" href="">
+     <a href="DOLNOŚLĄSKIE_Targoszyn.html">
+      Targoszyn
+     </a>
+    </li>
+    <li data-attribute="Irządze" href="">
+     <a href="DOLNOŚLĄSKIE_Irządze.html">
+      Irządze
+     </a>
+    </li>
+    <li data-attribute="Jemielno" href="">
+     <a href="DOLNOŚLĄSKIE_Jemielno.html">
+      Jemielno
+     </a>
+    </li>
+    <li data-attribute="Rogoźnica" href="">
+     <a href="DOLNOŚLĄSKIE_Rogoźnica.html">
+      Rogoźnica
+     </a>
+    </li>
+    <li data-attribute="Golędzinów" href="">
+     <a href="DOLNOŚLĄSKIE_Golędzinów.html">
+      Golędzinów
+     </a>
+    </li>
+    <li data-attribute="Drzemlikowice" href="">
+     <a href="DOLNOŚLĄSKIE_Drzemlikowice.html">
+      Drzemlikowice
+     </a>
+    </li>
+    <li data-attribute="Spalice" href="">
+     <a href="DOLNOŚLĄSKIE_Spalice.html">
+      Spalice
+     </a>
+    </li>
+    <li data-attribute="Szczodre" href="">
+     <a href="DOLNOŚLĄSKIE_Szczodre.html">
+      Szczodre
+     </a>
+    </li>
+    <li data-attribute="Żółkiewka" href="">
+     <a href="DOLNOŚLĄSKIE_Żółkiewka.html">
+      Żółkiewka
+     </a>
+    </li>
+    <li data-attribute="Brzezia Łąka" href="">
+     <a href="DOLNOŚLĄSKIE_Brzezia Łąka.html">
+      Brzezia Łąka
+     </a>
+    </li>
+    <li data-attribute="Żurawice" href="">
+     <a href="DOLNOŚLĄSKIE_Żurawice.html">
+      Żurawice
+     </a>
+    </li>
+    <li data-attribute="Dobromierz" href="">
+     <a href="DOLNOŚLĄSKIE_Dobromierz.html">
+      Dobromierz
+     </a>
+    </li>
+    <li data-attribute="Krzydlina Mała" href="">
+     <a href="DOLNOŚLĄSKIE_Krzydlina Mała.html">
+      Krzydlina Mała
+     </a>
+    </li>
+    <li data-attribute="Krzeczyn Wielki" href="">
+     <a href="DOLNOŚLĄSKIE_Krzeczyn Wielki.html">
+      Krzeczyn Wielki
+     </a>
+    </li>
+    <li data-attribute="Pobiel" href="">
+     <a href="DOLNOŚLĄSKIE_Pobiel.html">
+      Pobiel
+     </a>
+    </li>
+    <li data-attribute="Barkowo" href="">
+     <a href="DOLNOŚLĄSKIE_Barkowo.html">
+      Barkowo
+     </a>
+    </li>
+    <li data-attribute="Powidzko" href="">
+     <a href="DOLNOŚLĄSKIE_Powidzko.html">
+      Powidzko
+     </a>
+    </li>
+    <li data-attribute="Korzeńsko" href="">
+     <a href="DOLNOŚLĄSKIE_Korzeńsko.html">
+      Korzeńsko
+     </a>
+    </li>
+    <li data-attribute="Wawrzyszów" href="">
+     <a href="DOLNOŚLĄSKIE_Wawrzyszów.html">
+      Wawrzyszów
+     </a>
+    </li>
+    <li data-attribute="Radziądz" href="">
+     <a href="DOLNOŚLĄSKIE_Radziądz.html">
+      Radziądz
+     </a>
+    </li>
+    <li data-attribute="Roztoka" href="">
+     <a href="DOLNOŚLĄSKIE_Roztoka.html">
+      Roztoka
+     </a>
+    </li>
+    <li data-attribute="Gierałtowiec" href="">
+     <a href="DOLNOŚLĄSKIE_Gierałtowiec.html">
+      Gierałtowiec
+     </a>
+    </li>
+    <li data-attribute="Jegłowa" href="">
+     <a href="DOLNOŚLĄSKIE_Jegłowa.html">
+      Jegłowa
+     </a>
+    </li>
+    <li data-attribute="Krzywa" href="">
+     <a href="DOLNOŚLĄSKIE_Krzywa.html">
+      Krzywa
+     </a>
+    </li>
+    <li data-attribute="Księginice" href="">
+     <a href="DOLNOŚLĄSKIE_Księginice.html">
+      Księginice
+     </a>
+    </li>
+    <li data-attribute="Miłoradzice" href="">
+     <a href="DOLNOŚLĄSKIE_Miłoradzice.html">
+      Miłoradzice
+     </a>
+    </li>
+    <li data-attribute="Niemstów" href="">
+     <a href="DOLNOŚLĄSKIE_Niemstów.html">
+      Niemstów
+     </a>
+    </li>
+    <li data-attribute="Parchów" href="">
+     <a href="DOLNOŚLĄSKIE_Parchów.html">
+      Parchów
+     </a>
+    </li>
+    <li data-attribute="Rakoszyce" href="">
+     <a href="DOLNOŚLĄSKIE_Rakoszyce.html">
+      Rakoszyce
+     </a>
+    </li>
+    <li data-attribute="Rokitnica" href="">
+     <a href="DOLNOŚLĄSKIE_Rokitnica.html">
+      Rokitnica
+     </a>
+    </li>
+    <li data-attribute="Ruja" href="">
+     <a href="DOLNOŚLĄSKIE_Ruja.html">
+      Ruja
+     </a>
+    </li>
+    <li data-attribute="Sarby" href="">
+     <a href="DOLNOŚLĄSKIE_Sarby.html">
+      Sarby
+     </a>
+    </li>
+    <li data-attribute="Składowice" href="">
+     <a href="DOLNOŚLĄSKIE_Składowice.html">
+      Składowice
+     </a>
+    </li>
+    <li data-attribute="Szklary Dolne" href="">
+     <a href="DOLNOŚLĄSKIE_Szklary Dolne.html">
+      Szklary Dolne
+     </a>
+    </li>
+    <li data-attribute="Sokołowiec" href="">
+     <a href="DOLNOŚLĄSKIE_Sokołowiec.html">
+      Sokołowiec
+     </a>
+    </li>
+    <li data-attribute="Jaworów" href="">
+     <a href="DOLNOŚLĄSKIE_Jaworów.html">
+      Jaworów
+     </a>
+    </li>
+    <li data-attribute="Nowy Kościół" href="">
+     <a href="DOLNOŚLĄSKIE_Nowy Kościół.html">
+      Nowy Kościół
+     </a>
+    </li>
+    <li data-attribute="Osła" href="">
+     <a href="DOLNOŚLĄSKIE_Osła.html">
+      Osła
+     </a>
+    </li>
+    <li data-attribute="Pustków Wilczkowski" href="">
+     <a href="DOLNOŚLĄSKIE_Pustków Wilczkowski.html">
+      Pustków Wilczkowski
+     </a>
+    </li>
+    <li data-attribute="Trzebnice" href="">
+     <a href="DOLNOŚLĄSKIE_Trzebnice.html">
+      Trzebnice
+     </a>
+    </li>
+    <li data-attribute="Wiercień" href="">
+     <a href="DOLNOŚLĄSKIE_Wiercień.html">
+      Wiercień
+     </a>
+    </li>
+    <li data-attribute="Wilków-Osiedle" href="">
+     <a href="DOLNOŚLĄSKIE_Wilków-Osiedle.html">
+      Wilków-Osiedle
+     </a>
+    </li>
+    <li data-attribute="Żabice" href="">
+     <a href="DOLNOŚLĄSKIE_Żabice.html">
+      Żabice
+     </a>
+    </li>
+    <li data-attribute="Wszechświęte" href="">
+     <a href="DOLNOŚLĄSKIE_Wszechświęte.html">
+      Wszechświęte
+     </a>
+    </li>
+    <li data-attribute="Międzylesie" href="">
+     <a href="DOLNOŚLĄSKIE_Międzylesie.html">
+      Międzylesie
+     </a>
+    </li>
+    <li data-attribute="Ciepłowody" href="">
+     <a href="DOLNOŚLĄSKIE_Ciepłowody.html">
+      Ciepłowody
+     </a>
+    </li>
+    <li data-attribute="Kościelnik" href="">
+     <a href="DOLNOŚLĄSKIE_Kościelnik.html">
+      Kościelnik
+     </a>
+    </li>
+    <li data-attribute="Radogoszcz" href="">
+     <a href="DOLNOŚLĄSKIE_Radogoszcz.html">
+      Radogoszcz
+     </a>
+    </li>
+    <li data-attribute="Radostów Średni" href="">
+     <a href="DOLNOŚLĄSKIE_Radostów Średni.html">
+      Radostów Średni
+     </a>
+    </li>
+    <li data-attribute="Zagrodno" href="">
+     <a href="DOLNOŚLĄSKIE_Zagrodno.html">
+      Zagrodno
+     </a>
+    </li>
+    <li data-attribute="Budziszów Wielki" href="">
+     <a href="DOLNOŚLĄSKIE_Budziszów Wielki.html">
+      Budziszów Wielki
+     </a>
+    </li>
+    <li data-attribute="Miszkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Miszkowice.html">
+      Miszkowice
+     </a>
+    </li>
+    <li data-attribute="Szarocin" href="">
+     <a href="DOLNOŚLĄSKIE_Szarocin.html">
+      Szarocin
+     </a>
+    </li>
+    <li data-attribute="Tomisław" href="">
+     <a href="DOLNOŚLĄSKIE_Tomisław.html">
+      Tomisław
+     </a>
+    </li>
+    <li data-attribute="Przedmoście" href="">
+     <a href="DOLNOŚLĄSKIE_Przedmoście.html">
+      Przedmoście
+     </a>
+    </li>
+    <li data-attribute="Wągrodno" href="">
+     <a href="DOLNOŚLĄSKIE_Wągrodno.html">
+      Wągrodno
+     </a>
+    </li>
+    <li data-attribute="Udanin" href="">
+     <a href="DOLNOŚLĄSKIE_Udanin.html">
+      Udanin
+     </a>
+    </li>
+    <li data-attribute="Zastruże" href="">
+     <a href="DOLNOŚLĄSKIE_Zastruże.html">
+      Zastruże
+     </a>
+    </li>
+    <li data-attribute="Prusy" href="">
+     <a href="DOLNOŚLĄSKIE_Prusy.html">
+      Prusy
+     </a>
+    </li>
+    <li data-attribute="Prusice" href="">
+     <a href="DOLNOŚLĄSKIE_Prusice.html">
+      Prusice
+     </a>
+    </li>
+    <li data-attribute="Siedlce" href="">
+     <a href="DOLNOŚLĄSKIE_Siedlce.html">
+      Siedlce
+     </a>
+    </li>
+    <li data-attribute="Siekierczyn" href="">
+     <a href="DOLNOŚLĄSKIE_Siekierczyn.html">
+      Siekierczyn
+     </a>
+    </li>
+    <li data-attribute="Głębowice" href="">
+     <a href="DOLNOŚLĄSKIE_Głębowice.html">
+      Głębowice
+     </a>
+    </li>
+    <li data-attribute="Budziwojów" href="">
+     <a href="DOLNOŚLĄSKIE_Budziwojów.html">
+      Budziwojów
+     </a>
+    </li>
+    <li data-attribute="Dłużyna Dolna" href="">
+     <a href="DOLNOŚLĄSKIE_Dłużyna Dolna.html">
+      Dłużyna Dolna
+     </a>
+    </li>
+    <li data-attribute="Mieczków" href="">
+     <a href="DOLNOŚLĄSKIE_Mieczków.html">
+      Mieczków
+     </a>
+    </li>
+    <li data-attribute="Osolin" href="">
+     <a href="DOLNOŚLĄSKIE_Osolin.html">
+      Osolin
+     </a>
+    </li>
+    <li data-attribute="Żarska Wieś" href="">
+     <a href="DOLNOŚLĄSKIE_Żarska Wieś.html">
+      Żarska Wieś
+     </a>
+    </li>
+    <li data-attribute="Orzeszków" href="">
+     <a href="DOLNOŚLĄSKIE_Orzeszków.html">
+      Orzeszków
+     </a>
+    </li>
+    <li data-attribute="Domaniów" href="">
+     <a href="DOLNOŚLĄSKIE_Domaniów.html">
+      Domaniów
+     </a>
+    </li>
+    <li data-attribute="Gierałtów" href="">
+     <a href="DOLNOŚLĄSKIE_Gierałtów.html">
+      Gierałtów
+     </a>
+    </li>
+    <li data-attribute="Gościszów" href="">
+     <a href="DOLNOŚLĄSKIE_Gościszów.html">
+      Gościszów
+     </a>
+    </li>
+    <li data-attribute="Pielgrzymka" href="">
+     <a href="DOLNOŚLĄSKIE_Pielgrzymka.html">
+      Pielgrzymka
+     </a>
+    </li>
+    <li data-attribute="Nowa Wieś Grodziska" href="">
+     <a href="DOLNOŚLĄSKIE_Nowa Wieś Grodziska.html">
+      Nowa Wieś Grodziska
+     </a>
+    </li>
+    <li data-attribute="Rzeplin" href="">
+     <a href="DOLNOŚLĄSKIE_Rzeplin.html">
+      Rzeplin
+     </a>
+    </li>
+    <li data-attribute="Tuszyn" href="">
+     <a href="DOLNOŚLĄSKIE_Tuszyn.html">
+      Tuszyn
+     </a>
+    </li>
+    <li data-attribute="Wilczków" href="">
+     <a href="DOLNOŚLĄSKIE_Wilczków.html">
+      Wilczków
+     </a>
+    </li>
+    <li data-attribute="Oleszna" href="">
+     <a href="DOLNOŚLĄSKIE_Oleszna.html">
+      Oleszna
+     </a>
+    </li>
+    <li data-attribute="Ratowice" href="">
+     <a href="DOLNOŚLĄSKIE_Ratowice.html">
+      Ratowice
+     </a>
+    </li>
+    <li data-attribute="Polakowice" href="">
+     <a href="DOLNOŚLĄSKIE_Polakowice.html">
+      Polakowice
+     </a>
+    </li>
+    <li data-attribute="Witków" href="">
+     <a href="DOLNOŚLĄSKIE_Witków.html">
+      Witków
+     </a>
+    </li>
+    <li data-attribute="Nowa Wieś" href="">
+     <a href="DOLNOŚLĄSKIE_Nowa Wieś.html">
+      Nowa Wieś
+     </a>
+    </li>
+    <li data-attribute="Sułów" href="">
+     <a href="DOLNOŚLĄSKIE_Sułów.html">
+      Sułów
+     </a>
+    </li>
+    <li data-attribute="Smolna" href="">
+     <a href="DOLNOŚLĄSKIE_Smolna.html">
+      Smolna
+     </a>
+    </li>
+    <li data-attribute="Łozina" href="">
+     <a href="DOLNOŚLĄSKIE_Łozina.html">
+      Łozina
+     </a>
+    </li>
+    <li data-attribute="Osiek Łużycki" href="">
+     <a href="DOLNOŚLĄSKIE_Osiek Łużycki.html">
+      Osiek Łużycki
+     </a>
+    </li>
+    <li data-attribute="Rzeczyca" href="">
+     <a href="DOLNOŚLĄSKIE_Rzeczyca.html">
+      Rzeczyca
+     </a>
+    </li>
+    <li data-attribute="Stary Wołów" href="">
+     <a href="DOLNOŚLĄSKIE_Stary Wołów.html">
+      Stary Wołów
+     </a>
+    </li>
+    <li data-attribute="Dąbie" href="">
+     <a href="DOLNOŚLĄSKIE_Dąbie.html">
+      Dąbie
+     </a>
+    </li>
+    <li data-attribute="Czeszów" href="">
+     <a href="DOLNOŚLĄSKIE_Czeszów.html">
+      Czeszów
+     </a>
+    </li>
+    <li data-attribute="Skokowa" href="">
+     <a href="DOLNOŚLĄSKIE_Skokowa.html">
+      Skokowa
+     </a>
+    </li>
+    <li data-attribute="Buczyna" href="">
+     <a href="DOLNOŚLĄSKIE_Buczyna.html">
+      Buczyna
+     </a>
+    </li>
+    <li data-attribute="Sosnówka" href="">
+     <a href="DOLNOŚLĄSKIE_Sosnówka.html">
+      Sosnówka
+     </a>
+    </li>
+    <li data-attribute="Ujeździec Wielki" href="">
+     <a href="DOLNOŚLĄSKIE_Ujeździec Wielki.html">
+      Ujeździec Wielki
+     </a>
+    </li>
+    <li data-attribute="Pakosławsko" href="">
+     <a href="DOLNOŚLĄSKIE_Pakosławsko.html">
+      Pakosławsko
+     </a>
+    </li>
+    <li data-attribute="Lipa" href="">
+     <a href="DOLNOŚLĄSKIE_Lipa.html">
+      Lipa
+     </a>
+    </li>
+    <li data-attribute="Zbytowa" href="">
+     <a href="DOLNOŚLĄSKIE_Zbytowa.html">
+      Zbytowa
+     </a>
+    </li>
+    <li data-attribute="Bierna" href="">
+     <a href="DOLNOŚLĄSKIE_Bierna.html">
+      Bierna
+     </a>
+    </li>
+    <li data-attribute="Podgórzyn" href="">
+     <a href="DOLNOŚLĄSKIE_Podgórzyn.html">
+      Podgórzyn
+     </a>
+    </li>
+    <li data-attribute="Sokołowice" href="">
+     <a href="DOLNOŚLĄSKIE_Sokołowice.html">
+      Sokołowice
+     </a>
+    </li>
+    <li data-attribute="Wilków" href="">
+     <a href="DOLNOŚLĄSKIE_Wilków.html">
+      Wilków
+     </a>
+    </li>
+    <li data-attribute="Tymowa" href="">
+     <a href="DOLNOŚLĄSKIE_Tymowa.html">
+      Tymowa
+     </a>
+    </li>
+    <li data-attribute="Trójca" href="">
+     <a href="DOLNOŚLĄSKIE_Trójca.html">
+      Trójca
+     </a>
+    </li>
+    <li data-attribute="Bukowice" href="">
+     <a href="DOLNOŚLĄSKIE_Bukowice.html">
+      Bukowice
+     </a>
+    </li>
+    <li data-attribute="Kaczorów" href="">
+     <a href="DOLNOŚLĄSKIE_Kaczorów.html">
+      Kaczorów
+     </a>
+    </li>
+    <li data-attribute="Siedlęcin" href="">
+     <a href="DOLNOŚLĄSKIE_Siedlęcin.html">
+      Siedlęcin
+     </a>
+    </li>
+    <li data-attribute="Rębiszów" href="">
+     <a href="DOLNOŚLĄSKIE_Rębiszów.html">
+      Rębiszów
+     </a>
+    </li>
+    <li data-attribute="Kuźniczysko" href="">
+     <a href="DOLNOŚLĄSKIE_Kuźniczysko.html">
+      Kuźniczysko
+     </a>
+    </li>
+    <li data-attribute="Karczyce" href="">
+     <a href="DOLNOŚLĄSKIE_Karczyce.html">
+      Karczyce
+     </a>
+    </li>
+    <li data-attribute="Pastuchów" href="">
+     <a href="DOLNOŚLĄSKIE_Pastuchów.html">
+      Pastuchów
+     </a>
+    </li>
+    <li data-attribute="Krzelów" href="">
+     <a href="DOLNOŚLĄSKIE_Krzelów.html">
+      Krzelów
+     </a>
+    </li>
+    <li data-attribute="Jerzmanki" href="">
+     <a href="DOLNOŚLĄSKIE_Jerzmanki.html">
+      Jerzmanki
+     </a>
+    </li>
+    <li data-attribute="Wykroty" href="">
+     <a href="DOLNOŚLĄSKIE_Wykroty.html">
+      Wykroty
+     </a>
+    </li>
+    <li data-attribute="Imbramowice" href="">
+     <a href="DOLNOŚLĄSKIE_Imbramowice.html">
+      Imbramowice
+     </a>
+    </li>
+    <li data-attribute="Uraz" href="">
+     <a href="DOLNOŚLĄSKIE_Uraz.html">
+      Uraz
+     </a>
+    </li>
+    <li data-attribute="Łagów" href="">
+     <a href="DOLNOŚLĄSKIE_Łagów.html">
+      Łagów
+     </a>
+    </li>
+    <li data-attribute="Wziąchowo Wielkie" href="">
+     <a href="DOLNOŚLĄSKIE_Wziąchowo Wielkie.html">
+      Wziąchowo Wielkie
+     </a>
+    </li>
+    <li data-attribute="Trzebieszowice" href="">
+     <a href="DOLNOŚLĄSKIE_Trzebieszowice.html">
+      Trzebieszowice
+     </a>
+    </li>
+    <li data-attribute="Proboszczów" href="">
+     <a href="DOLNOŚLĄSKIE_Proboszczów.html">
+      Proboszczów
+     </a>
+    </li>
+    <li data-attribute="Wierzbno" href="">
+     <a href="DOLNOŚLĄSKIE_Wierzbno.html">
+      Wierzbno
+     </a>
+    </li>
+    <li data-attribute="Kopaniec" href="">
+     <a href="DOLNOŚLĄSKIE_Kopaniec.html">
+      Kopaniec
+     </a>
+    </li>
+    <li data-attribute="Kuźnica Czeszycka" href="">
+     <a href="DOLNOŚLĄSKIE_Kuźnica Czeszycka.html">
+      Kuźnica Czeszycka
+     </a>
+    </li>
+    <li data-attribute="Platerówka" href="">
+     <a href="DOLNOŚLĄSKIE_Platerówka.html">
+      Platerówka
+     </a>
+    </li>
+    <li data-attribute="Wojcieszyce" href="">
+     <a href="DOLNOŚLĄSKIE_Wojcieszyce.html">
+      Wojcieszyce
+     </a>
+    </li>
+    <li data-attribute="Żelowice" href="">
+     <a href="DOLNOŚLĄSKIE_Żelowice.html">
+      Żelowice
+     </a>
+    </li>
+    <li data-attribute="Gniewków" href="">
+     <a href="DOLNOŚLĄSKIE_Gniewków.html">
+      Gniewków
+     </a>
+    </li>
+    <li data-attribute="Strzelce" href="">
+     <a href="DOLNOŚLĄSKIE_Strzelce.html">
+      Strzelce
+     </a>
+    </li>
+    <li data-attribute="Kostomłoty" href="">
+     <a href="DOLNOŚLĄSKIE_Kostomłoty.html">
+      Kostomłoty
+     </a>
+    </li>
+    <li data-attribute="Dobrzeń" href="">
+     <a href="DOLNOŚLĄSKIE_Dobrzeń.html">
+      Dobrzeń
+     </a>
+    </li>
+    <li data-attribute="Opolno-Zdrój" href="">
+     <a href="DOLNOŚLĄSKIE_Opolno-Zdrój.html">
+      Opolno-Zdrój
+     </a>
+    </li>
+    <li data-attribute="Działoszyn" href="">
+     <a href="DOLNOŚLĄSKIE_Działoszyn.html">
+      Działoszyn
+     </a>
+    </li>
+    <li data-attribute="Węgry" href="">
+     <a href="DOLNOŚLĄSKIE_Węgry.html">
+      Węgry
+     </a>
+    </li>
+    <li data-attribute="Pogwizdów" href="">
+     <a href="DOLNOŚLĄSKIE_Pogwizdów.html">
+      Pogwizdów
+     </a>
+    </li>
+    <li data-attribute="Ścięgny" href="">
+     <a href="DOLNOŚLĄSKIE_Ścięgny.html">
+      Ścięgny
+     </a>
+    </li>
+    <li data-attribute="Ligota Mała" href="">
+     <a href="DOLNOŚLĄSKIE_Ligota Mała.html">
+      Ligota Mała
+     </a>
+    </li>
+    <li data-attribute="Zbylutów" href="">
+     <a href="DOLNOŚLĄSKIE_Zbylutów.html">
+      Zbylutów
+     </a>
+    </li>
+    <li data-attribute="Opolnica" href="">
+     <a href="DOLNOŚLĄSKIE_Opolnica.html">
+      Opolnica
+     </a>
+    </li>
+    <li data-attribute="Barcinek" href="">
+     <a href="DOLNOŚLĄSKIE_Barcinek.html">
+      Barcinek
+     </a>
+    </li>
+    <li data-attribute="Białołęka" href="">
+     <a href="DOLNOŚLĄSKIE_Białołęka.html">
+      Białołęka
+     </a>
+    </li>
+    <li data-attribute="Bieniowice" href="">
+     <a href="DOLNOŚLĄSKIE_Bieniowice.html">
+      Bieniowice
+     </a>
+    </li>
+    <li data-attribute="Braszowice" href="">
+     <a href="DOLNOŚLĄSKIE_Braszowice.html">
+      Braszowice
+     </a>
+    </li>
+    <li data-attribute="Budzów" href="">
+     <a href="DOLNOŚLĄSKIE_Budzów.html">
+      Budzów
+     </a>
+    </li>
+    <li data-attribute="Bukowina Sycowska" href="">
+     <a href="DOLNOŚLĄSKIE_Bukowina Sycowska.html">
+      Bukowina Sycowska
+     </a>
+    </li>
+    <li data-attribute="Czatkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Czatkowice.html">
+      Czatkowice
+     </a>
+    </li>
+    <li data-attribute="Dąbrowa Bolesławiecka" href="">
+     <a href="DOLNOŚLĄSKIE_Dąbrowa Bolesławiecka.html">
+      Dąbrowa Bolesławiecka
+     </a>
+    </li>
+    <li data-attribute="Długopole Dolne" href="">
+     <a href="DOLNOŚLĄSKIE_Długopole Dolne.html">
+      Długopole Dolne
+     </a>
+    </li>
+    <li data-attribute="Dunkowa" href="">
+     <a href="DOLNOŚLĄSKIE_Dunkowa.html">
+      Dunkowa
+     </a>
+    </li>
+    <li data-attribute="Działosza" href="">
+     <a href="DOLNOŚLĄSKIE_Działosza.html">
+      Działosza
+     </a>
+    </li>
+    <li data-attribute="Giebułtów" href="">
+     <a href="DOLNOŚLĄSKIE_Giebułtów.html">
+      Giebułtów
+     </a>
+    </li>
+    <li data-attribute="Gniechowice" href="">
+     <a href="DOLNOŚLĄSKIE_Gniechowice.html">
+      Gniechowice
+     </a>
+    </li>
+    <li data-attribute="Goszcz" href="">
+     <a href="DOLNOŚLĄSKIE_Goszcz.html">
+      Goszcz
+     </a>
+    </li>
+    <li data-attribute="Grabowno Wielkie" href="">
+     <a href="DOLNOŚLĄSKIE_Grabowno Wielkie.html">
+      Grabowno Wielkie
+     </a>
+    </li>
+    <li data-attribute="Krzydlina Wielka" href="">
+     <a href="DOLNOŚLĄSKIE_Krzydlina Wielka.html">
+      Krzydlina Wielka
+     </a>
+    </li>
+    <li data-attribute="Ligota Polska" href="">
+     <a href="DOLNOŚLĄSKIE_Ligota Polska.html">
+      Ligota Polska
+     </a>
+    </li>
+    <li data-attribute="Lutomia Dolna" href="">
+     <a href="DOLNOŚLĄSKIE_Lutomia Dolna.html">
+      Lutomia Dolna
+     </a>
+    </li>
+    <li data-attribute="Małkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Małkowice.html">
+      Małkowice
+     </a>
+    </li>
+    <li data-attribute="Masłów" href="">
+     <a href="DOLNOŚLĄSKIE_Masłów.html">
+      Masłów
+     </a>
+    </li>
+    <li data-attribute="Modła" href="">
+     <a href="DOLNOŚLĄSKIE_Modła.html">
+      Modła
+     </a>
+    </li>
+    <li data-attribute="Niedźwiedzice" href="">
+     <a href="DOLNOŚLĄSKIE_Niedźwiedzice.html">
+      Niedźwiedzice
+     </a>
+    </li>
+    <li data-attribute="Nowe Grodzisko" href="">
+     <a href="DOLNOŚLĄSKIE_Nowe Grodzisko.html">
+      Nowe Grodzisko
+     </a>
+    </li>
+    <li data-attribute="Okmiany" href="">
+     <a href="DOLNOŚLĄSKIE_Okmiany.html">
+      Okmiany
+     </a>
+    </li>
+    <li data-attribute="Parowa" href="">
+     <a href="DOLNOŚLĄSKIE_Parowa.html">
+      Parowa
+     </a>
+    </li>
+    <li data-attribute="Piotrkowice" href="">
+     <a href="DOLNOŚLĄSKIE_Piotrkowice.html">
+      Piotrkowice
+     </a>
+    </li>
+    <li data-attribute="Pławna Górna" href="">
+     <a href="DOLNOŚLĄSKIE_Pławna Górna.html">
+      Pławna Górna
+     </a>
+    </li>
+    <li data-attribute="Płóczki Górne" href="">
+     <a href="DOLNOŚLĄSKIE_Płóczki Górne.html">
+      Płóczki Górne
+     </a>
+    </li>
+    <li data-attribute="Ptaszków" href="">
+     <a href="DOLNOŚLĄSKIE_Ptaszków.html">
+      Ptaszków
+     </a>
+    </li>
+    <li data-attribute="Radzowice" href="">
+     <a href="DOLNOŚLĄSKIE_Radzowice.html">
+      Radzowice
+     </a>
+    </li>
+    <li data-attribute="Rosochata" href="">
+     <a href="DOLNOŚLĄSKIE_Rosochata.html">
+      Rosochata
+     </a>
+    </li>
+    <li data-attribute="Sady Górne" href="">
+     <a href="DOLNOŚLĄSKIE_Sady Górne.html">
+      Sady Górne
+     </a>
+    </li>
+    <li data-attribute="Ścinawa Polska" href="">
+     <a href="DOLNOŚLĄSKIE_Ścinawa Polska.html">
+      Ścinawa Polska
+     </a>
+    </li>
+    <li data-attribute="Sędzimirów" href="">
+     <a href="DOLNOŚLĄSKIE_Sędzimirów.html">
+      Sędzimirów
+     </a>
+    </li>
+    <li data-attribute="Spalona" href="">
+     <a href="DOLNOŚLĄSKIE_Spalona.html">
+      Spalona
+     </a>
+    </li>
+    <li data-attribute="Stary Łom" href="">
+     <a href="DOLNOŚLĄSKIE_Stary Łom.html">
+      Stary Łom
+     </a>
+    </li>
+    <li data-attribute="Szewce" href="">
+     <a href="DOLNOŚLĄSKIE_Szewce.html">
+      Szewce
+     </a>
+    </li>
+    <li data-attribute="Wabienice" href="">
+     <a href="DOLNOŚLĄSKIE_Wabienice.html">
+      Wabienice
+     </a>
+    </li>
+    <li data-attribute="Warzęgowo" href="">
+     <a href="DOLNOŚLĄSKIE_Warzęgowo.html">
+      Warzęgowo
+     </a>
+    </li>
+    <li data-attribute="Wilkanów" href="">
+     <a href="DOLNOŚLĄSKIE_Wilkanów.html">
+      Wilkanów
+     </a>
+    </li>
+    <li data-attribute="Wojbórz" href="">
+     <a href="DOLNOŚLĄSKIE_Wojbórz.html">
+      Wojbórz
+     </a>
+    </li>
+    <li data-attribute="Stary Waliszów" href="">
+     <a href="DOLNOŚLĄSKIE_Stary Waliszów.html">
+      Stary Waliszów
+     </a>
+    </li>
+    <li data-attribute="Włodzice Wielkie" href="">
+     <a href="DOLNOŚLĄSKIE_Włodzice Wielkie.html">
+      Włodzice Wielkie
+     </a>
+    </li>
+    <li data-attribute="Wróbliniec" href="">
+     <a href="DOLNOŚLĄSKIE_Wróbliniec.html">
+      Wróbliniec
+     </a>
+    </li>
+    <li data-attribute="Stary Jaworów" href="">
+     <a href="DOLNOŚLĄSKIE_Stary Jaworów.html">
+      Stary Jaworów
+     </a>
+    </li>
+    <li data-attribute="Jędrzychów" href="">
+     <a href="DOLNOŚLĄSKIE_Jędrzychów.html">
+      Jędrzychów
+     </a>
+    </li>
+    <li data-attribute="Pławnica" href="">
+     <a href="DOLNOŚLĄSKIE_Pławnica.html">
+      Pławnica
+     </a>
+    </li>
+    <li data-attribute="Szalejów Górny" href="">
+     <a href="DOLNOŚLĄSKIE_Szalejów Górny.html">
+      Szalejów Górny
+     </a>
+    </li>
+    <li data-attribute="Zwrócona" href="">
+     <a href="DOLNOŚLĄSKIE_Zwrócona.html">
+      Zwrócona
+     </a>
+    </li>
+    <li data-attribute="Snowidza" href="">
+     <a href="DOLNOŚLĄSKIE_Snowidza.html">
+      Snowidza
+     </a>
+    </li>
+    <li data-attribute="Maciejowiec" href="">
+     <a href="DOLNOŚLĄSKIE_Maciejowiec.html">
+      Maciejowiec
+     </a>
+    </li>
+    <li data-attribute="Bukowiec" href="">
+     <a href="DOLNOŚLĄSKIE_Bukowiec.html">
+      Bukowiec
+     </a>
+    </li>
+    <li data-attribute="Kuraszków" href="">
+     <a href="DOLNOŚLĄSKIE_Kuraszków.html">
+      Kuraszków
+     </a>
+    </li>
+    <li data-attribute="Bukowina" href="">
+     <a href="DOLNOŚLĄSKIE_Bukowina.html">
+      Bukowina
+     </a>
+    </li>
+    <li data-attribute="Kazanów" href="">
+     <a href="DOLNOŚLĄSKIE_Kazanów.html">
+      Kazanów
+     </a>
+    </li>
+    <li data-attribute="Świerzawa" href="">
+     <a href="DOLNOŚLĄSKIE_Świerzawa.html">
+      Świerzawa
+     </a>
+    </li>
+    <li data-attribute="Domaszków" href="">
+     <a href="DOLNOŚLĄSKIE_Domaszków.html">
+      Domaszków
+     </a>
+    </li>
+    <li data-attribute="Legnickie Pole" href="">
+     <a href="DOLNOŚLĄSKIE_Legnickie Pole.html">
+      Legnickie Pole
+     </a>
+    </li>
+   </ul>
+  </h4>
+ </div>
+</body>

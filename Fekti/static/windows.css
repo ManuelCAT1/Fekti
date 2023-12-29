@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap');
+
+
+body{
+    background: linear-gradient(294deg, #0D035E 1.83%, #080710 89.71%);;
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+.logoDes{
+    z-index: 10;
+    margin-top: -130px;
+    line-height: -10px;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-form{
+
+right: 200px;
+     position: absolute;
+  
+top: 200px;
+z-index: 100;
+}
+
+form{
+    z-index: 99;
+    height: 250px;
+    width: 200px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(40px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+    margin-top: 50px;
+
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 15px;
+    padding: 0 0px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    text-indent: 10px;
+
+
+}
+::placeholder{
+    color: #e5e5e5;
+    padding-left: 10px;
+}
+.logIn{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+h1{
+    z-index: 10;
+    font-weight: 700;
+    color: white;
+    font-family: Ubuntu;
+    width: 50%;
+    font-size: 29px;
+    text-align: left;
+
+    margin-left: 40px;
+    
+    line-height: -2;
+}
+
+h1 span{
+    text-align: center;
+    
+}
+
+
+
+
+h{
+color: white;
+}
+
+
+
+
+
+
+p{
+        font-weight: 700;
+    color: #FF00FF;
+    font-family: Ubuntu;
+    width: 50%;
+    font-size: 146px;
+   margin-left: 0px;
+margin-bottom: 10px;
+   z-index: 99;
+    text-align: center;
+
+}
+
+
+.registerForm{
+     height: 50%;
+     width: 20%;
+}
+
+
+.newAcc1{
+    
+    width: 100%;
+    background-color: #BDB76B;
+    color: #080710;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+
+
+
+
+
+
+
+.answer {
+    overflow: hidden;
+    height: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    text-align: center;
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+h3{
+    text-align: center;
+}
+
+.container{
+    position: absolute;
+}
+
+
+.description{
+    background: purple;
+    
+    justify-content: center;
+    width: 30%;
+    text-align: center;
+    
+    color: gray;
+   
+
+   background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(40px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+    margin-top: 0px;
+    height: 70%;
+    z-index: 100;
+
+}
+
+
+h4{
+     margin-top: -90px;
+    color: #c4cfde;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    text-align: center;
+    font-weight: 200;
+    margin-left: -40px;
+}
+
+
+h5{
+
+    color: #89C4E1;
+    font-size: 46px;
+     font-family: Ubuntu;
+     
+    font-size: 40px;
+
+   z-index: 99;
+   margin-top: -30px;
+
+}
+
+p3{
+    font-weight: 700;
+    color: #FF00FF;
+    font-family: Ubuntu;
+    
+    font-size: 46px;
+
+   z-index: 99;
+ 
+
+}
+p4{
+    font-weight: 600;
+}
+
+
+a{
+    margin-top: -20px;
+    font-family: Ubuntu;
+    color: #F582A7;
+    
+    line-height: 1.4
+    
+}
+
+
+
+ul{
+    list-style-type: none
+    
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TL1H9BWD28');
+</script>
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content= "width=device-width, user-scalable=no">
+	<title>Fekti</title>
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script
+    type="text/javascript"
+   src="{{ url_for('static', filename='main.js') }}"
+>
+
+
+</script>
+</head>
+<body>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	  {% for category, message in messages %}
+		{% if category == 'error' %}
+		  <!-- Display error message here -->
+		  <div class="alert-error" role="alert" id="errorAlert">
+			{{ message }}
+      <div class="close-button">
+			<button type="button" class="close" onclick="closeAlert('errorAlert')">
+        <img src="{{ url_for('static', filename='x.svg') }}" class="xButton">
+			</button>
+      </div>
+		  </div>
+		{% elif category == 'success' %}
+		  <!-- Display success message here -->
+		  <div class="alert-success" role="alert" id="successAlert">
+			{{ message }}
+      <div class="close-button"></div>
+			<button type="button" class="close" onclick="closeAlert('successAlert')">
+        <img src="{{ url_for('static', filename='x.svg') }}" class="xButton">
+			</button>
+      </div>
+		  </div>
+		{% endif %}
+	  {% endfor %}
+	{% endif %}
+    {% endwith %}
+
+
+<div class="login-form">
+
+ <form method="POST">
+       
+
+        
+        <input type="text" placeholder="Email" id="email" name="email">
+
+       
+        <input type="password" placeholder="Hasło" id="password" name="password">
+
+        
+
+        <button type="submit" class="logIn">Zaloguj</button>
+
+
+        <div class="line"></div>
+
+      
+
+
+        <input class="newAcc" type="button" value=" Stwórz konto " onclick="window.location.href='/register'">
+
+    </form>
+</div>
+
+
+
+<div class="description">
+	
+	<h5> Witaj w <p3> Fekti</p3></h5>
+	<h4>
+		
+<p4>Fekti to platforma, na której bezpiecznie i anonimowo podzielisz się materiałami do egzaminów.</p4><br><br>
+
+Z Fekti możesz:<br><br>
+
+<ul>
+
+<li>Zyskać dostęp do bogatej biblioteki materiałów egzaminacyjnych</li><br>
+<li>Współpracować anonimowo z innymi studentami</li><br>
+<li>Zwiększyć skuteczność swoich przygotowań do egzaminów dzięki sprawdzonym materiałom</li><br>
+
+</ul>
+Aby rozpocząć, zarejestruj się i wykorzystaj siłę wspólnej wiedzy. Jeśli już jesteś członkiem, zaloguj się i odkryj świat anonimowego dzielenia się materiałami egzaminacyjnymi. Twój sukces akademicki zaczyna się tutaj.
+
+
+	</h4>
+
+
+</div>
+
+<div class="container">
+<div class="logoDes">
+
+
+<h1>
+	<p> Fekti </p>
+	<span>Wstawiaj <h>anonimowo.</h> </span>
+	<br>
+	
+	<span>Używaj <h>anonimowo. </h></span>
+	<br>
+	
+	<span>Usuń <h>niezaufancyh.</h></span>
+
+</h1>
+</div>
+</div>
+
+
+
+  
+
+
+
+</section>
+</body>
+</html>

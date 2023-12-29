@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+  
+	gtag('config', 'G-TL1H9BWD28');
+  </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Zarejestruj się</title>
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<script
+    type="text/javascript"
+   src="{{ url_for('static', filename='main.js') }}"
+ 
+
+>
+
+
+</script>
+
+
+<script type="text/javascript">
+	var onloadCallback = function() {
+	  
+	};
+  </script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+async defer>
+</script>
+<script>
+    function validateForm() {
+        // Check if the captcha is filled
+        var response = grecaptcha.getResponse();
+        if (response.length === 0) {
+            alert("Kliknij \"Nie jestem robotem\".");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
+
+
+
+
+    function toggleDropdown() {
+      var profileButton = document.querySelector('.profileButton');
+      profileButton.classList.toggle('active');
+    }
+  
+    function closeAlert(id) {
+      var alert = document.getElementById(id);
+      alert.style.display = 'none';
+    }
+  
+    window.onload = function() {
+      var imageUpload = document.getElementById('imageUpload');
+      var imagePreview = document.getElementById('imagePreview');
+      if (imageUpload) {
+        imageUpload.addEventListener('change', function(e) {
+          var reader = new FileReader();
+  
+          reader.onload = function(event) {
+            imagePreview.src = event.target.result;
+            imagePreview.style.display = 'block'; // Show when image is selected
+          }
+  
+          reader.readAsDataURL(e.target.files[0]);
+        });
+      }
+    };
+
+
+
+    window.onload = function() {
+    function toggleDropdown() {
+      var profileButton = document.querySelector('.profileButton');
+      profileButton.classList.toggle('active');
+    }
+
+    function closeAlert(id) {
+      var alert = document.getElementById(id);
+      alert.style.display = 'none';
+    }
+
+    var imageUpload = document.getElementById('imageUpload');
+    var imagePreview = document.getElementById('imagePreview');
+    if (imageUpload) {
+      imageUpload.addEventListener('change', function(e) {
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+          imagePreview.src = event.target.result;
+          imagePreview.style.display = 'block'; // Show when image is selected
+        }
+
+        reader.readAsDataURL(e.target.files[0]);
+      });
+    }
+
+    var toggleBtn = document.getElementById('toggleBtn');
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    var toggleImg = document.querySelector('.toggleImg');
+    var originalSrc = toggleImg.src; // menu-01.svg is the original image
+    var toggleSrc = "{{ url_for('static', filename='x.svg') }}"; // x.svg is the toggle image
+
+    toggleBtn.addEventListener('click', function() {
+      if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+        // If the dropdown menu is not visible, show it and change the image to x.svg
+        dropdownMenu.style.display = 'block';
+        toggleImg.src = toggleSrc;
+      } else {
+        // If the dropdown menu is visible, hide it and change the image back to menu-01.svg
+        dropdownMenu.style.display = 'none';
+        toggleImg.src = originalSrc;
+      }
+    });
+};
+
+window.addEventListener('resize', function() {
+  var dropdownMenu = document.querySelector('.dropdown-menu');
+  if (window.innerWidth > 960) {
+    dropdownMenu.style.display = 'none';
+  }
+});
+
+
+
+
+
+
+
+
+
+  </script>
+
+<script>
+function openModal(userId, username) {
+  var modal = document.getElementById('confirmModal');
+  var confirmBtn = modal.querySelector('.confirm-btn');
+  var cancelBtn = modal.querySelector('.cancel-btn');
+  var form = document.getElementById('reportForm' + userId);
+  var mainContent = document.getElementById('main-content');
+  var mainContent2 = document.getElementById('main-content2');
+  var modalText = document.getElementById('modalText');
+  modalText.textContent = "Czy jesteś pewny, że chcesz zgłosić \"" + username + "\"?";
+ 
+ 
+
+  // When the user clicks on the confirm button, submit the form
+  confirmBtn.onclick = function() {
+    form.submit();
+  }
+
+  // When the user clicks on the cancel button, close the modal
+  cancelBtn.onclick = function() {
+    modal.style.display = "none";
+    mainContent.classList.remove('modal-open');
+    mainContent2.classList.remove('modal-open'); // Remove the class when the modal is hidden
+  }
+
+
+  modal.style.display = "block";
+  mainContent.classList.add('modal-open');
+  mainContent2.classList.add('modal-open'); // Add the class when the modal is displayed
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  var modal = document.getElementById('confirmModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.body.classList.remove('modal-open');
+  }
+}
+
+</script>
+</head>
+<body>
+
+
+	<div id="main-content">
+
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+		  {% for category, message in messages %}
+			{% if category == 'error' %}
+			  <!-- Display error message here -->
+			  <div class="alert-error" role="alert" id="errorAlert">
+				{{ message }}
+		  <div class="close-button">
+				<button type="button" class="close" onclick="closeAlert('errorAlert')">
+			<img src="{{ url_for('static', filename='x.svg') }}" class="xButton">
+				</button>
+		  </div>
+			  </div>
+			{% elif category == 'success' %}
+			  <!-- Display success message here -->
+			  <div class="alert-success" role="alert" id="successAlert">
+				{{ message }}
+		  <div class="close-button"></div>
+				<button type="button" class="close" onclick="closeAlert('successAlert')">
+			<img src="{{ url_for('static', filename='x.svg') }}" class="xButton">
+				</button>
+		  </div>
+			  </div>
+			{% endif %}
+		  {% endfor %}
+		{% endif %}
+		{% endwith %}
+	
+
+
+
+ <form class="registerForm" method="POST" onsubmit="return validateForm()">
+       
+
+	<input type="text" placeholder="E-mail" id="email" name="email" autocomplete="username">        
+        <input type="text" placeholder="Nazwa Użytkownika" id="username" name="username" autocomplete="off">
+
+       
+        <input type="password" placeholder="Hasło" id="password" name="password">
+        <input type="password" placeholder="Powtórz hasło" id="password2" name="password2">
+		
+		<select name="school" class="selectSchool">
+			<option value="" disabled selected>Wybierz swoją szkołę</option>
+			{% for school in schools %}
+				<option value="{{ school.id }}">{{ school.name }}</option>
+			{% endfor %}
+		</select>
+        
+		<div class="g-recaptcha" data-sitekey="6LdbGuwoAAAAAIKNwDzT1Zr7inuwZi_BgIBfhSIf"></div>
+
+        <button type="submit" class="newAcc1">Zarejestruj się</button>
+
+        <div class="line"></div>
+
+
+<div class="haveAccount">
+        
+       
+        <h4>Masz konto? <a href="/login"> Zaloguj się</a></h4>
+</div>
+    </form>
+
+  
+<div class="logoDes">
+
+
+	<h1>
+		<p> Fekti </p>
+		<span>Wstawiaj <h>anonimowo.</h> </span>
+		<br>
+		
+		<span>Używaj <h>anonimowo. </h></span>
+		<br>
+		
+		<span>Usuń <h>niezaufancyh.</h></span>
+	
+	</h1>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+2023-12-29 19:34:07,607 INFO Fekti MainThread : GateEND
+2023-12-29 19:34:07,656 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:49929
+2023-12-29 19:34:07,656 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-12-29 19:34:07,657 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-29 19:34:08,505 INFO Fekti MainThread : GateEND
+2023-12-29 19:34:08,570 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-29 19:34:08,583 INFO werkzeug MainThread :  * Debugger PIN: 113-357-295
+2023-12-29 19:34:15,871 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:15] "[32mGET / HTTP/1.1[0m" 308 -
+2023-12-29 19:34:15,965 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:15] "[32mGET /home HTTP/1.1[0m" 302 -
+2023-12-29 19:34:15,998 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:15] "GET /login?next=/home HTTP/1.1" 200 -
+2023-12-29 19:34:16,044 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:16] "GET /static/style.css HTTP/1.1" 200 -
+2023-12-29 19:34:16,046 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:16] "GET /static/main.js HTTP/1.1" 200 -
+2023-12-29 19:34:16,251 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:16] "GET /static/Fekti_logo.png HTTP/1.1" 200 -
+2023-12-29 19:34:18,438 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:18] "GET /register HTTP/1.1" 200 -
+2023-12-29 19:34:18,521 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:18] "GET /static/register.css HTTP/1.1" 200 -
+2023-12-29 19:34:18,536 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [29/Dec/2023 19:34:18] "[36mGET /static/main.js HTTP/1.1[0m" 304 -

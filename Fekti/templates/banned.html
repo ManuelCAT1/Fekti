@@ -1,0 +1,48 @@
+{% if current_user.banned %}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TL1H9BWD28');
+</script>
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>You are banned</title>
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h5>Account <p3>Banned</p3></h5>
+
+		<div class="description">
+        <p4>Your account has been reported by other users as suspicious. Please remember to use a username that lets your friends recognize you while maintaining anonymity.</p4>
+        </div>
+		<h1>
+		<div class="footer">
+			<span>Founded by <h>Manuel Kotecki</h> </span>
+		</h1>
+		<nav>
+			<h2>
+        <a href="{{ url_for('views.about') }}" class="btn">About Us</a>
+        <a href="{{ url_for('views.contact') }}" class="btn">Contact Us</a>
+	</h2>
+		</nav>
+		</div
+    </>undefinediv>
+</body>
+</html>
+
+{% else %}
+    {% set redirect_url = url_for('views.homePage') %}
+    {% if redirect_url %}
+        <script>window.location.href = "{{ redirect_url }}";</script>
+    {% endif %}
+{% endif %}

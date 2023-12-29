@@ -1,0 +1,44 @@
+<!-- Fekti/templates/contact.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TL1H9BWD28');
+</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fekti Kontakt</title>
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h5>Kontakt do <p3>Fekti</p3></h5>
+
+		<div class="description">
+        <p4>Obsługa klienta: <a href="mailto:support@fekti.com">support@fekti.com</a><br></p4>
+        <br>
+        <p4>Zapytania biznesowe: <a href="mailto:business@fekti.com">business@fekti.com</a><br></p4>
+        <br>
+        <p4>Opinie i sugestie: <a href="mailto:feedback@fekti.com">feedback@fekti.com</a><br></p4>
+        </div>
+		<h1>
+		<div class="footer">
+			<span>Produkcja <h>Manuel Kotecki</h> </span>
+		</h1>
+		<nav>
+			<h2>
+        <a href="{{ url_for('views.about') }}" class="btn">O nas</a>
+        <a href="{{ url_for('views.homePage') }}" class="btn">Strona Główna</a>
+	</h2>
+		</nav>
+		</div>
+    </div>
+</body>
+</html>

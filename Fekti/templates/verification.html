@@ -1,0 +1,53 @@
+<!-- Fekti/templates/about.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TL1H9BWD28');
+</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fekti weryfikacja</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h5><p3>Fekti</p3></h5>
+
+		<div class="description">
+        <p4>Stworzono konto!</p4>
+        </div>
+		<h1>
+		<div class="footer">
+			<span>Produkcja <h>Manuel Kotecki</h> </span>
+			
+			
+
+		
+		</h1>
+        <!-- <h2>Our Team</h2>
+        <div class="team">
+            <div class="member">
+                <img src="{{ url_for('static', filename='member1.jpg') }}" alt="Member 1">
+                <h3>Member 1</h3>
+                <p>Role</p>
+            </div>
+           
+        </div> -->
+		<nav>
+			<h2>
+
+        <a href="{{ url_for('auth.loginPage') }}" class="btn">Zaloguj się</a>
+	</h2>
+		</nav>
+		</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- Fekti/templates/credits.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TL1H9BWD28');
+</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Żetony</title>
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Fekti_logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h5>Żetony</h5>
+
+		<div class="description2">
+            <p8>
+        <p>W Fekti używamy systemu żetonoweego do zarządzania dostępem do zasobów. Oto jak to działa:
+		</p>
+
+        
+
+            <li>Każdy użytkownik otrzymuje 1 żeton co 2 tygodnie. Kredyty są aktualizowane automatycznie.</li>
+            <li>Żetony mogą być wykorzystane do odblokowywania zdjęć. Odblokowanie każdego zdjęcia kosztuje 1 żeton.</li>
+            
+
+
+        </p8>
+        </div>
+		<h1>
+		<div class="footer">
+			<span>Produkcja <h>Manuel Kotecki</h> </span>
+		</h1>
+		<nav>
+			<h2>
+        <a href="{{ url_for('views.about') }}" class="btn">O nas</a>
+        <a href="{{ url_for('views.homePage') }}" class="btn">Strona Główna</a>
+	</h2>
+		</nav>
+		</div>
+    </div>
+</body>
+</html>
