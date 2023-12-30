@@ -78,6 +78,15 @@ def create_app(environ=None, start_response=None):
 
     with app.app_context():
         db.create_all()
+
+
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+
+    s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
+
+    app.logger.info('GateEND')
     return app
 
 
@@ -87,10 +96,3 @@ ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif'}
 
 
 
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-
-
-s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
-
-app.logger.info('GateEND')
