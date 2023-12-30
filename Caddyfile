@@ -2,6 +2,14 @@ www.fekti.com {
     redir https://fekti.com{uri}
 }
 
+fekti.pl {
+    redir https://fekti.com{uri}
+}
+
+www.fekti.pl {
+    redir https://fekti.com{uri}
+}
+
 fekti.com {
     reverse_proxy localhost:8000
 }
