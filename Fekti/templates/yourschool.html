@@ -264,15 +264,16 @@ window.onclick = function(event) {
         <h1> Wszyscy użytkownicy twojej szkoły:</h1>
         <ol>
           {% for user in users %}
-          <li>
-            {% if user.id != current_user.id %}
-            <form id="reportForm{{ user.id }}" action="{{ url_for('views.report', user_id=user.id) }}" method="post">
-              <button class="reportButton" type="button" onclick="openModal({{ user.id }}, '{{ user.username }}')">Zgłoś</button>
-            </form>
+          {% if user.username != 'Manu' %}
+            <li>
+              {% if user.id != current_user.id %}
+                <form id="reportForm{{ user.id }}" action="{{ url_for('views.report', user_id=user.id) }}" method="post">
+                  <button class="reportButton" type="button" onclick="openModal({{ user.id }}, '{{ user.username }}')">Zgłoś</button>
+                </form>
+              {% endif %}
+                {{ user.username }}
+            </li>
           {% endif %}
-            {{ user.username }}
-
-          </li>
         {% endfor %}
         </ol>
     </div>
