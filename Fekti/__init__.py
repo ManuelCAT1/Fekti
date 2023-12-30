@@ -14,7 +14,7 @@ logging.basicConfig(filename='email.log', level=logging.DEBUG,
 db = SQLAlchemy()
 DB_NAME = "database.db"
 mail = Mail()  # Initialize mail
-
+s = URLSafeTimedSerializer('SuperFektiXDUnpredictableKey')
 def create_app(environ=None, start_response=None):
     
     app = Flask(__name__)
@@ -83,8 +83,6 @@ def create_app(environ=None, start_response=None):
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-
-    s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
     app.logger.info('GateEND')
     return app
