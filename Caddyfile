@@ -14,6 +14,6 @@ fekti.com {
     reverse_proxy localhost:8000
 }
 
-16.170.232.172 {
+http://16.171.11.164/ {
     reverse_proxy localhost:8000
 }
