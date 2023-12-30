@@ -50,44 +50,43 @@ views = Blueprint('views', __name__)
 @views.route('/home/<subject>')
 @login_required
 def homePage(subject):
-    print("homePage 1")
-    logging.info('Entered homePage() function')
-    if current_user.banned:
-        return render_template('banned.html')
-    update_credits(current_user)
-    school_id = session.get('school_id')
-    photo = Photo(title="", fileName="", description="", school_id=None, user_id=None, image_data=None, school=None, credits=0, likes=[], selected_subject="")
-    unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
-    page = request.args.get('page', 1, type=int)
-    photos = Photo.query.filter_by(school_id=current_user.school_id).order_by(Photo.likes_count.desc()).paginate(page=page, per_page=10)
-
-
-    needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id, isRated=False).first()
-    if needed_feedback:
-        return flashFeedback(photo_id=needed_feedback.photo_id, user_id=current_user.id)
-
-
-    # Apply the blur filter to each photo unless it's unlocked
-    for photo in photos.items:
-        if photo.id not in unlocked_photos_ids:
-            photo.image_data = blur_image_blob(photo.image_data)
-
-
-    if school_id is None or current_user.school_id != school_id:
-        return redirect(url_for('auth.loginPage'))
-    
-
-    if subject is not None:
-        photos = Photo.query.filter_by(school_id=current_user.school_id, selected_subject=subject).order_by(Photo.likes_count.desc()).paginate(page=page, per_page=10)
-    else:
+    try:
+        print("homePage 1")
+        logging.info('Entered homePage() function')
+        if current_user.banned:
+            return render_template('banned.html')
+        update_credits(current_user)
+        school_id = session.get('school_id')
+        photo = Photo(title="", fileName="", description="", school_id=None, user_id=None, image_data=None, school=None, credits=0, likes=[], selected_subject="")
+        unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
+        page = request.args.get('page', 1, type=int)
         photos = Photo.query.filter_by(school_id=current_user.school_id).order_by(Photo.likes_count.desc()).paginate(page=page, per_page=10)
 
+        needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id, isRated=False).first()
+        if needed_feedback:
+            return flashFeedback(photo_id=needed_feedback.photo_id, user_id=current_user.id)
 
-    if current_user.school_id != session['school_id']:
-        return redirect(url_for('views.homePage', school_id=session['school_id']))
+        # Apply the blur filter to each photo unless it's unlocked
+        for photo in photos.items:
+            if photo.id not in unlocked_photos_ids:
+                photo.image_data = blur_image_blob(photo.image_data)
 
-    return render_template("home.html", photos=photos, photo=photo, user=current_user, unlocked_photos_ids=unlocked_photos_ids, credits=current_user.credits, selected_subject=subject, subjects=["Matematyka", "Fizyka", "Angielski", "Polski", "Hiszpański", "Niemiecki", "EDBiBHP", "Chemia", "Geografia", "Biologia", "Historia", "HITiWOS", "Informatyka", "Religia"])
+        if school_id is None or current_user.school_id != school_id:
+            return redirect(url_for('auth.loginPage'))
 
+        if subject is not None:
+            photos = Photo.query.filter_by(school_id=current_user.school_id, selected_subject=subject).order_by(Photo.likes_count.desc()).paginate(page=page, per_page=10)
+        else:
+            photos = Photo.query.filter_by(school_id=current_user.school_id).order_by(Photo.likes_count.desc()).paginate(page=page, per_page=10)
+
+        if current_user.school_id != session['school_id']:
+            return redirect(url_for('views.homePage', school_id=session['school_id']))
+
+        return render_template("home.html", photos=photos, photo=photo, user=current_user, unlocked_photos_ids=unlocked_photos_ids, credits=current_user.credits, selected_subject=subject, subjects=["Matematyka", "Fizyka", "Angielski", "Polski", "Hiszpański", "Niemiecki", "EDBiBHP", "Chemia", "Geografia", "Biologia", "Historia", "HITiWOS", "Informatyka", "Religia"])
+    except Exception as e:
+        with open('error.txt', 'w') as f:
+            f.write(str(e))
+        raise e  # Re-raise the exception after writing to the file
 
 @views.route('/image/<int:photo_id>')
 @login_required
