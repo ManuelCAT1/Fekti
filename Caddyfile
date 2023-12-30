@@ -1,4 +1,19 @@
+www.fekti.com {
+    reverse_proxy localhost:8000
+}
 
-http://16.171.11.164 {
+fekti.pl {
+    reverse_proxy localhost:8000
+}
+
+www.fekti.pl {
+    reverse_proxy localhost:8000
+}
+
+fekti.com {
+    reverse_proxy localhost:8000
+}
+
+16.170.232.172 {
     reverse_proxy localhost:8000
 }
