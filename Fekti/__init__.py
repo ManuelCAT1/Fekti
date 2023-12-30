@@ -26,7 +26,7 @@ def create_app(environ=None, start_response=None):
     app.config['SECRET_KEY'] = 'SuperFektiXDUnpredictableKey'
     app.config['SECURITY_PASSWORD_SALT'] = 'AnotherSuperFektiXDUnpredictableKey'
     
-
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
     # Email configuration
