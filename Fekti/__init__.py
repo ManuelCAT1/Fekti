@@ -86,7 +86,7 @@ ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif'}
 
 
 
-app = create_app()
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
