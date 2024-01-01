@@ -265,7 +265,7 @@ window.onclick = function(event) {
         <ol>
           {% for user in users %}
           {% if user.username != 'Manu' %}
-	  {% if user.username != 'Manu' %}
+	  {% if user.username != 'Peter123' %}
           {% if current_user.is_authenticated %}
             <li>
               {% if user.id != current_user.id %}
