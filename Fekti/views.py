@@ -284,7 +284,7 @@ def yourschool():
         return redirect(url_for('views.banned'))  # Redirect to banned page
 
     school = current_user.school
-    users = [user for user in school.get_mainusers() if user.verified]
+    users = school.get_mainusers()
     return render_template('yourschool.html', users=users, credits=current_user.credits)
 
 @views.route('/photos')
