@@ -201,6 +201,7 @@ section {
 }
 
 .answer {
+    padding: 10px;
     overflow: hidden;
     height: auto;
     transition: .5s;
