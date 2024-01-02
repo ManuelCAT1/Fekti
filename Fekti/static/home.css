@@ -858,13 +858,13 @@ a{
 	text-decoration: none;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1200px) {
 	.dropdownMenu {
 	  display: none !important;
 	}
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
 	.dropdownMenu {
 		-webkit-backdrop-filter: blur(40px); /* Add this line first, it fixes blur for Safari*/
 		backdrop-filter: blur(40px);
