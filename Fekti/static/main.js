@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 answer.style.maxHeight = `0px`;
             } else { 
                 mainParent.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px"; // Set max-height to the scrollHeight of the content
-                answer.style.overflow = "auto"; // Add overflow property
+                answer.style.maxHeight = `1000px`; // Set a large enough value
             }
         });
     });
