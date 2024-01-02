@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
             } else { 
                 mainParent.classList.add('active');
                 answer.style.maxHeight = answer.scrollHeight + "px"; // Set max-height to the scrollHeight of the content
+                answer.style.overflow = "auto"; // Add overflow property
             }
         });
     });
 });
-
       document.getElementById('newAcc').addEventListener('click', function() {
     // Redirect to the /login URL
     window.location.href = '/register';
