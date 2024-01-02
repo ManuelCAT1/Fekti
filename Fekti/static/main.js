@@ -1,22 +1,21 @@
-
 document.addEventListener("DOMContentLoaded", function() {
-  const accordionItems = document.querySelectorAll('.accordion h3');
-  let mainParent;
-  let answer;
+    const accordionItems = document.querySelectorAll('.accordion h3');
+    let mainParent;
+    let answer;
 
-  accordionItems.forEach(item => {
-      item.addEventListener('click', () => {
-          answer = item.nextElementSibling;
-          mainParent = item.parentElement;
-          if (mainParent.classList.contains('active')) {
-              mainParent.classList.remove('active');
-              answer.style.height = `0px`;
-          } else { 
-              mainParent.classList.add('active');
-              answer.style.height = `auto`; // Changed to auto
-          }
-      });
-  });
+    accordionItems.forEach(item => {
+        item.addEventListener('click', () => {
+            answer = item.nextElementSibling;
+            mainParent = item.parentElement;
+            if (mainParent.classList.contains('active')) {
+                mainParent.classList.remove('active');
+                answer.style.maxHeight = `0px`;
+            } else { 
+                mainParent.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px"; // Set max-height to the scrollHeight of the content
+            }
+        });
+    });
 });
 
       document.getElementById('newAcc').addEventListener('click', function() {
