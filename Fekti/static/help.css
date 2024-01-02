@@ -689,7 +689,7 @@ li{
 	display: none;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
 .navbar{
 	display: none;
 }
@@ -720,7 +720,7 @@ a{
 	text-decoration: none;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1200px) {
 	.dropdownMenu {
 	  display: none !important;
 	}
@@ -830,13 +830,13 @@ a{
         text-decoration: none;
     }
     
-    @media (min-width: 960px) {
+    @media (min-width: 1200px) {
         .dropdownMenu {
           display: none !important;
         }
       }
     
-      @media (max-width: 960px) {
+      @media (max-width: 1200px) {
         .dropdownMenu {
             -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
@@ -876,13 +876,13 @@ a{
     }
 
 
-    @media (min-width: 960px) {
+    @media (min-width: 1200px) {
         .dropdownMenu {
           display: none !important;
         }
       }
     
-      @media (max-width: 960px) {
+      @media (max-width: 1200px) {
         .dropdownMenu {
             -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
