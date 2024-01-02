@@ -78,7 +78,7 @@ ul {
 
 .answer {
     overflow: auto;
-    height: auto;
+    height: 0;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -201,9 +201,8 @@ section {
 }
 
 .answer {
-    padding: 10px;
     overflow: hidden;
-    height: auto;
+    height: 0;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
