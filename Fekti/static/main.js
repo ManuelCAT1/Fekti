@@ -1,28 +1,24 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const accordionItems = document.querySelectorAll('.accordion h3');
+    let mainParent;
+    let height;
+    let answer;
 
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const accordionItems = document.querySelectorAll('.accordion h3');
-        let mainParent;
-        let height;
-        let answer;
-
-        accordionItems.forEach(item => {
-            item.addEventListener('click', () => {
-                height = item.nextElementSibling.firstElementChild.offsetHeight;
-                answer = item.nextElementSibling;
-                mainParent = item.parentElement;
-                if (mainParent.classList.contains('active')) {
-                    mainParent.classList.remove('active');
-                    answer.style.height = `0px`;
-                } else { 
-                    mainParent.classList.add('active');
-                    answer.style.height = `${height}px`;
-                }
-            });
+    accordionItems.forEach(item => {
+        item.addEventListener('click', () => {
+            height = item.nextElementSibling.firstElementChild.scrollHeight; // Changed from offsetHeight to scrollHeight
+            answer = item.nextElementSibling;
+            mainParent = item.parentElement;
+            if (mainParent.classList.contains('active')) {
+                mainParent.classList.remove('active');
+                answer.style.height = `0px`;
+            } else { 
+                mainParent.classList.add('active');
+                answer.style.height = `${height}px`;
+            }
         });
     });
-
-
+});
 
       document.getElementById('newAcc').addEventListener('click', function() {
     // Redirect to the /login URL
