@@ -20,8 +20,6 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def loginPage():
-    if current_user.is_authenticated:
-        return redirect(url_for('views.homePage'))
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
