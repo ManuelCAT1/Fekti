@@ -3,7 +3,7 @@ from Fekti import create_app
 from flask_mail import Mail
 
 app = create_app()
-app.register_blueprint(views)
+
 
 @app.template_filter('custom_b64encode')
 def custom_b64encode(data):
@@ -11,6 +11,9 @@ def custom_b64encode(data):
 
 from flask import render_template
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
 
 
 from Fekti.views import views
