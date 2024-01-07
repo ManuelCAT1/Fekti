@@ -443,7 +443,7 @@ close:focus, close:active {
     width: 35%;
 	padding: 10px 0px ;
     margin-top: 10px;
-	
+	    -webkit-backdrop-filter: blur(40px);
 	
 	
 	
