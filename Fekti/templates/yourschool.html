@@ -264,9 +264,7 @@ window.onclick = function(event) {
         <h1> Wszyscy użytkownicy twojej szkoły:</h1>
         <ol>
           {% for user in users %}
-          {% if user.username != 'Manu' %}
-	  {% if user.username != 'Peter123' %}
-          {% if current_user.is_authenticated %}
+  {% if user.username != 'Manu' and user.confirmed %}
             <li>
               {% if user.id != current_user.id %}
                 <form id="reportForm{{ user.id }}" action="{{ url_for('views.report', user_id=user.id) }}" method="post">
@@ -275,8 +273,7 @@ window.onclick = function(event) {
               {% endif %}
                 {{ user.username }}
             </li>
-            {% endif %}
-		{% endif %}
+
           {% endif %}
         {% endfor %}
         </ol>
