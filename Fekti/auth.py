@@ -95,7 +95,7 @@ def registerPage():
 
             link = url_for('auth.confirm_email', token=token, _external=True)   
 
-            msg.body= 'Your link is {}'.format(link)
+            msg.body= 'Twój link weryfikacyjny to {}'.format(link)
 
 
             mail.send(msg)
