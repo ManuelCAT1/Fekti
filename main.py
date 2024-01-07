@@ -11,9 +11,6 @@ def custom_b64encode(data):
 
 from flask import render_template
 
-@app.errorhandler(404)
-def not_found_error(error):
-    return render_template('404.html'), 404
 
 
 from Fekti.views import views
