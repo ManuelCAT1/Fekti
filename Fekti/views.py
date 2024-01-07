@@ -42,6 +42,9 @@ def allowed_file(filename):
 
 views = Blueprint('views', __name__)
 
+@views.app_errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
 
 
 
