@@ -99,7 +99,7 @@ def homePage(subject):
 
         return render_template("home.html", photos=photos, photo=photo, user=current_user, unlocked_photos_ids=unlocked_photos_ids, credits=current_user.credits, selected_subject=subject, subjects=["Matematyka", "Fizyka", "Angielski", "Polski", "Hiszpański", "Niemiecki", "EDBiBHP", "Chemia", "Geografia", "Biologia", "Historia", "HITiWOS", "Informatyka", "Religia"])
     except Exception as e:
-        with open('error.txt', 'w') as f:
+        with open('error2.txt', 'w') as f:
             f.write(str(e))
         raise e  # Re-raise the exception after writing to the file
 
