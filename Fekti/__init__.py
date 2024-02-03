@@ -21,15 +21,16 @@ def create_app(environ=None, start_response=None):
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
 
-    def custom_b64encode(value):
-        if isinstance(value, bytes):  # Check if value is bytes
-            encoded_data = base64.b64encode(value).decode('utf-8')
-        else:
-            encoded_data = base64.b64encode(value.encode('utf-8')).decode('utf-8')
-        return encoded_data
+def custom_b64encode(value):
+    if isinstance(value, bytes):
+        # Convert bytes to string using base64 encoding
+        value = base64.b64encode(value).decode('utf-8')
+    
+    # Encode the string to base64 (either the original or converted one)
+    return base64.b64encode(value.encode('utf-8')).decode('utf-8')
 
-    # Register the filter globally
-    app.jinja_env.filters['custom_b64encode'] = custom_b64encode
+# Register the filter globally
+app.jinja_env.filters['custom_b64encode'] = custom_b64encode
 
 
     app.config['SECRET_KEY'] = 'SuperFektiXDUnpredictableKey'
