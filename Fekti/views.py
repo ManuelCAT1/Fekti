@@ -6,35 +6,33 @@ import base64
 from . import create_app
 import os
 from datetime import datetime, timedelta
-
-
-
-
 from PIL import Image, ImageFilter
 import io
-
 import logging
 
 logging.basicConfig(filename='routeLogs.log', level=logging.INFO)
 
 def blur_image_blob(image_blob):
-    img = Image.open(io.BytesIO(image_blob))
-    blurred = img.filter(ImageFilter.GaussianBlur(35))
-    byte_arr = io.BytesIO()
-    blurred.save(byte_arr, format=img.format)
-    blurred_blob = byte_arr.getvalue()
-    return blurred_blob
-
-
-
-
-
+    try:
+        img = Image.open(io.BytesIO(image_blob))
+        blurred = img.filter(ImageFilter.GaussianBlur(35))
+        byte_arr = io.BytesIO()
+        blurred.save(byte_arr, format=img.format)
+        blurred_blob = byte_arr.getvalue()
+        return blurred_blob
+    except Exception as e:
+        logging.error(f'Error blurring image: {str(e)}')
+        return None
 
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif'}
 
 def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    try:
+        return '.' in filename and \
+               filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    except Exception as e:
+        logging.error(f'Error checking allowed file: {str(e)}')
+        return False
 
 views = Blueprint('views', __name__)
 
@@ -42,14 +40,12 @@ views = Blueprint('views', __name__)
 def not_found_error(error):
     return render_template('404.html'), 404
 
-# @views.template_filter('custom_b64encode')
-# def custom_b64encode_filter(value):
-#     return custom_b64encode(value)
 def custom_b64encode(value):
-    return base64.b64encode(value.encode('utf-8')).decode('utf-8')
-
-
-
+    try:
+        return base64.b64encode(value.encode('utf-8')).decode('utf-8')
+    except Exception as e:
+        logging.error(f'Error encoding base64: {str(e)}')
+        return ''
 
 @views.record
 def record(state):
