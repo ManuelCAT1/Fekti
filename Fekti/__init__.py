@@ -19,7 +19,7 @@ def create_app(environ=None, start_response=None):
     
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    
+    app.jinja_env.filters['custom_b64encode'] = custom_b64encode
 
   
 
