@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 from .models import db, Photo, Like, School, User, Unlock, Report, PhotoFeedback, NeededFeedback
+from Fekti.views import custom_b64encode
 
 import os
 from datetime import datetime, timedelta
