@@ -22,7 +22,11 @@ def create_app(environ=None, start_response=None):
 
 
     def custom_b64encode(value):
-        return base64.b64encode(value.encode('utf-8')).decode('utf-8')
+        if isinstance(value, bytes):  # Check if value is bytes
+            encoded_data = base64.b64encode(value).decode('utf-8')
+        else:
+            encoded_data = base64.b64encode(value.encode('utf-8')).decode('utf-8')
+        return encoded_data
 
     # Register the filter globally
     app.jinja_env.filters['custom_b64encode'] = custom_b64encode
