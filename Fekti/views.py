@@ -53,10 +53,16 @@ views = Blueprint('views', __name__)
 def not_found_error(error):
     return render_template('404.html'), 404
 
-@views.template_filter('custom_b64encode')
-def custom_b64encode_filter(value):
-    return custom_b64encode(value)
+# @views.template_filter('custom_b64encode')
+# def custom_b64encode_filter(value):
+#     return custom_b64encode(value)
+def custom_b64encode(value):
+    return base64.b64encode(value.encode('utf-8')).decode('utf-8')
 
+@views.record
+def record(state):
+    # state.app is the Flask application instance
+    state.app.jinja_env.filters['custom_b64encode'] = custom_b64encode
 
 @views.route('/', defaults={'subject': None}, methods=['GET', 'POST'])
 @views.route('/home', defaults={'subject': None})
