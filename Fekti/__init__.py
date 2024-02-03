@@ -19,9 +19,14 @@ def create_app(environ=None, start_response=None):
     
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+
+
+    def custom_b64encode(value):
+        return base64.b64encode(value.encode('utf-8')).decode('utf-8')
+
+    # Register the filter globally
     app.jinja_env.filters['custom_b64encode'] = custom_b64encode
 
-  
 
     app.config['SECRET_KEY'] = 'SuperFektiXDUnpredictableKey'
     app.config['SECURITY_PASSWORD_SALT'] = 'AnotherSuperFektiXDUnpredictableKey'
