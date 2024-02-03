@@ -26,13 +26,13 @@ app.config['UPLOAD_FOLDER'] = '/photos/'
 @app.template_filter('custom_b64encode')
 def custom_b64encode(data):
     if isinstance(data, bytes):
-        encoded_data = base64.b64encode(data)
+        encoded_data = base64.b64encode(data).decode('utf-8')
     elif isinstance(data, str):
-        encoded_data = base64.b64encode(data.encode('utf-8'))
+        encoded_data = base64.b64encode(data.encode('utf-8')).decode('utf-8')
     else:
         str_data = str(data)
-        encoded_data = base64.b64encode(str_data.encode('utf-8'))
-    return encoded_data.decode('utf-8')
+        encoded_data = base64.b64encode(str_data.encode('utf-8')).decode('utf-8')
+    return encoded_data
 
 
 
