@@ -1474,6 +1474,8 @@ h6 {
 	overflow: hidden; /* Ensures text does not spill out */
 	text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
 	flex-shrink: 0; /* Prevents the text from shrinking */
+
+	text-align: right; 
 }
 
 .titleP:before {
