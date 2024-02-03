@@ -18,24 +18,15 @@ import logging
 logging.basicConfig(filename='routeLogs.log', level=logging.INFO)
 
 def blur_image_blob(image_blob):
-    try:
-        # Convert the binary data to an image
-        img = Image.open(io.BytesIO(image_blob))
+    img = Image.open(io.BytesIO(image_blob))
+    blurred = img.filter(ImageFilter.GaussianBlur(35))
 
-        # Apply the blur filter
-        blurred = img.filter(ImageFilter.GaussianBlur(35))
-
-        # Save the blurred image to a BytesIO object
-        byte_arr = io.BytesIO()
-        blurred.save(byte_arr, format=img.format)  # Use the original image's format
-
-        # Convert the BytesIO object to bytes
+    # Save the blurred image as bytes
+    with io.BytesIO() as byte_arr:
+        blurred.save(byte_arr, format=img.format)
         blurred_blob = byte_arr.getvalue()
 
-        return blurred_blob
-    except Exception as e:
-        logging.error(f'Error in blur_image_blob: {str(e)}')
-        return None  # Handle the error gracefully, you can return None or raise a custom exception
+    return blurred_blob
 
 
 
