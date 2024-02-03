@@ -20,12 +20,9 @@ logging.basicConfig(filename='routeLogs.log', level=logging.INFO)
 def blur_image_blob(image_blob):
     img = Image.open(io.BytesIO(image_blob))
     blurred = img.filter(ImageFilter.GaussianBlur(35))
-
-    # Save the blurred image as bytes
-    with io.BytesIO() as byte_arr:
-        blurred.save(byte_arr, format=img.format)
-        blurred_blob = byte_arr.getvalue()
-
+    byte_arr = io.BytesIO()
+    blurred.save(byte_arr, format=img.format)
+    blurred_blob = byte_arr.getvalue()
     return blurred_blob
 
 
