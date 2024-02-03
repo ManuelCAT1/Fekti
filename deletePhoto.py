@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from .models import Photo  # Import your Photo class here
+from models import Photo  # Import your Photo class here
 
 # Replace 'YourDatabaseURL' with the actual database URL
 engine = create_engine('instance/database.db')
