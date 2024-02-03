@@ -7,6 +7,12 @@ import os
 from datetime import datetime, timedelta
 
 
+import base64
+
+def custom_b64encode(value):
+    return base64.b64encode(value.encode('utf-8')).decode('utf-8')
+
+
 from PIL import Image, ImageFilter
 import io
 
@@ -46,6 +52,9 @@ views = Blueprint('views', __name__)
 def not_found_error(error):
     return render_template('404.html'), 404
 
+@views.template_filter('custom_b64encode')
+def custom_b64encode_filter(value):
+    return custom_b64encode(value)
 
 
 @views.route('/', defaults={'subject': None}, methods=['GET', 'POST'])
