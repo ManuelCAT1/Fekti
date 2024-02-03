@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 from .models import db, Photo, Like, School, User, Unlock, Report, PhotoFeedback, NeededFeedback
 import base64
-from . import app
+from . import create_app
 import os
 from datetime import datetime, timedelta
 
