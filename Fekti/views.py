@@ -11,6 +11,9 @@ from datetime import datetime, timedelta
 import base64
 
 def custom_b64encode(value):
+    # Ensure value is a string
+    if not isinstance(value, str):
+        value = str(value)
     return base64.b64encode(value.encode('utf-8')).decode('utf-8')
 
 
