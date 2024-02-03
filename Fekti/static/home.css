@@ -778,6 +778,7 @@ li{
 
 
 .dropdownMenu .credits {
+	margin-top: 0px;
 position: relative;
 justify-content: center;
 align-items: center;
