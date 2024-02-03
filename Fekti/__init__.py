@@ -20,42 +20,28 @@ def create_app(environ=None, start_response=None):
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
+    def custom_b64encode(value):
+        return base64.b64encode(value.encode('utf-8')).decode('utf-8')
 
-def custom_b64encode(value):
-    if isinstance(value, bytes):
-        # Convert bytes to string using base64 encoding
-        value = base64.b64encode(value).decode('utf-8')
-    
-    # Encode the string to base64 (either the original or converted one)
-    return base64.b64encode(value.encode('utf-8')).decode('utf-8')
-
-# Register the filter globally
-app.jinja_env.filters['custom_b64encode'] = custom_b64encode
-
+    # Register the filter globally
+    app.jinja_env.filters['custom_b64encode'] = custom_b64encode
 
     app.config['SECRET_KEY'] = 'SuperFektiXDUnpredictableKey'
     app.config['SECURITY_PASSWORD_SALT'] = 'AnotherSuperFektiXDUnpredictableKey'
     
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-
     # Email configuration
     app.config['MAIL_SERVER'] = 'serwer2395047.home.pl'
- 
     app.config['MAIL_PORT'] = 587
-  
     app.config['MAIL_USE_TLS'] = True  # Enable TLS
-    
     app.config['MAIL_USE_SSL'] = False  # Keep SSL disabled
     app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', 'weryfikacja@fekti.com')
-
     app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', '8@_cLZ4rvFLF9b5')
- 
     app.config['MAIL_DEFAULT_SENDER'] = 'weryfikacja@fekti.com'
- 
     db.init_app(app)
-
     mail.init_app(app)  # Initialize mail with the app
+
 
 
 
