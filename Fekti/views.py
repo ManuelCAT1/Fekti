@@ -40,9 +40,12 @@ views = Blueprint('views', __name__)
 def not_found_error(error):
     return render_template('404.html'), 404
 
-def custom_b64encode(value):
+def custom_b64encode(image_data):
     try:
-        return base64.b64encode(value.encode('utf-8')).decode('utf-8')
+        if image_data:
+            return base64.b64encode(image_data).decode('utf-8')
+        else:
+            return ''
     except Exception as e:
         logging.error(f'Error encoding base64: {str(e)}')
         return ''
