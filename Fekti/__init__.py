@@ -85,6 +85,14 @@ def create_app(environ=None, start_response=None):
         db.create_all()
 
 
+  @app.template_filter('custom_b64encode')
+    def custom_b64encode_filter(value):
+        # Ensure value is a string
+        if not isinstance(value, str):
+            value = str(value)
+        return base64.b64encode(value.encode('utf-8')).decode('utf-8')
+
+
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
