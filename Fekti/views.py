@@ -68,23 +68,43 @@ def homePage(subject):
     try:
         print("homePage 1")
         logging.info('Entered homePage() function')
+        
         if current_user.banned:
             return render_template('banned.html')
-        update_credits(current_user)
+
+        try:
+            update_credits(current_user)
+        except Exception as e:
+            logging.error(f'Error updating credits: {str(e)}')
+            return render_template('error.html', message='Error updating credits')
+
         school_id = session.get('school_id')
         photo = Photo(title="", fileName="", description="", school_id=None, user_id=None, image_data=None, school=None, credits=0, likes=[], selected_subject="")
-        unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
+
+        unlocked_photos_ids = []
+        try:
+            unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
+        except Exception as e:
+            logging.error(f'Error fetching unlocked photos: {str(e)}')
+
         page = request.args.get('page', 1, type=int)
-        photos = Photo.query.filter_by(school_id=current_user.school_id).order_by(Photo.likes_count.desc()).paginate(page=page, per_page=10)
+
+        try:
+            photos = Photo.query.filter_by(school_id=current_user.school_id).order_by(Photo.likes_count.desc()).paginate(page=page, per_page=10)
+        except Exception as e:
+            logging.error(f'Error fetching photos: {str(e)}')
+            return render_template('error.html', message='Error fetching photos')
 
         needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id, isRated=False).first()
         if needed_feedback:
             return flashFeedback(photo_id=needed_feedback.photo_id, user_id=current_user.id)
 
-        # Apply the blur filter to each photo unless it's unlocked
-        for photo in photos.items:
-            if photo.id not in unlocked_photos_ids:
-                photo.image_data = blur_image_blob(photo.image_data)
+        try:
+            for photo in photos.items:
+                if photo.id not in unlocked_photos_ids:
+                    photo.image_data = blur_image_blob(photo.image_data)
+        except Exception as e:
+            logging.error(f'Error applying blur filter: {str(e)}')
 
         if school_id is None or current_user.school_id != school_id:
             return redirect(url_for('auth.loginPage'))
@@ -106,24 +126,33 @@ def homePage(subject):
 @views.route('/image/<int:photo_id>')
 @login_required
 def serve_image(photo_id):
-    print("serve_image 2")
-    logging.info('Entered image/() function')
-    unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
-    photo = Photo.query.get(photo_id)
-    print(current_user.id)
-    print(photo.image_id)
-
-    
-
-    if photo.id not in unlocked_photos_ids or photo.user_id != current_user.id:
-        image_data = blur_image_blob(photo.image_data)
-    elif photo.user_id == current_user.id:
-        image_data = photo.image_data
+    try:
+        print("serve_image 2")
+        logging.info('Entered image/() function')
         
-    else:
-        image_data = photo.image_data
+        unlocked_photos_ids = []
+        try:
+            unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
+        except Exception as e:
+            logging.error(f'Error fetching unlocked photos: {str(e)}')
 
-    return send_file(io.BytesIO(image_data), mimetype='image/jpeg')
+        photo = Photo.query.get(photo_id)
+        print(current_user.id)
+        print(photo.image_id)
+
+        if photo.id not in unlocked_photos_ids or photo.user_id != current_user.id:
+            image_data = blur_image_blob(photo.image_data)
+        elif photo.user_id == current_user.id:
+            image_data = photo.image_data
+        else:
+            image_data = photo.image_data
+
+        return send_file(io.BytesIO(image_data), mimetype='image/jpeg')
+    except Exception as e:
+        with open('error_image.txt', 'w') as f:
+            f.write(str(e))
+        raise e  # Re-raise the exception after writing to the file
+
 
 from datetime import datetime, timedelta
 
