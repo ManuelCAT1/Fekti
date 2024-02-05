@@ -335,8 +335,22 @@ def photos():
     if current_user.banned:
         return redirect(url_for('views.banned'))  # Redirect to banned page
 
-    return render_template('photos.html', credits=current_user.credits)
+    unlocked_photos_ids = []
+    try:
+        # Fetching IDs of all photos that the current user has unlocked
+        unlocked_photos_ids = [photo.id for photo in Photo.query.join(Unlock).filter(Unlock.user_id == current_user.id).all()]
+    except Exception as e:
+        print(f'Error fetching unlocked photos: {str(e)}')  # Handle exceptions
 
+    page = request.args.get('page', 1, type=int)
+    try:
+        # Paginate photos based on the school ID of the current user and order by likes count
+        photos = Photo.query.filter(Photo.id.in_(unlocked_photos_ids)).paginate(page=page, per_page=10)
+    except Exception as e:
+        print(f'Error fetching photos: {str(e)}')  # Handle exceptions
+        return render_template('error.html', message='Error fetching photos')
+
+    return render_template('photos.html', photos=photos, unlocked_photos_ids=unlocked_photos_ids, credits=current_user.credits)
 # @views.route('/school')
 # def school():
 #     return render_template('schools/windows.html')
