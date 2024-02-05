@@ -176,31 +176,30 @@ import time
 @views.route('/unlock_photo/<int:photo_id>', methods=['POST'])
 @login_required
 def unlock_photo(photo_id):
-    print("unlock_photo 5")
-    logging.info('Entered unlocktphoto() function')
-    user = current_user
-    photo = Photo.query.get(photo_id)
-    
-    
-    if user.credits > 0:
-        user.credits -= 1
-        unlock = Unlock(user_id=user.id, photo_id=photo.id)
-        db.session.add(unlock)
-        db.session.commit()
-        flash('Odblokowano zdjęcie', 'success')
+    try:
+        print("unlock_photo 5")
+        logging.info('Entered unlock_photo() function')
+        user = current_user
+        photo = Photo.query.get_or_404(photo_id)  # This automatically handles the case if photo does not exist
 
-        # Set the session variable
-        session['unlocked_photo_id'] = photo_id
+        if user.credits > 0:
+            user.credits -= 1
+            unlock = Unlock(user_id=user.id, photo_id=photo.id)
+            db.session.add(unlock)
+            db.session.commit()
+            flash('Odblokowano zdjęcie', 'success')
+            # Schedule task (note: this requires proper setup to work, see comments below)
+            # schedule.every(1).day.do(add_photo_to_feedback, photo_id=photo_id, user_id=user.id)
+            return redirect(url_for('views.photos'))  # Ensure this is the correct endpoint
+        else:
+            flash('Niewystarczające kredyty', 'error')
+            return redirect(url_for('views.homePage'))
 
-
-        schedule.every(1).day.do(add_photo_to_feedback, photo_id=photo_id, user_id=user.id)
-
- 
-        return redirect(url_for('views.Photos'))
-
-    elif user.credits == 0:
-        flash('Niewystarczające kredyty', 'error')
+    except Exception as e:
+        logging.error(f'Error in unlock_photo: {str(e)}')
+        # Redirect to a safe page or show an error message
         return redirect(url_for('views.homePage'))
+
 
 def add_photo_to_feedback(photo_id, user_id):
     print("add_photo_to_feedback 6")
