@@ -112,13 +112,21 @@ def registerPage():
 def confirm_email(token):
     from . import s
     try:
-        email = s.loads(token, salt='FektySaltSPXD', max_age=86400)
+        # Notice the omission of the max_age parameter
+        email = s.loads(token, salt='FektySaltSPXD')
         user = User.query.filter_by(email=email).first()
-        user.confirmed = True  # Set the 'confirmed' attribute to True
-        db.session.commit()  # Commit the change to the database
+        if user:
+            user.confirmed = True  # Set the 'confirmed' attribute to True
+            db.session.commit()  # Commit the change to the database
+        else:
+            return 'Invalid or expired token.', 400  # Handle non-existing user
     except SignatureExpired:
+        # This block will no longer be necessary if max_age is omitted
         return render_template('expired.html')
+    except:  # Catch other exceptions, such as BadSignature
+        return 'Invalid or expired token.', 400
     return render_template('verification.html')
+
 
 @auth.route('/logout')
 @login_required
