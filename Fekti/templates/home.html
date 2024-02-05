@@ -4,41 +4,6 @@
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
 
-<script>
-    function downloadImage(photoId, imageData) {
-        // Convert base64 image data to a blob
-        function base64ToBlob(base64, mimeType) {
-            var byteCharacters = atob(base64);
-            var byteArrays = [];
-
-            for (var offset = 0; offset < byteCharacters.length; offset += 512) {
-                var slice = byteCharacters.slice(offset, offset + 512);
-                var byteNumbers = new Array(slice.length);
-                for (var i = 0; i < slice.length; i++) {
-                    byteNumbers[i] = slice.charCodeAt(i);
-                }
-                var byteArray = new Uint8Array(byteNumbers);
-                byteArrays.push(byteArray);
-            }
-
-            var blob = new Blob(byteArrays, {type: mimeType});
-            return blob;
-        }
-
-        // Assuming imageData is the base64 encoded string without the prefix 'data:image/png;base64,'
-        var blob = base64ToBlob(imageData, 'image/png');
-        var url = URL.createObjectURL(blob);
-
-        // Create a link and trigger the download
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = 'photo-' + photoId + '.png';
-        document.body.appendChild(a); // Required for Firefox
-        a.click();
-        window.URL.revokeObjectURL(url);
-        a.remove();
-    }
-</script>
 
 	
 <script>
