@@ -188,8 +188,9 @@ def unlock_photo(photo_id):
             db.session.add(unlock)
             db.session.commit()
             flash('Odblokowano zdjęcie', 'success')
-            # Schedule task (note: this requires proper setup to work, see comments below)
-            schedule.every(1).day.do(add_photo_to_feedback, photo_id=photo_id, user_id=user.id)
+            needed_feedback = NeededFeedback(photo_id=photo_id, user_id=user.id, isRated=False)
+            db.session.add(needed_feedback)
+            db.session.commit()
             return redirect(url_for('views.photos'))  # Ensure this is the correct endpoint
         else:
             flash('Niewystarczające kredyty', 'error')
