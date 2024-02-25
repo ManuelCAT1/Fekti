@@ -258,15 +258,14 @@ def submit_feedback(photo_id):
 
     photo = Photo.query.get(photo_id)
 
-    if feedback == 'like':
+    if feedback == True:
         # Increment the like count
         photo.likes_count += 1
-    elif feedback == 'dislike':
+    elif feedback == False:
         photo.likes_count -= 1
     # Create a new PhotoFeedback record
     photo_feedback = PhotoFeedback(photo_id=photo_id, user_id=current_user.id, feedback=feedback)
     db.session.add(photo_feedback)
-    db.session.add(likes_count)
     db.session.commit()
 
     # Check if the photo has reached the threshold for likes or dislikes
