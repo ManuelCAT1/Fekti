@@ -274,10 +274,14 @@ def submit_feedback(photo_id):
     if feedback == True:
         # Increment the like count
         photo.likes_count += 1
+        NeededFeedback.query.filter_by(photo_id=photo_id, user_id=current_user.id).update({'isRated': True})
+        db.session.commit()
         # needed_feedback.isRated = True  # Mark as rated
         # db.session.commit()
     elif feedback == False:
         photo.likes_count -= 1
+        NeededFeedback.query.filter_by(photo_id=photo_id, user_id=current_user.id).update({'isRated': True})
+        db.session.commit()
         # needed_feedback.isRated = True  # Mark as rated
         # db.session.commit()
     # Create a new PhotoFeedback record
