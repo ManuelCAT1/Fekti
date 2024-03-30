@@ -264,12 +264,12 @@ def submit_feedback(photo_id):
     if feedback == True:
         # Increment the like count
         photo.likes_count += 1
-        needed_feedback.isRated = True  # Mark as rated
-        db.session.commit()
+        # needed_feedback.isRated = True  # Mark as rated
+        # db.session.commit()
     elif feedback == False:
         photo.likes_count -= 1
-        needed_feedback.isRated = True  # Mark as rated
-        db.session.commit()
+        # needed_feedback.isRated = True  # Mark as rated
+        # db.session.commit()
     # Create a new PhotoFeedback record
     photo_feedback = PhotoFeedback(photo_id=photo_id, user_id=current_user.id, feedback=feedback)
     db.session.add(photo_feedback)
