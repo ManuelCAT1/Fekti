@@ -208,13 +208,19 @@ def add_photo_to_feedback(photo_id, user_id):
     needed_feedback = NeededFeedback(photo_id=photo_id, user_id=user_id)
     db.session.add(needed_feedback)
     db.session.commit()
-
+def mark_feedback_as_rated(photo_id, user_id):
+    print("mark_feedback_as_rated 10")
+    needed_feedback = NeededFeedback.query.filter_by(photo_id=photo_id, user_id=user_id).first()
+    if needed_feedback:
+        needed_feedback.isRated = True
+        db.session.commit()
 
 from datetime import datetime
 
 @views.route('/feedback')
 @login_required
 def feedback():
+    mark_feedback_as_rated()
     print("feedback 7")
     logging.info('Entered feedback() function')
     needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id).first()
@@ -254,6 +260,7 @@ def feedback_photo(photo_id):
 @views.route('/submit_feedback/<int:photo_id>', methods=['POST'])
 @login_required
 def submit_feedback(photo_id):
+    mark_feedback_as_rated()
     print("submit_feedback 9")
     logging.info('Entered submitfeedbacks() function')
     feedback = request.form.get('feedback')  # Get the feedback from the form
@@ -310,12 +317,7 @@ def submit_feedback(photo_id):
 
     return redirect(url_for('views.homePage'))
 
-def mark_feedback_as_rated(photo_id, user_id):
-    print("mark_feedback_as_rated 10")
-    needed_feedback = NeededFeedback.query.filter_by(photo_id=photo_id, user_id=user_id).first()
-    if needed_feedback:
-        needed_feedback.isRated = True
-        db.session.commit()
+
 
 
 @views.route('/yourschool')
