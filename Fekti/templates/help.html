@@ -2,6 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script defer src="https://cdn.amplitude.com/libs/analytics-browser-2.5.2-min.js.gz"></script>
+<script defer src="https://cdn.amplitude.com/libs/plugin-default-event-tracking-advanced-browser-0.8.0-min.js.gz"></script>
+<script type="module">
+  amplitude.init('2e2a1d4a5e3c21281fed43b7b4669973');
+  const defaultEventTrackingAdvancedPlugin = amplitudeDefaultEventTrackingAdvancedPlugin.plugin();
+  amplitude.add(defaultEventTrackingAdvancedPlugin);
+</script>
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1H9BWD28"></script>
 <script>
