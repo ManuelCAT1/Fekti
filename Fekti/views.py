@@ -215,17 +215,19 @@ def mark_feedback_as_rated(photo_id, user_id):
         needed_feedback.isRated = True
         db.session.commit()
 
+
 from datetime import datetime
 
 @views.route('/feedback')
 @login_required
 def feedback():
-    mark_feedback_as_rated(photo_id, current_user.id)
+    
     print("feedback 7")
     logging.info('Entered feedback() function')
     needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id).first()
     photo_id = needed_feedback.photo_id if needed_feedback else None
 
+    mark_feedback_as_rated(photo_id, current_user.id)
     #if photo_id is None or ("""needed_feedback and""" needed_feedback.isRated):
     #if photo_id is None or (needed_feedback.isRated):
     if not needed_feedback:
@@ -240,7 +242,7 @@ from flask import redirect, url_for
 @views.route('/feedback_photo/<int:photo_id>')
 @login_required
 def feedback_photo(photo_id):
-    mark_feedback_as_rated(photo_id, current_user.id)
+    
     print("feedback_photo 8")
     logging.info('Entered feedback pgohto() function')
     photo = Photo.query.get(photo_id)
@@ -260,7 +262,7 @@ def feedback_photo(photo_id):
 @views.route('/submit_feedback/<int:photo_id>', methods=['POST'])
 @login_required
 def submit_feedback(photo_id):
-    mark_feedback_as_rated(photo_id, current_user.id)
+    
     print("submit_feedback 9")
     logging.info('Entered submitfeedbacks() function')
     feedback = request.form.get('feedback')  # Get the feedback from the form
