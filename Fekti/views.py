@@ -234,6 +234,7 @@ from flask import redirect, url_for
 @views.route('/feedback_photo/<int:photo_id>')
 @login_required
 def feedback_photo(photo_id):
+    mark_feedback_as_rated()
     print("feedback_photo 8")
     logging.info('Entered feedback pgohto() function')
     photo = Photo.query.get(photo_id)
