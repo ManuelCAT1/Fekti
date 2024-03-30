@@ -220,7 +220,7 @@ def feedback():
     needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id).first()
     photo_id = needed_feedback.photo_id if needed_feedback else None
 
-    if photo_id is None or (needed_feedback and needed_feedback.isRated):
+    if photo_id is None or ("""needed_feedback and""" needed_feedback.isRated):
         return redirect(url_for('views.homePage'))
 
     photo = Photo.query.get(photo_id)
