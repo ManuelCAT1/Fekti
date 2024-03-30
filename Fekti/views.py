@@ -221,7 +221,8 @@ def feedback():
     photo_id = needed_feedback.photo_id if needed_feedback else None
 
     #if photo_id is None or ("""needed_feedback and""" needed_feedback.isRated):
-    if photo_id is None or (needed_feedback.isRated):
+    #if photo_id is None or (needed_feedback.isRated):
+    if not needed_feedback:
         print(needed_feedback.isRated)
         return redirect(url_for('views.homePage'))
 
