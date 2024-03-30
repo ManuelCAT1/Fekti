@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   <img src="data:image/png;base64,{{ photo.image_data|custom_b64encode }}" alt="{{ photo.title }}" class="imgsrc-unblurred">
                   <form method="POST" action="{{ url_for('views.unlock_photo', photo_id=photo.id) }}">
                      <!-- <button type="submit" class="unlockButton">Odblokuj</button>--> 
-			<button type="submit" onclick="trackPhotoUnlock('{{ photo.id }}')">Odblokuj</button>
+			<button type="submit" onclick="trackPhotoUnlock('{{ photo.id }}')" class="unlockButton">Odblokuj</button>
 
                   </form>
               {% endif %}
