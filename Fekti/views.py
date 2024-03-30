@@ -227,7 +227,7 @@ def feedback():
     needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id).first()
     photo_id = needed_feedback.photo_id if needed_feedback else None
 
-    mark_feedback_as_rated(photo_id, current_user.id)
+    
     #if photo_id is None or ("""needed_feedback and""" needed_feedback.isRated):
     #if photo_id is None or (needed_feedback.isRated):
     if not needed_feedback:
@@ -316,7 +316,8 @@ def submit_feedback(photo_id):
     session.pop('unlocked_photo_id', None)
     session.pop('unlock_time', None)
 
-
+    NeededFeedback.query.filter_by(photo_id=photo_id, user_id=current_user.id).update({'isRated': True})
+    db.session.commit()
     return redirect(url_for('views.homePage'))
 
 
