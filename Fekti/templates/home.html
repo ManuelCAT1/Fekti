@@ -191,6 +191,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Ensure Amplitude is loaded
+  if (window.amplitude) {
+    var testButton = document.getElementById('testAmplitudeButton');
+    
+    testButton.addEventListener('click', function() {
+      // Log an event named 'Test Button Clicked'
+      amplitude.getInstance().logEvent('Test Button Clicked');
+      alert('Test Event Sent to Amplitude!');
+    });
+  } else {
+    console.error('Amplitude SDK is not loaded');
+  }
+});
+</script>
 
 </head>
 <body>
@@ -331,6 +347,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 </div>
+	
 <div id="background" style="display: none"></div>
 </div>
 <div class="uploadIMG">
@@ -364,6 +381,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <img id="imagePreview" src="#" alt="" />
   </form>
 </div>
+<button id="testAmplitudeButton">Test Amplitude Tracking</button>
 
 <div class="postContatiner">
 
