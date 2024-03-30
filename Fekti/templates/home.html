@@ -9,6 +9,15 @@
 
 amplitude.init('2e2a1d4a5e3c21281fed43b7b4669973');
 </script>
+
+<script>
+function trackPhotoUnlock(photoId) {
+    amplitude.getInstance().logEvent('Photo Unlock', {photoId: photoId});
+    // Additional code to actually unlock the photo...
+}
+</script>
+
+
 	
 <script>
 	
