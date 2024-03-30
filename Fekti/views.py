@@ -208,12 +208,6 @@ def add_photo_to_feedback(photo_id, user_id):
     needed_feedback = NeededFeedback(photo_id=photo_id, user_id=user_id)
     db.session.add(needed_feedback)
     db.session.commit()
-def mark_feedback_as_rated(photo_id, user_id):
-    print("mark_feedback_as_rated 10")
-    needed_feedback = NeededFeedback.query.filter_by(photo_id=photo_id, user_id=user_id).first()
-    if needed_feedback:
-        needed_feedback.isRated = True
-        db.session.commit()
 
 
 from datetime import datetime
@@ -221,16 +215,13 @@ from datetime import datetime
 @views.route('/feedback')
 @login_required
 def feedback():
-    
     print("feedback 7")
     logging.info('Entered feedback() function')
     needed_feedback = NeededFeedback.query.filter_by(user_id=current_user.id).first()
     photo_id = needed_feedback.photo_id if needed_feedback else None
 
-    
     #if photo_id is None or ("""needed_feedback and""" needed_feedback.isRated):
-    #if photo_id is None or (needed_feedback.isRated):
-    if not needed_feedback:
+    if photo_id is None or (needed_feedback.isRated):
         print(needed_feedback.isRated)
         return redirect(url_for('views.homePage'))
 
@@ -242,7 +233,6 @@ from flask import redirect, url_for
 @views.route('/feedback_photo/<int:photo_id>')
 @login_required
 def feedback_photo(photo_id):
-    
     print("feedback_photo 8")
     logging.info('Entered feedback pgohto() function')
     photo = Photo.query.get(photo_id)
@@ -262,7 +252,6 @@ def feedback_photo(photo_id):
 @views.route('/submit_feedback/<int:photo_id>', methods=['POST'])
 @login_required
 def submit_feedback(photo_id):
-    
     print("submit_feedback 9")
     logging.info('Entered submitfeedbacks() function')
     feedback = request.form.get('feedback')  # Get the feedback from the form
@@ -274,16 +263,8 @@ def submit_feedback(photo_id):
     if feedback == True:
         # Increment the like count
         photo.likes_count += 1
-        NeededFeedback.query.filter_by(photo_id=photo_id, user_id=current_user.id).update({'isRated': True})
-        db.session.commit()
-        # needed_feedback.isRated = True  # Mark as rated
-        # db.session.commit()
     elif feedback == False:
         photo.likes_count -= 1
-        NeededFeedback.query.filter_by(photo_id=photo_id, user_id=current_user.id).update({'isRated': True})
-        db.session.commit()
-        # needed_feedback.isRated = True  # Mark as rated
-        # db.session.commit()
     # Create a new PhotoFeedback record
     photo_feedback = PhotoFeedback(photo_id=photo_id, user_id=current_user.id, feedback=feedback)
     db.session.add(photo_feedback)
@@ -320,11 +301,15 @@ def submit_feedback(photo_id):
     session.pop('unlocked_photo_id', None)
     session.pop('unlock_time', None)
 
-    NeededFeedback.query.filter_by(photo_id=photo_id, user_id=current_user.id).update({'isRated': True})
-    db.session.commit()
+
     return redirect(url_for('views.homePage'))
 
-
+def mark_feedback_as_rated(photo_id, user_id):
+    print("mark_feedback_as_rated 10")
+    needed_feedback = NeededFeedback.query.filter_by(photo_id=photo_id, user_id=user_id).first()
+    if needed_feedback:
+        needed_feedback.isRated = True
+        db.session.commit()
 
 
 @views.route('/yourschool')
@@ -665,10 +650,3 @@ def help():
 # @login_required
 # def swietokrzyskie():
 #     return render_template('schools/ŚWIĘTOKRZYSKIE/ŚWIĘTOKRZYSKIE.html')
-
-
-
-
-
-
-
